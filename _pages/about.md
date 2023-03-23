@@ -12,7 +12,7 @@ Jiangping Huang is currently a postdoctoral research fellow working with Prof. [
 
 Jiangping's research focuses on developing innovative artificial intelligence technologies that can effectively and efficiently utilize user-generated data (including texts, speech and video) to benefit human. Especially, Jiangping concentrates on following research interests (**ARRAY**): 
 + N**A**tural Language Processing
-+ Information **R**etrieval & Recommendation
++ Info**R**mation Retrieval & Recommendation
 + Machine Lea**R**ning
 + D**A**ta & Knowledge Engineering
 + C**Y**berspace Security
