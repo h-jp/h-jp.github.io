@@ -54,4 +54,4 @@ Example: editing a markdown file for a talk
 
 More
 ------
-The homepage will be updated as soon as possible. Stay tuned.
+The homepage will be updated as soon as possible. Stay tuned!
