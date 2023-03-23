@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Jiangping Huang"
+title                    : "Homepage"
 title_separator          : "-"
 name                     : &name "Jiangping Huang"
 description              : &description "Postdoctoral Researcher@NTU"
