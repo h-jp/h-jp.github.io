@@ -16,7 +16,8 @@ Jiangping's research focuses on developing innovative artificial intelligence te
 + Machine Lea**R**ning
 + D**A**ta & Knowledge Engineering
 + Cyberspace Securit**Y**
-Human generates massive amounts of data with their **languages** and data carries a wealth of **information** in **cyberspace**. Jiangping's vision and mission is to research the theory which can prompt **machines** to discover **knowledge** from these information, and use **engineering** as a carrier to help machines to **recommend** knowledge to people in need in a more intelligent way. Jiangping pays close attention to the challenges of ethics, fairness, and controllability in the development of intelligence. He believes that only **secure** intelligence can truly benefit human beings. Jiangping's interests are ARRAY, and ARRAY is the cornerstone of intelligence. Is that right? Welcome to discuss!
+
+<!-- Human generates massive amounts of data with their **languages** and data carries a wealth of **information** in **cyberspace**. Jiangping's vision and mission is to research the theory which can prompt **machines** to discover **knowledge** from these information, and use **engineering** as a carrier to help machines to **recommend** knowledge to people in need in a more intelligent way. Jiangping pays close attention to the challenges of ethics, fairness, and controllability in the development of intelligence. He believes that only **secure** intelligence can truly benefit human beings. Jiangping's interests are ARRAY, and ARRAY is the cornerstone of intelligence. Is that right? Welcome to discuss! -->
 
 
 <!-- A data-driven personal website
