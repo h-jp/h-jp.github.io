@@ -10,12 +10,12 @@ redirect_from:
 
 Jiangping Huang is currently a postdoctoral research fellow working with Prof. [Gao Cong](https://personal.ntu.edu.sg/gaocong/) at [Singtel Cognitive and Artificial Intelligence Lab for Enterprises (SCALE@NTU)](https://www.ntu.edu.sg/scale). Prior to that, he is an assistant professor at [Chongqing University of Posts and Telecommunications (CQUPT)](https://www.cqupt.edu.cn/). Furthermore, Jiangping received his Ph.D. degree in computer science from [Wuhan University](https://www.whu.edu.cn/) in Dec 2017, supervised by Prof. [Donghong Ji](https://cse.whu.edu.cn/info/1258/3290.htm).  
 
-Jiangping's research focuses on developing innovative artificial intelligence technologies that can effectively and efficiently utilize user-generated data (including texts, speech and video) to benefit human. Especially, Jiangping concentrates on following research interests: 
-+ Natural Language Processing
-+ Information Retrieval & Recommendation
-+ Machine Learning
-+ Data & Knowledge Engineering
-+ Cyberspace Security
+Jiangping's research focuses on developing innovative artificial intelligence technologies that can effectively and efficiently utilize user-generated data (including texts, speech and video) to benefit human. Especially, Jiangping concentrates on following research interests (**ARRAY**): 
++ N**A**tural Language Processing
++ Information **R**etrieval & Recommendation
++ Machine Lea**R**ning
++ D**A**ta & Knowledge Engineering
++ C**Y**berspace Security
 
 <!-- A data-driven personal website
 ======
