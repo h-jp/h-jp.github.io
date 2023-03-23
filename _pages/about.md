@@ -1,7 +1,7 @@
 ---
 permalink: /
-title: "About me"
-excerpt: "About me"
+title: "About"
+excerpt: "About"
 author_profile: true
 redirect_from: 
   - /about/
@@ -52,6 +52,6 @@ Many people use a git client to create files on their local computer and then pu
 Example: editing a markdown file for a talk
 ![Editing a markdown file for a talk](/images/editing-talk.png) -->
 
-For more info
+More
 ------
 The homepage will be updated as soon as possible. Stay tuned.
