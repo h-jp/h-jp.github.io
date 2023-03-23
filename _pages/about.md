@@ -17,6 +17,8 @@ Jiangping's research focuses on developing innovative artificial intelligence te
 + D**A**ta & Knowledge Engineering
 + Cyberspace Securit**Y**
 Human generates massive amounts of data with their **languages** and data carries a wealth of **information** in **cyberspace**. Jiangping's vision and mission is to research the theory which can prompt **machines** to discover **knowledge** from these information, and use **engineering** as a carrier to help machines to **recommend** knowledge to people in need in a more intelligent way. Jiangping pays close attention to the challenges of ethics, fairness, and controllability in the development of intelligence. He believes that only **secure** intelligence can truly benefit human beings. Jiangping's interests are ARRAY, and ARRAY is the cornerstone of intelligence. Is that right? Welcome to discuss!
+
+
 <!-- A data-driven personal website
 ======
 Like many other Jekyll-based GitHub Pages templates, academicpages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
