@@ -1,7 +1,7 @@
 hero:
   name: "Jiangping Huang"
   credentials: "Ph.D. / Postdoctoral Fellow / Master Supervisor"
-  role: "Assistant Professor, Chongqing University of Posts and Telecommunications"
+  role: "Assistant Professor, Chongqing University of Posts and Telecommunications (CQUPT)"
   tagline: "Building intelligent software systems through large language models, multi-agent collaboration, and cognitive reasoning."
   research_areas:
     - "Artificial Intelligence"
@@ -24,14 +24,14 @@ hero:
 
 about:
   english:
-    - "Jiangping Huang is a faculty member and master supervisor at Chongqing University of Posts and Telecommunications. He received his Ph.D. in Computer Science from Wuhan University and worked as a postdoctoral research fellow at Nanyang Technological University, Singapore from 2022 to 2024."
+    - "Jiangping Huang is a faculty member and master supervisor at Chongqing University of Posts and Telecommunications (CQUPT). He received his Ph.D. in Computer Science from Wuhan University and worked as a postdoctoral research fellow at Nanyang Technological University, Singapore from 2022 to 2024."
     - "His research lies at the intersection of artificial intelligence, intelligent software engineering, multi-agent systems, and intelligent robotics, with a particular focus on LLM-based software engineering, intelligent requirements engineering, code generation and self-repair, trace-driven debugging, cognitive multi-agent collaboration, and human-AI/robot collaboration."
     - "He has participated in a key project of the National Natural Science Foundation of China, served as a major contributor to several NSFC and national-level projects, and led multiple provincial and ministerial projects. His work has resulted in nearly 20 academic papers, more than 10 national invention patent applications, more than 10 software copyrights, and a Chongqing Science and Technology Progress Award. He also serves as a reviewer for conferences and journals including AAAI, EMNLP, NLPCC, ACM TKDD, and ACM TALLIP."
   chinese:
     - "黄江平，博士、博士后，硕士生导师，博士毕业于武汉大学，曾在新加坡南洋理工大学从事博士后研究，现任重庆邮电大学教师。主要研究方向包括人工智能、智能软件工程与智能机器人，重点关注多智能体系统、智能需求工程、代码生成与自修复、软件逆向工程、认知智能与人机协同等前沿问题。"
     - "近年来，围绕大语言模型与多智能体系统赋能软件开发智能化这一主线，持续开展人工智能与软件工程交叉研究。先后参与国家自然科学基金重点项目1项，主研国家自然科学基金面上项目3项、国家社科基金项目1项，主持省部级项目7项。已发表学术论文近20篇，申请国家发明专利10余项，登记软件著作权10余项，获重庆市科技进步奖1项。"
   positions:
-    - "2018.01-present, Faculty Member, Chongqing University of Posts and Telecommunications"
+    - "2018.01-present, Faculty Member, Chongqing University of Posts and Telecommunications (CQUPT)"
     - "2022.07-2024.07, Postdoctoral Research Fellow, Nanyang Technological University, Singapore"
     - "Ph.D. in Computer Science, Wuhan University"
 
@@ -128,7 +128,7 @@ selected_publications:
 research_group:
   name: "CSMA Research Group"
   url: "https://csma-research-group.github.io"
-  summary: "The CSMA Research Group is based at Chongqing University of Posts and Telecommunications and works on artificial intelligence, intelligent software engineering, multi-agent systems, intelligent robotics, and application-driven intelligent systems."
+  summary: "The CSMA Research Group is based at Chongqing University of Posts and Telecommunications (CQUPT) and works on artificial intelligence, intelligent software engineering, multi-agent systems, intelligent robotics, and application-driven intelligent systems."
   collaboration: "The group maintains collaboration and academic exchange with universities and research institutions including Nanyang Technological University, Peking University, Wuhan University, and Beihang University."
   slogan: "Cognitive and collaborative intelligence for software, robotics, and real-world AI."
 
