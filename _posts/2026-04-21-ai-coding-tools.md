@@ -10,9 +10,11 @@ tags:
   - Software Engineering
   - Code Generation
 excerpt: "AI coding tools are changing software development from manual editing toward intent expression, review, testing, and repair."
+lang: en
+translation: /posts/2026/04/ai-coding-tools-zh/
 ---
 
-Chinese theme: Codex、Claude Code 与 AI 编程工具：软件开发方式正在改变
+[简体中文](/posts/2026/04/ai-coding-tools-zh/)
 
 AI coding tools are changing the daily workflow of software development. Tools such as Codex, Claude Code, and other coding agents can read files, generate patches, explain unfamiliar code, run commands, and help developers move from an idea to an implementation much faster than before. This shift is not simply about faster typing. It changes what developers need to focus on.
 

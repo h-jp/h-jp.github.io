@@ -10,9 +10,11 @@ tags:
   - Self Management
   - Mentoring
 excerpt: "A reflection on why strong students and researchers grow fastest when they learn to manage their own goals, standards, and feedback loops."
+lang: en
+translation: /posts/2026/02/self-management-in-research-zh/
 ---
 
-Chinese theme: 优秀的人不需要管理，因为他们会自我管理
+[简体中文](/posts/2026/02/self-management-in-research-zh/)
 
 In research supervision, management is often discussed as if it mainly means assigning tasks, checking progress, and correcting mistakes. These things are sometimes necessary, especially when a student is new to research. But they are not the core of high-quality research training. The best students and researchers gradually become people who do not need to be managed in the narrow sense, because they learn to manage themselves.
 

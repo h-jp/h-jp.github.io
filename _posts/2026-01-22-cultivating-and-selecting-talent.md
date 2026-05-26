@@ -10,9 +10,11 @@ tags:
   - Talent Development
   - Mentoring
 excerpt: "A reflection on why research groups should cultivate students carefully while also selecting those who are willing to grow through responsibility, initiative, and long-term effort."
+lang: en
+translation: /posts/2026/01/cultivating-and-selecting-talent-zh/
 ---
 
-Chinese theme: 人才需要培养，同样离不开筛选
+[简体中文](/posts/2026/01/cultivating-and-selecting-talent-zh/)
 
 Talent certainly requires cultivation. A student does not become a mature researcher simply by entering a research group. Research ability, engineering ability, academic writing, and communication skills all need to be developed through real tasks. Students need opportunities to read papers, build systems, design experiments, discuss ideas, receive feedback, and revise their work again and again. Without cultivation, many promising students may never discover their own potential.
 

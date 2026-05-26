@@ -10,9 +10,11 @@ tags:
   - Toolchains
   - Human-AI Collaboration
 excerpt: "A good AI automation toolchain should move implementation details into reliable workflows while keeping human attention on goals, judgment, and thinking."
+lang: en
+translation: /posts/2026/05/ai-automation-toolchain-zh/
 ---
 
-Chinese theme: 构建 AI 自动工具链：让人沉浸于思考，让 AI 负责实现
+[简体中文](/posts/2026/05/ai-automation-toolchain-zh/)
 
 A central promise of AI automation is that humans can spend less time on repetitive implementation details and more time on thinking. This promise is attractive, but it is easy to misunderstand. AI should not simply replace careful work with automatic output. A useful AI automation toolchain should help humans express goals, preserve context, execute routine steps, inspect evidence, and return attention to the decisions that require judgment.
 

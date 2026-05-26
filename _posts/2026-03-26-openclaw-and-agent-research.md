@@ -9,9 +9,11 @@ tags:
   - Tool Use
   - Task Execution
 excerpt: "Agent research should move beyond isolated tool calls toward reliable task execution with goals, memory, evidence, and feedback."
+lang: en
+translation: /posts/2026/03/openclaw-and-agent-research-zh/
 ---
 
-Chinese theme: OpenClaw 与我们的智能体研究：从工具使用到任务执行
+[简体中文](/posts/2026/03/openclaw-and-agent-research-zh/)
 
 Many discussions about AI agents begin with tool use. A model calls a search tool, writes code, opens a file, or invokes an API. Tool use is an important capability, but it is not the end of agent research. A useful agent must do more than call tools correctly in isolated steps. It must understand a goal, decompose the task, choose tools at the right time, inspect intermediate results, recover from failure, and produce an outcome that can be trusted.
 
