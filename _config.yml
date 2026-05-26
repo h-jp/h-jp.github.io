@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Homepage"
+title                    : "Jiangping Huang"
 title_separator          : "-"
 name                     : &name "Jiangping Huang"
-description              : &description "Postdoctoral Researcher@NTU"
+description              : &description "Assistant Professor at CQUPT. AI, Intelligent Software Engineering, Multi-Agent Systems, and Intelligent Robotics."
 url                      : https://h-jp.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "h-jp/h-jp.github.io"
@@ -82,14 +82,17 @@ analytics:
 author:
   name             : "Jiangping Huang"
   avatar           : "hjp_github.png"
-  bio              : "Postdoctoral Researcher@NTU"
-  #location         : "Singapore"
-  employer         :
+  bio              : "Assistant Professor, CQUPT | AI + Intelligent Software Engineering + Multi-Agent Systems"
+  location         : "Chongqing, China"
+  employer         : "Chongqing University of Posts and Telecommunications"
   #pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   #googlescholar    : "https://scholar.google.com/citations?user=IulnddEAAAAJ&hl=zh-CN"
-  email            : "cs-huangjp@ntu.edu.sg"
+  email            : "huangjp@cqupt.edu.cn"
+  wechat           : "jiangpinghuang"
+  research_group   : "https://csma-research-group.github.io"
+  institutional_homepage: "http://faculty.cqupt.edu.cn/hjp/zh_CN/index.htm"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
+  uri              : "http://faculty.cqupt.edu.cn/hjp/zh_CN/index.htm"
   bitbucket        :
   codepen          :
   dribbble         :

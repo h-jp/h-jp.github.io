@@ -1,0 +1,19 @@
+
+# Jekyll / Bundler local files
+vendor/bundle/
+.bundle/
+.jekyll-cache/
+_site/
+.sass-cache/
+
+# Local Jekyll / Bundler files
+.bundle/
+vendor/
+vendor/bundle/
+.jekyll-cache/
+_site/
+.sass-cache/
+
+# Temporary reference materials
+tmp/
+tree.log

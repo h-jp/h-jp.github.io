@@ -1,0 +1,264 @@
+hero:
+  name: "Jiangping Huang"
+  credentials: "Ph.D. / Postdoctoral Fellow / Master Supervisor"
+  role: "Assistant Professor, Chongqing University of Posts and Telecommunications"
+  tagline: "Building intelligent software systems through large language models, multi-agent collaboration, and cognitive reasoning."
+  research_areas:
+    - "Artificial Intelligence"
+    - "Intelligent Software Engineering"
+    - "Multi-Agent Systems"
+    - "Intelligent Robotics"
+  highlights:
+    - label: "ICSE 2026"
+      title: "TraceCoder"
+      detail: "Trace-driven multi-agent debugging for LLM-generated code"
+      tag: "CCF A"
+    - label: "ASE 2025"
+      title: "Intelligent Requirements Engineering"
+      detail: "Knowledge-guided multi-agent collaboration for SRS generation"
+      tag: "CCF A"
+    - label: "CSMA Research Group"
+      title: "AI + SE + MAS"
+      detail: "Research platform for software intelligence, agents, and robotics"
+      tag: "Research Group"
+
+about:
+  english:
+    - "Jiangping Huang is a faculty member and master supervisor at Chongqing University of Posts and Telecommunications. He received his Ph.D. in Computer Science from Wuhan University and worked as a postdoctoral research fellow at Nanyang Technological University, Singapore from 2022 to 2024."
+    - "His research lies at the intersection of artificial intelligence, intelligent software engineering, multi-agent systems, and intelligent robotics, with a particular focus on LLM-based software engineering, intelligent requirements engineering, code generation and self-repair, trace-driven debugging, cognitive multi-agent collaboration, and human-AI/robot collaboration."
+    - "He has participated in a key project of the National Natural Science Foundation of China, served as a major contributor to several NSFC and national-level projects, and led multiple provincial and ministerial projects. His work has resulted in nearly 20 academic papers, more than 10 national invention patent applications, more than 10 software copyrights, and a Chongqing Science and Technology Progress Award. He also serves as a reviewer for conferences and journals including AAAI, EMNLP, NLPCC, ACM TKDD, and ACM TALLIP."
+  chinese:
+    - "黄江平，博士、博士后，硕士生导师，博士毕业于武汉大学，曾在新加坡南洋理工大学从事博士后研究，现任重庆邮电大学教师。主要研究方向包括人工智能、智能软件工程与智能机器人，重点关注多智能体系统、智能需求工程、代码生成与自修复、软件逆向工程、认知智能与人机协同等前沿问题。"
+    - "近年来，围绕大语言模型与多智能体系统赋能软件开发智能化这一主线，持续开展人工智能与软件工程交叉研究。先后参与国家自然科学基金重点项目1项，主研国家自然科学基金面上项目3项、国家社科基金项目1项，主持省部级项目7项。已发表学术论文近20篇，申请国家发明专利10余项，登记软件著作权10余项，获重庆市科技进步奖1项。"
+  positions:
+    - "2018.01-present, Faculty Member, Chongqing University of Posts and Telecommunications"
+    - "2022.07-2024.07, Postdoctoral Research Fellow, Nanyang Technological University, Singapore"
+    - "Ph.D. in Computer Science, Wuhan University"
+
+research_vision:
+  title: "Research Vision"
+  summary: "My research is organized around intelligent software systems rather than isolated NLP or ML tasks. The goal is to build a closed loop from requirements understanding, code generation, testing, runtime analysis, fault diagnosis, and self-repair to intelligent agents and embodied systems."
+  chinese_summary: "以人工智能为核心，以智能软件工程为主阵地，以多智能体与认知机制为方法特色，面向智能机器人和真实应用场景扩展，构建从需求理解、代码生成、运行分析、故障诊断到自我修复的智能软件系统闭环。"
+  chain:
+    - "Requirements"
+    - "Code"
+    - "Testing"
+    - "Runtime Traces"
+    - "Debugging"
+    - "Self-Repair"
+    - "Intelligent Systems"
+  principles:
+    - "From requirements to code"
+    - "From code to execution traces"
+    - "From traces to debugging and self-repair"
+    - "From software systems to intelligent agents and robots"
+    - "From single-model intelligence to multi-agent cognitive collaboration"
+
+research_areas:
+  - title: "Artificial Intelligence & Multi-Agent Systems"
+    summary: "This direction studies how LLM-based agents reason, remember, reflect, coordinate, and adapt when solving complex technical tasks. We are especially interested in cognitive multi-agent architectures that divide roles, exchange evidence, recover from failures, and remain trustworthy under uncertainty."
+    keywords:
+      - "Large Language Model Agents"
+      - "Multi-Agent Collaboration"
+      - "Cognitive Reasoning"
+      - "Memory and Reflection"
+      - "Trustworthy and Adaptive AI"
+  - title: "Intelligent Software Engineering"
+    summary: "This direction builds AI-driven methods for the full software lifecycle, from requirements analysis to code generation, testing, trace analysis, debugging, repair, and evolution. The emphasis is on verifiable software artifacts, requirement-code-test alignment, and systems that use runtime evidence instead of relying only on generated text."
+    keywords:
+      - "Intelligent Requirements Engineering"
+      - "Code Generation and Repair"
+      - "Trace-Driven Debugging"
+      - "Software Reverse Engineering"
+      - "Requirements-Code-Test Alignment"
+  - title: "Intelligent Robotics & Human-AI Collaboration"
+    summary: "This direction extends cognitive and collaborative AI toward embodied systems that perceive environments, plan tasks, make decisions, and collaborate with humans. Students can work on language-to-goal grounding, adaptive task planning, human-robot interaction, and intelligent systems that connect software agents with physical or simulated environments."
+    keywords:
+      - "Task Planning"
+      - "Environment Perception"
+      - "Embodied Intelligence"
+      - "Human-Robot Collaboration"
+      - "Autonomous Decision Making"
+
+selected_publications:
+  - id: "tracecoder-icse-2026"
+    title: "TraceCoder: A Trace-Driven Multi-Agent Framework for Automated Debugging of LLM-Generated Code"
+    year: 2026
+    venue: "ICSE 2026"
+    tag: "CCF A, Top-tier SE Conference"
+    focus: "LLM-generated code debugging, trace-driven multi-agent repair"
+    highlight: true
+  - id: "structure-guided-code-generation-neurocomputing-2026"
+    title: "Structure-guided function-level code generation with LLMs via UML activity diagrams"
+    year: 2026
+    venue: "Neurocomputing"
+    focus: "LLM-based code generation, UML activity diagrams, structure-guided generation"
+  - id: "kgmaf-ase-2025"
+    title: "Envisioning Intelligent Requirements Engineering via Knowledge-Guided Multi-Agent Collaboration"
+    year: 2025
+    venue: "ASE 2025"
+    tag: "CCF A, Top-tier SE Conference"
+    focus: "Intelligent requirements engineering, knowledge-guided multi-agent collaboration"
+    highlight: true
+  - id: "fummer-ipm-2024"
+    title: "FUMMER: A fine-grained self-supervised momentum distillation framework for multimodal recommendation"
+    year: 2024
+    venue: "Information Processing & Management"
+    focus: "Multimodal recommendation, self-supervised learning"
+  - id: "adaptive-federated-learning-npl-2024"
+    title: "A Dynamic Adaptive and Resource-Allocated Selection Method Based on TOPSIS and VIKOR in Federated Learning"
+    year: 2024
+    venue: "Neural Processing Letters"
+    focus: "Federated learning, resource allocation"
+  - id: "structam-lrec-coling-2024"
+    title: "StructAM: Enhancing Address Matching through Semantic Understanding of Structure-aware Information"
+    year: 2024
+    item_type: "Conference Paper"
+    venue: "LREC-COLING 2024"
+    proceedings: "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation"
+    place: "Torino, Italy"
+    date: "2024-05"
+    authors: "Zhang, Zhaoqi; Balsebre, Pasquale; Luo, Siqiang; Hai, Zhen; Huang, Jiangping; and others"
+    focus: "Address matching, semantic understanding, structure-aware information"
+    tags:
+      - "Semantic Understanding"
+      - "Address Matching"
+      - "Structure-aware Information"
+
+research_group:
+  name: "CSMA Research Group"
+  url: "https://csma-research-group.github.io"
+  summary: "The CSMA Research Group is based at Chongqing University of Posts and Telecommunications and works on artificial intelligence, intelligent software engineering, multi-agent systems, intelligent robotics, and application-driven intelligent systems."
+  collaboration: "The group maintains collaboration and academic exchange with universities and research institutions including Nanyang Technological University, Peking University, Wuhan University, and Beihang University."
+  slogan: "Cognitive and collaborative intelligence for software, robotics, and real-world AI."
+
+prospective_students:
+  title: "Prospective Students"
+  summary: "Highly motivated students who are interested in AI, LLMs, multi-agent systems, intelligent software engineering, and intelligent robotics are welcome to contact me. The group is particularly suitable for students who are willing to engage in real research problems, system building, rigorous experiments, and academic writing."
+  chinese_summary: "团队更适合积极主动、愿意持续投入科研和系统开发的同学。对于希望在研究生阶段真正提升科研能力、工程能力和学术表达能力，并有志于发表高水平论文、继续攻读博士或进入高水平研发平台的学生，团队将提供持续指导和支持。"
+  programs:
+    - "计算机科学与技术（学术型硕士）"
+    - "软件工程（学术型硕士）"
+    - "软件工程（专业型硕士）"
+  topics:
+    - "Artificial Intelligence"
+    - "Large Language Models"
+    - "Multi-Agent Systems"
+    - "Intelligent Software Engineering"
+    - "Code Generation and Self-Repair"
+    - "Intelligent Requirements Engineering"
+    - "Intelligent Robotics"
+  fit:
+    - "Interested in research and willing to read papers carefully"
+    - "Comfortable with programming, system building, and experiments"
+    - "Willing to write, present, revise, and communicate research ideas clearly"
+    - "Prepared for sustained effort rather than short-term participation"
+    - "Interested in high-quality papers, Ph.D. study, or advanced R&D careers"
+
+students:
+  highlights:
+    - "Multiple undergraduate students received Outstanding Undergraduate Thesis/Design recognition."
+    - "Supervised students have continued to graduate study at universities including University of Science and Technology Beijing, University of Electronic Science and Technology of China, Southeast University, Beijing University of Posts and Telecommunications, and Wuhan University."
+    - "Graduate student Wenguang Ye works on multi-agent code generation and self-repair and is expected to continue Ph.D. study at Wuhan University."
+  people:
+    - name: "尹嘉珂"
+      project: "基于树莓派的智能物联网案例设计与实现"
+      period: "2018-2022"
+      note: "优秀本科毕业设计（论文）"
+      outcome: "重庆邮电大学 -> 北京科技大学，保研"
+    - name: "蒲雨欣"
+      project: "基于预训练语言模型的故事生成系统设计与实现"
+      period: "2018-2022"
+      note: "优秀本科毕业设计（论文）"
+      outcome: "重庆邮电大学 -> 电子科技大学，保研"
+    - name: "袁书伟"
+      project: "基于注意力机制的中文幽默识别与应用研究"
+      period: "2016-2020"
+      note: "优秀本科毕业设计（论文）"
+      outcome: "重庆邮电大学 -> 东南大学，保研"
+    - name: "赵水心"
+      project: "面向中外合作办学课程的智能辅助学习系统研究与实现"
+      period: "2020-2024"
+      note: "优秀本科毕业设计（论文）"
+      outcome: "重庆邮电大学 -> 北京邮电大学，保研"
+    - name: "叶文广"
+      project: "多智能体协同驱动的代码生成与自修复方法研究"
+      period: "2023-2026"
+      note: "研究生"
+      outcome: "重庆邮电大学 -> 武汉大学，攻读博士"
+
+news:
+  - date: "2026"
+    text: "TraceCoder accepted by ICSE 2026."
+  - date: "2026"
+    text: "Structure-guided function-level code generation with LLMs via UML activity diagrams published in Neurocomputing."
+  - date: "2025"
+    text: "Envisioning Intelligent Requirements Engineering via Knowledge-Guided Multi-Agent Collaboration accepted by ASE 2025."
+  - date: "2024"
+    text: "FUMMER published in Information Processing & Management."
+  - date: "2024"
+    text: "StructAM presented/published at LREC-COLING 2024."
+  - date: "2022-2024"
+    text: "Postdoctoral research at Nanyang Technological University, Singapore."
+
+teaching:
+  - title: "Computer Science Introduction"
+    audience: "Undergraduate"
+    period: "2018-2022 Spring"
+    role: "Co-teaching, Sino-US program"
+  - title: "Data and Algorithm Fundamentals (Data Structures)"
+    audience: "Undergraduate"
+    period: "2019-2020 Fall"
+    role: "Instructor"
+  - title: "Computer Networks"
+    audience: "Undergraduate"
+    period: "2019-2021 Fall"
+    role: "Instructor"
+  - title: "Cross-Media Information Processing Technology"
+    audience: "Graduate"
+    period: "2020-2022 Spring"
+    role: "Co-teaching"
+  - title: "Linux Program Development"
+    audience: "Undergraduate"
+    period: "2024-2026 Spring/Fall"
+    role: "Instructor"
+  - title: "Software Requirements Engineering"
+    audience: "Graduate"
+    period: "2026 Spring"
+    role: "Co-teaching"
+
+awards:
+  - "2018 Chongqing Science and Technology Progress Award"
+  - "Outstanding Teacher, 2019-2020 academic year"
+  - "Outstanding Teacher, 2021-2022 academic year"
+  - "Outstanding Teacher, 2024-2025 academic year"
+
+service:
+  - "Reviewer for AAAI, EMNLP, NLPCC, ACM TKDD, and ACM TALLIP"
+
+blog:
+  title: "Blog / Notes"
+  summary: "Research notes, learning methods, mentoring reflections, and academic life. The section is intended to record how research ideas are formed, systems are built, students are trained, and academic judgment is developed over time."
+  categories:
+    - "Research"
+    - "Learning"
+    - "Mentoring"
+    - "Reflections"
+
+contact:
+  email: "huangjp@cqupt.edu.cn"
+  wechat: "jiangpinghuang"
+  wechat_note: "Please indicate your purpose when adding me on WeChat."
+  institutional_homepage: "http://faculty.cqupt.edu.cn/hjp/zh_CN/index.htm"
+  personal_homepage: "https://h-jp.github.io"
+  research_group: "https://csma-research-group.github.io"
+  github: "https://github.com/h-jp"
+  note: "For prospective students: please include your background, research interests, programming experience, and any relevant projects or writing samples when contacting me."
+  academic_links: []
+  optional_social_links:
+    - label: "Twitter/X"
+      configured: "jiangpinghuang"
+      status: "Needs confirmation"
+    - label: "Weibo"
+      configured: "jiangpinghuang"
+      status: "Needs confirmation"

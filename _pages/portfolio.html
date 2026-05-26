@@ -1,14 +1,33 @@
 ---
 layout: archive
-title: "Portfolio"
-permalink: /portfolio/
+title: "Projects"
+permalink: /projects/
 author_profile: true
+redirect_from:
+  - /portfolio/
 ---
 
-{% include base_path %}
+{% assign profile = site.data.profile %}
 
+This page replaces the old template portfolio section with current research systems and themes.
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
-
+<div class="publication-data-list">
+  <article class="publication-data-item">
+    <h2>TraceCoder</h2>
+    <p>Trace-driven multi-agent debugging and repair for LLM-generated code.</p>
+    <p><strong>Related publication:</strong> TraceCoder, ICSE 2026.</p>
+  </article>
+  <article class="publication-data-item">
+    <h2>KGMAF / ChatREQ</h2>
+    <p>Knowledge-guided multi-agent collaboration for intelligent requirements engineering and SRS generation.</p>
+    <p><strong>Related publication:</strong> Envisioning Intelligent Requirements Engineering via Knowledge-Guided Multi-Agent Collaboration, ASE 2025.</p>
+  </article>
+  <article class="publication-data-item">
+    <h2>Repository-Level Software Agents</h2>
+    <p>Ongoing research on software agents that understand repository structure, preserve project conventions, generate scoped changes, and repair regressions with test and trace feedback.</p>
+  </article>
+  <article class="publication-data-item">
+    <h2>Embodied and Robotic Intelligence</h2>
+    <p>Ongoing research on perception, planning, control, and human-robot collaboration in intelligent robotic systems.</p>
+  </article>
+</div>

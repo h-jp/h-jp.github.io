@@ -34,6 +34,15 @@
       {% if author.email %}
         <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
       {% endif %}
+      {% if author.wechat %}
+        <li><i class="fab fa-fw fa-weixin" aria-hidden="true"></i> WeChat: {{ author.wechat }}</li>
+      {% endif %}
+      {% if author.research_group %}
+        <li><a href="{{ author.research_group }}"><i class="fas fa-fw fa-users" aria-hidden="true"></i> CSMA Research Group</a></li>
+      {% endif %}
+      {% if author.institutional_homepage %}
+        <li><a href="{{ author.institutional_homepage }}"><i class="fas fa-fw fa-university" aria-hidden="true"></i> Institutional Homepage</a></li>
+      {% endif %}
       {% if author.keybase %}
         <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase</a></li>
       {% endif %}

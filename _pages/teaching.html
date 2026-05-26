@@ -5,8 +5,15 @@ permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
+{% assign profile = site.data.profile %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+<div class="teaching-data-list">
+{% for course in profile.teaching %}
+  <article class="teaching-data-item">
+    <h2>{{ course.title }}</h2>
+    <p><strong>Audience:</strong> {{ course.audience }}</p>
+    <p><strong>Period:</strong> {{ course.period }}</p>
+    <p><strong>Role:</strong> {{ course.role }}</p>
+  </article>
 {% endfor %}
+</div>

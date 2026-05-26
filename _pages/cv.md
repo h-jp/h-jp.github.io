@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "CV"
 permalink: /cv/
 author_profile: true
@@ -7,53 +7,61 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+{% assign profile = site.data.profile %}
 
-Education
-======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, Wuhan University, 2018 (expected)
+## Profile
 
-Work experience
-======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+{% for paragraph in profile.about.english %}
+{{ paragraph }}
 
-* July 2022: Research Assistant
-  * Nanyang Technological University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+{% endfor %}
 
-Publications
-======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Positions and Education
+
+{% for item in profile.about.positions %}
+* {{ item }}
+{% endfor %}
+
+## Research Interests
+
+{% for area in profile.research_areas %}
+* **{{ area.title }}:** {{ area.keywords | join: ", " }}
+{% endfor %}
+
+## Selected Recent Publications
+
+{% for publication in profile.selected_publications %}
+* **{{ publication.title }}**. {{ publication.venue }}, {{ publication.year }}.{% if publication.tag %} {{ publication.tag }}.{% endif %}
+{% endfor %}
+
+## Teaching
+
+{% for course in profile.teaching %}
+* **{{ course.title }}**, {{ course.audience }}, {{ course.period }}, {{ course.role }}.
+{% endfor %}
+
+## Student Supervision
+
+{% for student in profile.students.people %}
+* **{{ student.name }}**, {{ student.project }}, {{ student.note }}, {{ student.period }}. Outcome: {{ student.outcome }}.
+{% endfor %}
+
+## Awards
+
+{% for award in profile.awards %}
+* {{ award }}
+{% endfor %}
+
+## Professional Service
+
+{% for item in profile.service %}
+* {{ item }}
+{% endfor %}
+
+## Contact
+
+Email: [{{ profile.contact.email }}](mailto:{{ profile.contact.email }})
+
+WeChat: {{ profile.contact.wechat }}（添加好友时请注明来意）
+
+Research Group: [{{ profile.contact.research_group }}]({{ profile.contact.research_group }})
