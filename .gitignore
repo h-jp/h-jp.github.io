@@ -17,3 +17,6 @@ _site/
 # Temporary reference materials
 tmp/
 tree.log
+
+# files
+personal_homepage_and_repo_guide.md
