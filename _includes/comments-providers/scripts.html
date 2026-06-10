@@ -1,4 +1,10 @@
-{% if site.comments.provider and page.comments %}
+{% assign comments_enabled = site.comments.enabled | default: false %}
+{% assign page_comments_enabled = true %}
+{% if page.comments == false %}
+  {% assign page_comments_enabled = false %}
+{% endif %}
+
+{% if comments_enabled == true and site.comments.provider and page_comments_enabled == true and page.collection == "posts" %}
 
 {% case site.comments.provider %}
 {% when "disqus" %}

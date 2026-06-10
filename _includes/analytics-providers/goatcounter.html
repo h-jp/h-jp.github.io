@@ -1,0 +1,7 @@
+{% assign goatcounter = site.analytics.goatcounter %}
+{% assign goatcounter_code = goatcounter.code | default: "" %}
+
+{% if goatcounter.enabled == true and goatcounter_code != "" and goatcounter_code != "REPLACE_WITH_GOATCOUNTER_CODE" %}
+  <script data-goatcounter="https://{{ goatcounter_code | escape }}.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+{% endif %}

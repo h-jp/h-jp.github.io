@@ -1,0 +1,23 @@
+{% assign giscus = site.comments.giscus %}
+{% assign giscus_repo = giscus.repo | default: site.repository %}
+{% assign giscus_repo_id = giscus.repo_id | default: "" %}
+{% assign giscus_category_id = giscus.category_id | default: "" %}
+
+{% if giscus_repo and giscus_repo_id != "" and giscus_category_id != "" and giscus_repo_id != "REPLACE_WITH_GISCUS_REPO_ID" and giscus_category_id != "REPLACE_WITH_GISCUS_CATEGORY_ID" %}
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ giscus_repo | escape }}"
+          data-repo-id="{{ giscus_repo_id | escape }}"
+          data-category="{{ giscus.category | default: 'General' | escape }}"
+          data-category-id="{{ giscus_category_id | escape }}"
+          data-mapping="{{ giscus.mapping | default: 'pathname' | escape }}"
+          data-strict="{{ giscus.strict | default: '0' | escape }}"
+          data-reactions-enabled="{{ giscus.reactions_enabled | default: '1' | escape }}"
+          data-emit-metadata="{{ giscus.emit_metadata | default: '0' | escape }}"
+          data-input-position="{{ giscus.input_position | default: 'bottom' | escape }}"
+          data-theme="{{ giscus.theme | default: 'light' | escape }}"
+          data-lang="{{ giscus.lang | default: 'zh-CN' | escape }}"
+          data-loading="{{ giscus.loading | default: 'lazy' | escape }}"
+          crossorigin="anonymous"
+          async>
+  </script>
+{% endif %}
