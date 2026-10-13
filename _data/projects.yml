@@ -1,9 +1,9 @@
 - id: multi-agent-collaboration
   state: ongoing
   title:
-    en: Research on Multi-Agent Collaboration-Driven Methods for Reverse Analysis of *** and Automatic Generation
-      of ***
-    zh: 多智能体协同驱动的***逆向解析与***自动生成方法研究
+    en: Research on Multi-Agent Collaboration-Driven Methods for Reverse Analysis of [MASK] and Automatic Generation
+      of [MASK]
+    zh: 多智能体协同驱动的[MASK]逆向解析与[MASK]自动生成方法研究
   short:
     en: Explores multi-agent collaboration for reverse analysis and automated generation, with an emphasis on consistent and reliable results.
     zh: 探索多智能体协作支持逆向解析与自动生成的方法，关注结果的一致性与可靠性。
@@ -17,8 +17,8 @@
 - id: code-generation
   state: ongoing
   title:
-    en: Research on *** Code Generation Jointly Driven by *** Requirements Analysis and ***
-    zh: '***需求解析与***协同驱动的***代码生成研究'
+    en: Research on [MASK] Code Generation Jointly Driven by [MASK] Requirements Analysis and [MASK]
+    zh: '[MASK]需求解析与[MASK]协同驱动的[MASK]代码生成研究'
   short:
     en: Connects requirements understanding with code generation, focusing on alignment between stated needs and program behavior.
     zh: 探索需求理解与代码生成的有效衔接，关注需求意图与程序行为的一致性。

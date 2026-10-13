@@ -139,7 +139,7 @@ end
   projects = doc.css('.project-list li')
   next if doc.at_css('.language-notice')
   check.call(projects.size == 2, "Project count: #{url}")
-  check.call(projects.map { |p| p.css('h2,h3').text.scan('***').size } == [2,3], "Project redaction: #{url}")
+  check.call(projects.map { |p| p.css('h2,h3').text.scan('[MASK]').size } == [2,3], "Project redaction: #{url}")
   check.call(projects.map { |p| p.at_css('.project-meta').text.gsub(/\s+/, '') }.zip(['2025–2028','2026–2029']).all? { |p, date| p.include?(date) }, "Project periods: #{url}")
 end
 ['/teaching/','/zh/teaching/'].each do |url|
