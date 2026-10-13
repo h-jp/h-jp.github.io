@@ -14,8 +14,6 @@ lang: en
 translation: /posts/2026/05/ai-automation-toolchain-zh/
 ---
 
-[简体中文](/posts/2026/05/ai-automation-toolchain-zh/)
-
 A central promise of AI automation is that humans can spend less time on repetitive implementation details and more time on thinking. This promise is attractive, but it is easy to misunderstand. AI should not simply replace careful work with automatic output. A useful AI automation toolchain should help humans express goals, preserve context, execute routine steps, inspect evidence, and return attention to the decisions that require judgment.
 
 In software engineering, many tasks are partly repetitive and partly intellectual. Setting up experiments, parsing logs, generating reports, running tests, collecting traces, formatting data, and applying small code changes can often be automated. But deciding what problem is worth solving, whether an experiment is valid, whether a failure matters, and whether a claim is justified still requires human thinking. The toolchain should respect this division.

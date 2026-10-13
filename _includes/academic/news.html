@@ -1,0 +1,2 @@
+{% include academic/context.html %}{% include academic/news-list.html limit=site.news_page_size %}
+{% if site.data.news.size > site.news_page_size %}<div class="archive-nav"><p>{{ site.data.descriptions.archives.news[lang] }}</p><a class="text-link more-link" href="{{ prefix | append: '/news/archive/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.news_archive[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div>{% endif %}

@@ -1,0 +1,2 @@
+{% include academic/context.html %}{% include academic/post-list.html heading='h2' %}
+{% if archived_posts.size > 0 %}<div class="archive-nav"><p>{{ site.data.descriptions.archives.blog[lang] }}</p><a class="text-link more-link" href="{{ prefix | append: '/blogs/archive/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.blog_archive[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div>{% endif %}

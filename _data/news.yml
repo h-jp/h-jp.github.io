@@ -1,0 +1,57 @@
+- date: '2026.08'
+  datetime: 2026-08
+  text:
+    en: 'Our paper “SemFaith: Evaluating Semantic Faithfulness of LLM-Generated Classical-to-Modern Chinese Restatements” has been accepted by the 23rd Pacific Rim International Conference on Artificial Intelligence (PRICAI 2026, CCF C).'
+    zh: '论文《SemFaith: Evaluating Semantic Faithfulness of LLM-Generated Classical-to-Modern Chinese Restatements》已被第23届环太平洋国际人工智能会议（PRICAI 2026，CCF C）录用。'
+  paper:
+    en: /publication/semfaith-pricai-2026
+    zh: /zh/publication/semfaith-pricai-2026
+- date: '2026.08'
+  datetime: 2026-08
+  text:
+    en: Our paper “Cross-Model Collaboration for Enhancing LLM-Based Code Generation” has been published online
+      in ACM Transactions on Software Engineering and Methodology (TOSEM, CCF A).
+    zh: 论文《Cross-Model Collaboration for Enhancing LLM-Based Code Generation》已在ACM Transactions on Software
+      Engineering and Methodology（TOSEM，CCF A）在线发表。
+  paper:
+    en: /publication/cross-model-collaboration-tosem-2026
+    zh: /zh/publication/cross-model-collaboration-tosem-2026
+- date: '2026.04'
+  datetime: 2026-04
+  text:
+    en: 'Our paper “TraceCoder: A Trace-Driven Multi-Agent Framework for Automated Debugging of LLM-Generated
+      Code” has been published in the proceedings of the 48th IEEE/ACM International Conference on Software
+      Engineering (ICSE 2026, CCF A).'
+    zh: '论文《TraceCoder: A Trace-Driven Multi-Agent Framework for Automated Debugging of LLM-Generated Code》已发表于第48届IEEE/ACM国际软件工程会议论文集（ICSE
+      2026，CCF A）。'
+  paper:
+    en: /publication/tracecoder-icse-2026
+    zh: /zh/publication/tracecoder-icse-2026
+- date: '2026'
+  text:
+    en: 'Our paper “Structure-guided function-level code generation with LLMs via UML activity diagrams” has been published in Neurocomputing.'
+    zh: 基于UML活动图的结构引导函数级代码生成工作发表于Neurocomputing。
+  paper:
+    en: /publication/structure-guided-code-generation-neurocomputing-2026
+    zh: /zh/publication/structure-guided-code-generation-neurocomputing-2026
+- date: '2025'
+  text:
+    en: 'Our paper “Envisioning Intelligent Requirements Engineering via Knowledge-Guided Multi-Agent Collaboration” was accepted by ASE 2025.'
+    zh: 知识引导多智能体协作的智能需求工程工作被ASE 2025录用。
+  paper:
+    en: /publication/kgmaf-ase-2025
+    zh: /zh/publication/kgmaf-ase-2025
+- date: '2024'
+  text:
+    en: FUMMER has been published in Information Processing & Management.
+    zh: FUMMER发表于Information Processing & Management。
+  paper:
+    en: /publication/fummer-ipm-2024
+    zh: /zh/publication/fummer-ipm-2024
+- date: '2024'
+  text:
+    en: Our StructAM paper appeared in the LREC-COLING 2024 proceedings.
+    zh: StructAM发表于LREC-COLING 2024。
+  paper:
+    en: /publication/structam-lrec-coling-2024
+    zh: /zh/publication/structam-lrec-coling-2024

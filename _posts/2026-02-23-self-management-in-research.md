@@ -14,8 +14,6 @@ lang: en
 translation: /posts/2026/02/self-management-in-research-zh/
 ---
 
-[简体中文](/posts/2026/02/self-management-in-research-zh/)
-
 In research supervision, management is often discussed as if it mainly means assigning tasks, checking progress, and correcting mistakes. These things are sometimes necessary, especially when a student is new to research. But they are not the core of high-quality research training. The best students and researchers gradually become people who do not need to be managed in the narrow sense, because they learn to manage themselves.
 
 Self-management is not the same as working alone. Research is collaborative, and students still need discussion, criticism, and guidance. The difference is that a self-managed student does not wait passively for every next instruction. They know the current goal, understand the standard of evidence, notice when progress is blocked, and bring concrete questions to the next meeting. Instead of saying only that something is difficult, they can explain what they tried, what failed, what evidence they collected, and what decision needs to be made.

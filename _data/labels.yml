@@ -1,0 +1,177 @@
+home:
+  en: Home
+  zh: 首页
+brand_title:
+  en: HOMEPAGE
+  zh: 学术主页
+news:
+  en: News
+  zh: 动态
+research:
+  en: Research
+  zh: 研究
+projects:
+  en: Projects
+  zh: 项目
+publications:
+  en: Publications
+  zh: 论文
+teaching:
+  en: Teaching
+  zh: 教学
+blog:
+  en: Blog
+  zh: 博客
+about:
+  en: About
+  zh: 关于
+skip:
+  en: Skip to main content
+  zh: 跳到主要内容
+menu:
+  en: Menu
+  zh: 菜单
+navigation:
+  en: Main navigation
+  zh: 主导航
+language:
+  en: Language
+  zh: 语言
+selected_papers:
+  en: Selected publications
+  zh: 代表论文
+more:
+  en: More
+  zh: 更多
+news_archive:
+  en: Earlier news
+  zh: 历史动态
+back_news:
+  en: Back to recent news
+  zh: 返回近期动态
+projects_archive:
+  en: Past projects
+  zh: 先前项目
+back_projects:
+  en: Back to ongoing projects
+  zh: 返回在研项目
+projects_pending:
+  en: Details of past projects will be added soon.
+  zh: 历史项目信息待补充。
+publications_archive:
+  en: More publications
+  zh: 更多论文
+teaching_archive:
+  en: Earlier courses
+  zh: 以往课程
+back_teaching:
+  en: Back to recent courses
+  zh: 返回近期课程
+back_courses:
+  en: Back to courses
+  zh: 返回课程列表
+blog_archive:
+  en: Earlier posts
+  zh: 博客归档
+pinned:
+  en: Pinned
+  zh: 置顶
+latest:
+  en: Latest
+  zh: 最新
+research_heading:
+  en: Research interests
+  zh: 研究方向
+projects_heading:
+  en: Ongoing projects
+  zh: 在研项目
+courses_heading:
+  en: Courses
+  zh: 授课课程
+upcoming_course:
+  en: Planned course
+  zh: 计划开设
+supervision_heading:
+  en: Student Supervision
+  zh: 学生指导
+supervision_contact:
+  en: Please get in touch by email
+  zh: 欢迎邮件联系交流
+biography:
+  en: Biography
+  zh: 个人简介
+experience:
+  en: Experience
+  zh: 工作经历
+education:
+  en: Education
+  zh: 教育背景
+service:
+  en: Academic service
+  zh: 学术服务
+get_in_touch:
+  en: Get in touch
+  zh: 交流与合作
+group:
+  en: Research group
+  zh: 科研团队
+email:
+  en: Email
+  zh: 邮箱
+weibo:
+  en: Weibo
+  zh: 微博
+overview:
+  en: Overview
+  zh: 概述
+abstract:
+  en: Abstract
+  zh: 摘要
+conference_website:
+  en: Conference website
+  zh: 会议官网
+authors:
+  en: Authors
+  zh: 作者
+venue:
+  en: Published in
+  zh: 发表载体
+year:
+  en: Year
+  zh: 年份
+citation:
+  en: Citation
+  zh: 引用信息
+back_blog:
+  en: Back to Blog
+  zh: 返回博客
+post_navigation:
+  en: Post navigation
+  zh: 文章导航
+previous_post:
+  en: Previous post
+  zh: 上一篇
+next_post:
+  en: Next post
+  zh: 下一篇
+back_papers:
+  en: Back to Publications
+  zh: 返回论文
+categories:
+  en: Categories
+  zh: 分类
+tags:
+  en: Tags
+  zh: 标签
+sitemap:
+  en: Sitemap
+  zh: 站点地图
+archive:
+  en: Archive
+  zh: 归档
+date:
+  en: Published
+  zh: 发布日期
+research_group:
+  en: CSMA Research Group
+  zh: CSMA研究组

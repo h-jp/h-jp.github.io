@@ -1,0 +1,6 @@
+{% include academic/context.html %}
+{% assign recent_courses = site.data.courses | slice: 0, site.teaching_page_size %}
+{% assign recent_course = recent_courses | where: 'id', page.course_id | first %}
+{% assign course_parent = '/teaching/' %}
+{% unless recent_course %}{% assign course_parent = '/teaching/archive/' %}{% endunless %}
+<a class="text-link" href="{{ prefix | append: course_parent | append: '#' | append: page.course_id | relative_url }}"><span aria-hidden="true">←</span> {{ ui.back_courses[lang] }}</a>

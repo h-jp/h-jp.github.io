@@ -235,3 +235,88 @@
     }
   }
 }
+
+/* Compact academic contact profile: always visible and intentionally limited. */
+.author-profile--compact {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 4px 14px;
+  align-items: center;
+
+  .author__avatar {
+    display: block;
+    grid-row: 1 / span 2;
+    width: 64px;
+
+    img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+    }
+  }
+
+  .author__content {
+    display: block;
+    padding: 0;
+  }
+
+  .author__urls-wrapper {
+    display: block;
+    width: 100%;
+    cursor: default;
+  }
+
+  .author__urls--compact {
+    position: static;
+    z-index: auto;
+    display: flex !important;
+    visibility: visible !important;
+    flex-wrap: wrap;
+    gap: 2px 12px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    li {
+      margin: 0;
+      white-space: normal;
+    }
+
+    a {
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+      margin: 0;
+      padding: 5px 4px 5px 0;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  @include breakpoint($large) {
+    display: block;
+
+    .author__avatar {
+      width: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .author__urls--compact {
+      display: block !important;
+
+      a {
+        display: flex;
+      }
+    }
+  }
+}

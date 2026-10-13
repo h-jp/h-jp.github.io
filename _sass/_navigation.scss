@@ -174,14 +174,17 @@
 
 .greedy-nav {
   position: relative;
-  min-width: 250px;
+  // Keep the legacy greedy-navigation calculation non-negative so its
+  // recursive overflow pass always terminates, even at extreme zoom levels.
+  min-width: 5rem;
+  flex: 1 1 auto;
   background: $background-color;
 
   a {
     display: block;
     margin: 0 1rem;
     padding: 0.5rem 0;
-    color: $masthead-link-color;
+    color: $dark-gray;
     text-decoration: none;
 
     &:hover {
@@ -305,6 +308,94 @@
         border-bottom: none;
       }
     }
+  }
+}
+
+.masthead__menu {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.masthead__brand {
+  flex: 0 0 auto;
+  color: $dark-gray;
+  font-family: $sans-serif;
+  font-weight: 700;
+  white-space: nowrap;
+
+  &:hover {
+    color: $darker-gray;
+  }
+}
+
+.masthead__language {
+  flex: 0 0 auto;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  white-space: nowrap;
+
+  &__item {
+    display: inline-flex;
+    min-width: 1.75rem;
+    min-height: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0.25rem 0.35rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: $dark-gray;
+    font-family: $sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  a.language-switcher__item:hover {
+    border-color: $border-color;
+    color: $masthead-link-color-hover;
+  }
+
+  &__item--current {
+    border-color: $border-color;
+    background: rgba(#000, 0.04);
+    color: $darker-gray;
+  }
+
+  &__separator {
+    color: $gray;
+  }
+}
+
+.greedy-nav button:focus-visible,
+.masthead__brand:focus-visible,
+.language-switcher__item:focus-visible {
+  outline: 3px solid #1c5d99;
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .masthead__menu {
+    gap: 0.55rem;
+  }
+
+  .masthead__brand {
+    max-width: 7.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .language-switcher__item {
+    min-width: 1.5rem;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+    font-size: 0.76rem;
   }
 }
 

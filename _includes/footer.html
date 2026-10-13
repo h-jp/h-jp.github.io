@@ -1,22 +1,3 @@
-{% include base_path %}
-
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    <li><strong>Links</strong></li>
-    {% if site.author.email %}
-      <li><a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a></li>
-    {% endif %}
-    {% if site.author.github %}
-      <li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
-    {% endif %}
-    {% if site.author.research_group %}
-      <li><a href="{{ site.author.research_group }}"><i class="fas fa-users" aria-hidden="true"></i> CSMA Research Group</a></li>
-    {% endif %}
-    {% if site.author.institutional_homepage %}
-      <li><a href="{{ site.author.institutional_homepage }}"><i class="fas fa-university" aria-hidden="true"></i> Institutional Homepage</a></li>
-    {% endif %}
-    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
-  </ul>
-</div>
-
-<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Academic homepage maintained with Jekyll.</div>
+<footer class="site-footer">
+  <div class="footer-inner"><span>© {{ site.time | date: '%Y' }} {{ profile.name[lang] }}</span>{% include academic/personal-links.html %}</div>
+</footer>

@@ -14,8 +14,6 @@ lang: en
 translation: /posts/2026/01/cultivating-and-selecting-talent-zh/
 ---
 
-[简体中文](/posts/2026/01/cultivating-and-selecting-talent-zh/)
-
 Talent certainly requires cultivation. A student does not become a mature researcher simply by entering a research group. Research ability, engineering ability, academic writing, and communication skills all need to be developed through real tasks. Students need opportunities to read papers, build systems, design experiments, discuss ideas, receive feedback, and revise their work again and again. Without cultivation, many promising students may never discover their own potential.
 
 But cultivation alone is not enough. Talent also requires selection.

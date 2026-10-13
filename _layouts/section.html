@@ -1,0 +1,8 @@
+---
+layout: default
+---
+{% include academic/context.html %}
+<main id="main" class="container inner-page" tabindex="-1">
+  <header class="page-header"><h1>{{ page.title }}</h1>{% if page.description and page.utility == nil and page.url != '/404.html' and page.url != '/zh/404.html' %}<p>{{ page.description }}</p>{% endif %}</header>
+  <div class="section-content">{{ content }}</div>
+</main>

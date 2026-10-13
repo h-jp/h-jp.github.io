@@ -26,6 +26,7 @@
 /* https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html */
 
 .visually-hidden,
+.sr-only,
 .screen-reader-text,
 .screen-reader-text span,
 .screen-reader-shortcut {
@@ -67,16 +68,24 @@ body:hover .visually-hidden button {
 
 .skip-link {
   position: fixed;
-  z-index: 20;
+  top: 0.75rem;
+  left: 50%;
+  z-index: 100000;
   margin: 0;
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
+  background: #fff;
+  color: #17202a;
   font-family: $sans-serif;
+  font-weight: 700;
+  box-shadow: 0 0 0 3px #1c5d99;
+  transform: translate(-50%, -180%);
+  transition: transform 0.15s ease;
   white-space: nowrap;
 }
 
-.skip-link li {
-  height: 0;
-  width: 0;
-  list-style: none;
+.skip-link:focus {
+  transform: translate(-50%, 0);
 }
 
 

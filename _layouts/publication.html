@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% include academic/context.html %}
+{% assign pub = site.publications | where: 'pub_id', page.pub_id | first %}
+<main id="main" class="container article-page" tabindex="-1">
+  <article class="paper-detail">
+    <header class="article-header">
+      <a class="eyebrow" href="{{ prefix | append: '/publications/' | relative_url }}">{{ ui.publications[lang] }}</a>
+      <h1 lang="en">{{ pub.title }}</h1>
+      {% if lang == 'zh' %}<p class="paper-translation">{{ pub.title_zh }}</p>{% endif %}
+      {% if pub.authors %}<p class="paper-authors" lang="en">{{ pub.authors | escape | replace: 'Jiangping Huang', '<strong>Jiangping Huang</strong>' }}</p>{% endif %}
+      <div class="paper-venue"><span>{{ pub.venue }}{% unless pub.venue contains '202' %} · {{ pub.date | date: '%Y' }}{% endunless %}</span>{% if pub.rating %}<span class="venue-label">{{ pub.rating }}</span>{% endif %}</div>
+      {% if pub.acceptance %}<p class="meta paper-status"><time datetime="{{ pub.accepted_month }}">{{ pub.acceptance[lang] }}</time></p>{% endif %}
+    </header>
+    <section class="prose">{% if pub.abstract %}<h2>{{ ui.abstract[lang] }}</h2>{{ pub.abstract[lang] | markdownify }}{% else %}<h2>{{ ui.overview[lang] }}</h2><p>{% if lang == 'zh' %}{{ pub.description_zh }}{% else %}{{ pub.description }}{% endif %}</p>{% endif %}</section>
+    {% if pub.doi %}<p class="doi-detail"><a href="https://doi.org/{{ pub.doi }}">DOI: {{ pub.doi }} <span aria-hidden="true">↗</span></a></p>{% endif %}
+    {% if pub.conference_url %}<p><a class="text-link" href="{{ pub.conference_url }}">{{ ui.conference_website[lang] }} <span aria-hidden="true">↗</span></a></p>{% endif %}
+    {% unless pub.status == 'accepted' %}<section class="citation"><h2>{{ ui.citation[lang] }}</h2><p lang="en">{% if pub.authors %}{{ pub.authors }}. {% endif %}{{ pub.title }}. <em>{{ pub.venue }}</em>{% unless pub.venue contains '202' %}, {{ pub.date | date: '%Y' }}{% endunless %}.{% if pub.doi %} https://doi.org/{{ pub.doi }}{% endif %}</p></section>{% endunless %}
+    <a class="text-link" href="{{ prefix | append: '/publications/' | relative_url }}">← {{ ui.back_papers[lang] }}</a>
+  </article>
+</main>

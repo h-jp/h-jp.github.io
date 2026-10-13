@@ -1,0 +1,5 @@
+{%- assign lang = page.lang | default: 'en' | slice: 0, 2 -%}
+{%- assign profile = site.data.profile -%}
+{%- assign ui = site.data.labels -%}
+{%- assign prefix = '' -%}
+{%- if lang == 'zh' -%}{%- assign prefix = '/zh' -%}{%- endif -%}

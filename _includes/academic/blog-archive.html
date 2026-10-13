@@ -1,0 +1,4 @@
+{% include academic/context.html %}
+{% include academic/post-list.html heading='h2' archive=true %}
+{% if archived_posts.size == 0 %}<p class="empty-note">{% if lang == 'zh' %}全部文章已在博客页展示。{% else %}All posts are currently shown on the Blog page.{% endif %}</p>{% endif %}
+<div class="archive-nav archive-nav--back"><a class="text-link" href="{{ prefix | append: '/blogs/' | relative_url }}"><span aria-hidden="true">←</span> {{ ui.back_blog[lang] }}</a></div>

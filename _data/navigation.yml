@@ -1,25 +1,57 @@
-# main links links
 main:
-  - title: "Home"
-    url: /
-
-  - title: "Research"
-    url: /research/
-
-  - title: "Publications"
-    url: /publications/
-
-  - title: "Students"
-    url: /students/
-
-  - title: "Teaching"
-    url: /teaching/    
-
-  - title: "Blog"
-    url: /year-archive/
-
-  - title: "CV"
-    url: /cv/
-
-  - title: "Contact"
-    url: /contact/
+- id: home
+  title:
+    en: Home
+    zh: 首页
+  url:
+    en: /
+    zh: /zh/
+- id: news
+  title:
+    en: News
+    zh: 动态
+  url:
+    en: /news/
+    zh: /zh/news/
+- id: research
+  title:
+    en: Research
+    zh: 研究
+  url:
+    en: /research/
+    zh: /zh/research/
+- id: projects
+  title:
+    en: Projects
+    zh: 项目
+  url:
+    en: /projects/
+    zh: /zh/projects/
+- id: publications
+  title:
+    en: Publications
+    zh: 论文
+  url:
+    en: /publications/
+    zh: /zh/publications/
+- id: teaching
+  title:
+    en: Teaching
+    zh: 教学
+  url:
+    en: /teaching/
+    zh: /zh/teaching/
+- id: blog
+  title:
+    en: Blog
+    zh: 博客
+  url:
+    en: /blogs/
+    zh: /zh/blogs/
+- id: about
+  title:
+    en: About
+    zh: 关于
+  url:
+    en: /about/
+    zh: /zh/about/

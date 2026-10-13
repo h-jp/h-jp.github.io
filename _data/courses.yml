@@ -1,0 +1,132 @@
+- id: large-models-principles-practice
+  title:
+    en: "Large Models: Principles and Practice"
+    zh: 大模型原理与实践
+  period:
+    en: Spring semester, 2027
+    zh: 2027 春季
+  status: upcoming
+  description:
+    en: Planned for spring 2027—stay tuned. The course will connect the principles of large models
+      with hands-on exploration of their capabilities and applications.
+    zh: 计划于2027年春季开设，敬请期待。课程将围绕大模型的基本原理与实践方法，结合理论学习与动手探索，理解模型能力及其应用。
+  featured: true
+- id: requirements-engineering
+  title:
+    en: Software Requirements Engineering
+    zh: 软件需求工程
+  period:
+    en: Spring semester, 2026
+    zh: 2026 春季
+  audience:
+    en: Graduate
+    zh: 研究生
+  role:
+    en: Co-instructor
+    zh: 联合授课
+  description:
+    en: Introduces methods for eliciting, analyzing, modeling, specifying, and validating software requirements,
+      from understanding a problem to expressing an agreed set of needs. The course addresses stakeholder perspectives,
+      consistency, traceability, and requirements change, together with the connections between requirements
+      and subsequent design, development, and testing.
+    zh: 围绕软件需求的获取、分析、建模、规格说明与验证，介绍从问题理解到需求表达的基本方法。关注利益相关者诉求、需求一致性与可追踪性，并讨论需求变化及其与后续设计、开发和测试工作的衔接。
+  featured: true
+- id: linux-programming
+  title:
+    en: Linux Program Development
+    zh: Linux程序开发
+  period:
+    en: Spring/fall semesters, 2024–2026
+    zh: 2024–2026 春／秋季
+  audience:
+    en: Undergraduate
+    zh: 本科
+  role:
+    en: Instructor
+    zh: 主讲
+  description:
+    en: Introduces program development in Linux, including development tools, building and debugging programs,
+      and systems programming concepts such as files, processes, and interprocess communication. The course
+      emphasizes how programs interact with the operating system and develops approaches to implementing functionality,
+      analyzing behavior, and diagnosing faults in Linux environments.
+    zh: 介绍Linux环境下的程序开发方法，涵盖常用开发工具、程序构建与调试，以及文件、进程和进程间通信等系统编程基础。强调理解程序与操作系统之间的交互，形成在Linux环境中实现功能、分析行为和排查故障的基本能力。
+  featured: false
+- id: cross-media
+  title:
+    en: Cross-Media Information Processing Technology
+    zh: 跨媒体信息处理技术
+  period:
+    en: Spring semesters, 2020–2022
+    zh: 2020–2022 春季
+  audience:
+    en: Graduate
+    zh: 研究生
+  role:
+    en: Co-instructor
+    zh: 联合授课
+  description:
+    en: Explores methods for representing, relating, and integrating information across text, images, audio,
+      and other media. The course examines how complementary information sources support retrieval, recognition,
+      and intelligent applications, helping graduate students understand research questions and methodological
+      approaches in cross-media information processing.
+    zh: 围绕文本、图像、音频等不同媒体的信息表示、关联建模与融合处理，介绍跨媒体信息理解与应用的基本方法。关注多种信息源之间的互补关系及其在检索、识别和智能应用中的作用，帮助研究生理解相关研究问题与方法。
+  featured: false
+- id: intro-computer-science
+  title:
+    en: Introduction to Computer Science
+    zh: 计算机科学导论
+  period:
+    en: Spring semesters, 2018–2022
+    zh: 2018–2022 春季
+  audience:
+    en: Undergraduate
+    zh: 本科
+  role:
+    en: Co-taught in a Sino-US program
+    zh: 联合授课（中美）
+  description:
+    en: Introduces the core concepts and major areas of computer science, including the relationships among
+      computation, data, algorithms, programs, and computer systems. By connecting these ideas with representative
+      problems and applications, the course builds an overview of the discipline and explains the role of computational
+      thinking in problem solving.
+    zh: 介绍计算机科学的基本概念与主要领域，梳理计算、数据、算法、程序和计算机系统之间的关系。结合典型问题与应用场景，帮助学生建立对计算机学科的整体认识，理解计算思维在分析和解决问题中的作用。
+  featured: false
+- id: computer-networks
+  title:
+    en: Computer Networks
+    zh: 计算机网络
+  period:
+    en: Fall semesters, 2019–2021
+    zh: 2019–2021 秋季
+  audience:
+    en: Undergraduate
+    zh: 本科
+  role:
+    en: Instructor
+    zh: 主讲
+  description:
+    en: Introduces the principles, layered architectures, and major communication protocols of computer networks.
+      Through data transmission, addressing, routing, and end-to-end communication, the course connects protocol
+      mechanisms with network behavior and familiar network applications.
+    zh: 介绍计算机网络的基本原理、分层体系结构与主要通信协议，围绕数据传输、寻址、路由和端到端通信理解网络如何运行。结合常见网络应用，帮助学生建立从协议机制到系统行为的分析思路。
+  featured: false
+- id: data-structures
+  title:
+    en: Data and Algorithm Fundamentals (Data Structures)
+    zh: 数据与算法基础（数据结构）
+  period:
+    en: Fall semesters, 2019–2020
+    zh: 2019–2020 秋季
+  audience:
+    en: Undergraduate
+    zh: 本科
+  role:
+    en: Instructor
+    zh: 主讲
+  description:
+    en: Examines the organization, storage, and manipulation of data through common data structures and their
+      associated algorithms. The course introduces abstract data types, algorithm efficiency, and implementation
+      choices, emphasizing the selection of suitable structures and the design of programs that address both
+      correctness and efficiency.
+    zh: 围绕数据的组织、存储与操作，介绍常用数据结构及其配套算法，关注抽象数据类型、算法效率和实现方法。通过分析不同问题中的结构选择与算法设计，帮助学生形成兼顾正确性和效率的程序设计思路。
+  featured: false

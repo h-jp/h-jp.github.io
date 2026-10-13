@@ -1,0 +1,6 @@
+{% include academic/context.html %}
+<section class="supervision quiet-section" id="student-supervision" aria-labelledby="supervision-heading"><h2 class="subheading" id="supervision-heading">{{ ui.supervision_heading[lang] }}</h2><p>{{ profile.supervision.summary[lang] }}</p><p>{{ profile.intro[lang] }} {{ profile.supervision.invitation[lang] }} <a href="mailto:{{ profile.email }}">{{ ui.supervision_contact[lang] }}</a>{% if lang == 'zh' %}。{% else %}.{% endif %}</p></section>
+<section aria-labelledby="courses-heading"><h2 id="courses-heading" class="subheading">{{ ui.courses_heading[lang] }}</h2>
+{% include academic/course-list.html limit=site.teaching_page_size %}
+</section>
+{% if site.data.courses.size > site.teaching_page_size %}<div class="archive-nav"><p>{{ site.data.descriptions.archives.teaching[lang] }}</p><a class="text-link more-link" href="{{ prefix | append: '/teaching/archive/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.teaching_archive[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div>{% endif %}

@@ -1,19 +1,11 @@
 ---
-layout: archive
-title: "Teaching"
+layout: section
+title: Teaching
 permalink: /teaching/
-author_profile: true
+lang: en
+translation: /zh/teaching/
+section: teaching
+description: Student supervision, research opportunities, and courses.
 ---
 
-{% assign profile = site.data.profile %}
-
-<div class="teaching-data-list">
-{% for course in profile.teaching %}
-  <article class="teaching-data-item">
-    <h2>{{ course.title }}</h2>
-    <p><strong>Audience:</strong> {{ course.audience }}</p>
-    <p><strong>Period:</strong> {{ course.period }}</p>
-    <p><strong>Role:</strong> {{ course.role }}</p>
-  </article>
-{% endfor %}
-</div>
+{% include academic/teaching.html %}

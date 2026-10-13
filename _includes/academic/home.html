@@ -1,0 +1,23 @@
+{% include academic/context.html %}
+<section class="hero" aria-labelledby="home-title">
+  <div class="hero-copy">
+    <p class="hero-role">{{ profile.role[lang] }}</p>
+    <h1 id="home-title">{{ profile.name[lang] }}</h1>
+    <p class="hero-institution">{{ profile.institution[lang] }}</p>
+    <p class="hero-intro">{{ profile.intro[lang] }}</p>
+    <div class="hero-actions"><a class="primary-link" href="{{ prefix | append: '/publications/' | relative_url }}">{{ ui.selected_papers[lang] }} <span aria-hidden="true">→</span></a><a class="primary-link" href="{{ prefix | append: '/research/' | relative_url }}">{{ ui.research_heading[lang] }} <span aria-hidden="true">→</span></a></div>
+    {% include academic/personal-links.html full_email=true %}
+  </div>
+  <img class="portrait" src="{{ profile.portrait | relative_url }}" alt="{{ profile.name[lang] }}" width="1214" height="1295" fetchpriority="high">
+</section>
+<section class="home-section" aria-labelledby="news-title"><div class="section-heading"><h2 id="news-title">{{ ui.news[lang] }}</h2><a class="text-link more-link" href="{{ prefix | append: '/news/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.news[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div>{% include academic/news-list.html limit=site.news_page_size %}</section>
+<section class="home-section" aria-labelledby="papers-title"><div class="section-heading"><h2 id="papers-title">{{ ui.selected_papers[lang] }}</h2><a class="text-link more-link" href="{{ prefix | append: '/publications/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.selected_papers[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div>{% include academic/paper-list.html summary=true %}</section>
+<div class="home-columns home-section">
+  <section aria-labelledby="research-title"><div class="section-heading"><h2 id="research-title">{{ ui.research_heading[lang] }}</h2><a class="text-link more-link" href="{{ prefix | append: '/research/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.research_heading[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div><ol class="research-summary">{% for item in profile.research %}<li><h3><a href="{{ prefix | append: '/research/#' | append: item.id | relative_url }}">{{ item.title[lang] }}</a></h3><p>{{ item.description[lang] }}</p></li>{% endfor %}</ol></section>
+  <section aria-labelledby="projects-title"><div class="section-heading"><h2 id="projects-title">{{ ui.projects_heading[lang] }}</h2><a class="text-link more-link" href="{{ prefix | append: '/projects/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.projects_heading[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div>{% include academic/project-list.html summary=true %}</section>
+</div>
+<div class="home-columns home-section">
+  <section aria-labelledby="teaching-title"><div class="section-heading"><h2 id="teaching-title">{{ ui.teaching[lang] }}</h2><a class="text-link more-link" href="{{ prefix | append: '/teaching/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.teaching[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div><ul class="teaching-summary">{% assign recent_courses = site.data.courses | where: 'featured', true %}{% for course in recent_courses %}<li><p class="meta">{{ course.period[lang] }}{% if course.status == 'upcoming' %} · {{ ui.upcoming_course[lang] }}{% elsif course.audience[lang] %} · {{ course.audience[lang] }}{% endif %}</p><h3><a href="{{ prefix | append: '/teaching/#' | append: course.id | relative_url }}">{{ course.title[lang] }}</a></h3><p>{{ course.description[lang] }}</p></li>{% endfor %}</ul></section>
+  <section aria-labelledby="blog-title"><div class="section-heading"><h2 id="blog-title">{{ ui.blog[lang] }}</h2><a class="text-link more-link" href="{{ prefix | append: '/blogs/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.blog[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div>{% include academic/post-list.html limit=2 %}</section>
+</div>
+<section class="home-about home-section" aria-labelledby="about-title"><h2 id="about-title">{{ ui.about[lang] }}</h2><div><p>{% if lang == 'zh' %}博士毕业于武汉大学，曾在新加坡南洋理工大学从事博士后研究，现任重庆邮电大学教师、硕士生导师。{% else %}I received my Ph.D. from Wuhan University and conducted postdoctoral research at Nanyang Technological University. I am a faculty member and master's supervisor at Chongqing University of Posts and Telecommunications.{% endif %} <a class="text-link more-link" href="{{ prefix | append: '/about/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.about[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></p></div></section>

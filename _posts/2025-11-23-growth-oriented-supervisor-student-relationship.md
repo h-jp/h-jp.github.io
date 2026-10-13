@@ -16,10 +16,6 @@ lang: en
 translation: /posts/2025/11/growth-oriented-supervisor-student-relationship-zh/
 ---
 
-[简体中文](/posts/2025/11/growth-oriented-supervisor-student-relationship-zh/)
-
-# From Defensive Thinking to Growth-Oriented Thinking: Building a Constructive Supervisor–Student Relationship
-
 In recent years, discussions about the relationship between students and supervisors have become increasingly visible online. This is especially true in graduate education, where conflicts between supervisors and students are often circulated through social media, short videos, and online discussions. Some of these cases reflect real problems that deserve attention. Others, however, may be presented in a fragmented, emotional, or overly dramatic way.
 
 When such content is repeatedly viewed without careful reflection, it may shape students’ expectations before they have truly entered research training or built meaningful communication with their supervisors. Some students may begin their graduate studies with a defensive mindset, assuming that supervisors are naturally sources of pressure, risk, or even opposition. This kind of pre-existing perception can affect communication, research engagement, academic development, and long-term personal growth.

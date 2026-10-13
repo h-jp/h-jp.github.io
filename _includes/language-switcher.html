@@ -1,0 +1,7 @@
+<div class="language-switcher" role="group" aria-label="{{ ui.language[lang] }}">
+{% if lang == 'zh' %}
+  <a data-translation{% if site.chinese_enabled == true %} data-preserve-anchor{% endif %} href="{{ page.translation | relative_url }}" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+{% else %}
+  <a data-translation{% if site.chinese_enabled == true %} data-preserve-anchor{% endif %} href="{{ page.translation | relative_url }}" lang="zh-CN" hreflang="zh-CN" aria-label="切换到中文">ZH</a>
+{% endif %}
+</div>

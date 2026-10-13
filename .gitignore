@@ -5,6 +5,9 @@ vendor/bundle/
 .jekyll-cache/
 _site/
 .sass-cache/
+.DS_Store
+**/.DS_Store
+.jekyll-metadata
 
 # Local Jekyll / Bundler files
 .bundle/
@@ -20,3 +23,7 @@ tree.log
 
 # files
 personal_homepage_and_repo_guide.md
+
+# Local archives and working records
+_archive/
+work/

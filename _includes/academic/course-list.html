@@ -1,0 +1,11 @@
+{% assign course_offset = include.offset | default: 0 %}
+{% assign course_limit = include.limit | default: site.data.courses.size %}
+{% assign course_heading = include.heading | default: 'h3' %}
+<div class="course-list">
+{% for course in site.data.courses offset:course_offset limit:course_limit %}
+<article class="course" id="{{ course.id }}">
+  <div class="course-meta"><span>{{ course.period[lang] }}</span>{% if course.status == 'upcoming' %}<span>{{ ui.upcoming_course[lang] }}</span>{% endif %}{% if course.audience[lang] or course.role[lang] %}<span>{{ course.audience[lang] }}{% if course.audience[lang] and course.role[lang] %} · {% endif %}{{ course.role[lang] }}</span>{% endif %}</div>
+  <div><div class="course-heading"><{{ course_heading }}>{{ course.title[lang] }}</{{ course_heading }}><a class="text-link more-link" href="{{ prefix | append: '/teaching/' | append: course.id | append: '/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ course.title[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div><p>{{ course.description[lang] }}</p></div>
+</article>
+{% endfor %}
+</div>

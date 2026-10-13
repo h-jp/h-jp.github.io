@@ -1,0 +1,22 @@
+{%- assign blog_settings = site.data.blog -%}
+{%- assign pinned_count = blog_settings.pinned_count | default: 1 | plus: 0 | at_least: 1 | at_most: 3 -%}
+{%- assign latest_count = blog_settings.latest_count | default: 1 | plus: 0 | at_least: 1 | at_most: 3 -%}
+{%- assign regular_count = blog_settings.regular_count | default: 3 | plus: 0 -%}
+{%- assign blog_page_size = regular_count | plus: pinned_count | plus: latest_count | at_least: 5 | at_most: 10 -%}
+{%- assign blog_posts = site.posts | where: 'lang', lang | sort: 'date' | reverse -%}
+{%- assign pinned_posts = '' | split: ',' -%}
+{%- for pinned_url in blog_settings.pinned_posts -%}
+  {%- if pinned_posts.size >= pinned_count -%}{%- break -%}{%- endif -%}
+  {%- for post in blog_posts -%}
+    {%- if post.url == pinned_url or post.translation == pinned_url -%}
+      {%- unless pinned_posts contains post -%}{%- assign pinned_posts = pinned_posts | push: post -%}{%- endunless -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign latest_posts = blog_posts | slice: 0, latest_count -%}
+{%- assign ordered_posts = pinned_posts -%}
+{%- for post in blog_posts -%}
+  {%- unless pinned_posts contains post -%}{%- assign ordered_posts = ordered_posts | push: post -%}{%- endunless -%}
+{%- endfor -%}
+{%- assign visible_posts = ordered_posts | slice: 0, blog_page_size -%}
+{%- assign archived_posts = ordered_posts | slice: blog_page_size, ordered_posts.size -%}

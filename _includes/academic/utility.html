@@ -1,0 +1,21 @@
+{% include academic/context.html %}
+{% case page.utility %}
+{% when 'blog' %}{% include academic/blog.html %}
+{% when 'categories' or 'tags' %}
+  {% assign groups = site.categories %}{% if page.utility == 'tags' %}{% assign groups = site.tags %}{% endif %}
+  {% for group in groups %}
+    {% assign matching_count = 0 %}{% for post in group[1] %}{% assign pl = post.lang | slice: 0, 2 %}{% if pl == lang %}{% assign matching_count = matching_count | plus: 1 %}{% endif %}{% endfor %}
+    {% if matching_count > 0 %}<section class="taxonomy-group" id="{{ group[0] | slugify }}"><h2>{% if page.utility == 'categories' %}{{ site.data.category_labels[group[0]][lang] | default: group[0] }}{% else %}{{ group[0] }}{% endif %}</h2><ul>{% for post in group[1] %}{% assign pl = post.lang | slice: 0, 2 %}{% if pl == lang %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endif %}{% endfor %}</ul></section>{% endif %}
+  {% endfor %}
+{% when 'sitemap' or 'collections' %}
+  <ul class="page-index">{% for item in site.data.navigation.main %}<li><a href="{{ item.url[lang] | relative_url }}">{{ item.title[lang] }}</a></li>{% endfor %}</ul>
+  <h2>{{ ui.blog[lang] }}</h2>{% include academic/post-list.html compact=true %}
+  <p><a href="{{ prefix | append: '/categories/' | relative_url }}">{{ ui.categories[lang] }}</a> · <a href="{{ prefix | append: '/tags/' | relative_url }}">{{ ui.tags[lang] }}</a></p>
+{% when 'guide' %}
+  <p>{% if lang == 'zh' %}可通过下列栏目阅读研究介绍、学术成果、课程内容与博客文章。{% else %}Explore research interests, academic work, courses, and writing through the sections below.{% endif %}</p>
+  <ul class="page-index">{% for item in site.data.navigation.main %}<li><a href="{{ item.url[lang] | relative_url }}">{{ item.title[lang] }}</a></li>{% endfor %}</ul>
+{% when 'talks' %}
+  <p>{% if lang == 'zh' %}学术报告资料整理后将在此更新。相关研究可见{% else %}Talk materials will be added here when available. Explore related work in{% endif %} <a href="{{ prefix | append: '/research/' | relative_url }}">{{ ui.research[lang] }}</a> {% if lang == 'zh' %}与{% else %}and{% endif %} <a href="{{ prefix | append: '/publications/' | relative_url }}">{{ ui.publications[lang] }}</a>{% if lang == 'zh' %}。{% else %}.{% endif %}</p>
+{% when 'terms' %}
+  <div class="prose">{% if lang == 'zh' %}<p>本网站用于介绍个人学术研究、论文与教学，并分享博客文章。引用论文时请采用论文详情中的正式发表信息。</p><p>本站页面不启用评论、访问统计或广告脚本。点击邮件链接将打开您设备上的邮件应用；外部链接将进入相应网站。</p>{% else %}<p>This website presents academic research, publications, teaching, and blog writing. Please use the formal publication information on each paper's detail page when citing research.</p><p>These pages do not enable commenting, analytics, or advertising scripts. Email links open your device's email application; external links lead to their respective websites.</p>{% endif %}</div>
+{% endcase %}

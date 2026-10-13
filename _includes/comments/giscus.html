@@ -1,3 +1,8 @@
+{% assign giscus_lang = "en" %}
+{% if page.lang and page.lang contains "zh" %}
+  {% assign giscus_lang = "zh-CN" %}
+{% endif %}
+
 {% assign giscus = site.comments.giscus %}
 {% assign giscus_repo = giscus.repo | default: site.repository %}
 {% assign giscus_repo_id = giscus.repo_id | default: "" %}
@@ -15,7 +20,7 @@
           data-emit-metadata="{{ giscus.emit_metadata | default: '0' | escape }}"
           data-input-position="{{ giscus.input_position | default: 'bottom' | escape }}"
           data-theme="{{ giscus.theme | default: 'light' | escape }}"
-          data-lang="{{ giscus.lang | default: 'zh-CN' | escape }}"
+          data-lang="{{ giscus_lang }}"
           data-loading="{{ giscus.loading | default: 'lazy' | escape }}"
           crossorigin="anonymous"
           async>

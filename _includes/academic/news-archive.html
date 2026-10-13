@@ -1,0 +1,3 @@
+{% include academic/context.html %}
+{% include academic/news-list.html offset=site.news_page_size %}
+<div class="archive-nav archive-nav--back"><a class="text-link" href="{{ prefix | append: '/news/' | relative_url }}"><span aria-hidden="true">←</span> {{ ui.back_news[lang] }}</a></div>

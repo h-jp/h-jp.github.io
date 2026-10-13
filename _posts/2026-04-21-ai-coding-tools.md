@@ -14,8 +14,6 @@ lang: en
 translation: /posts/2026/04/ai-coding-tools-zh/
 ---
 
-[简体中文](/posts/2026/04/ai-coding-tools-zh/)
-
 AI coding tools are changing the daily workflow of software development. Tools such as Codex, Claude Code, and other coding agents can read files, generate patches, explain unfamiliar code, run commands, and help developers move from an idea to an implementation much faster than before. This shift is not simply about faster typing. It changes what developers need to focus on.
 
 In a traditional workflow, much effort is spent translating intent into code by hand. In an AI-assisted workflow, developers increasingly express intent, provide constraints, review generated changes, run tests, and decide whether the result fits the system. This does not remove engineering judgment. It raises the value of engineering judgment. A developer must know what to ask for, what context to provide, which output to distrust, and how to verify that the change is correct.

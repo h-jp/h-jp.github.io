@@ -1,0 +1,18 @@
+{% assign paper_heading = include.heading | default: 'h3' %}
+{% if include.archive %}
+{% assign accepted_papers = site.publications | where: 'selected', false | where: 'status', 'accepted' | sort: 'accepted_month' | reverse %}
+{% assign published_papers = site.publications | where: 'selected', false | where_exp: 'pub', 'pub.status != "accepted"' | sort: 'date' | reverse %}
+{% assign papers = accepted_papers | concat: published_papers %}
+{% else %}{% assign papers = site.publications | where: 'selected', true | sort: 'selected_order' %}{% endif %}
+<ol class="paper-list">
+{% for pub in papers %}
+{% assign paper_url = pub.url %}{% if lang == 'zh' %}{% assign paper_url = pub.translation %}{% endif %}
+<li class="paper-item"><span class="paper-number" aria-hidden="true">0{{ forloop.index }}</span><div>
+  <div class="paper-venue"><span>{{ pub.venue_short | default: pub.venue }}{% unless pub.venue contains '202' %} · {{ pub.date | date: '%Y' }}{% endunless %}</span>{% if pub.rating %}<span class="venue-label">{{ pub.rating }}</span>{% endif %}</div>
+  <{{ paper_heading }} lang="en"><a href="{{ paper_url | relative_url }}">{{ pub.title }}</a></{{ paper_heading }}>
+  {% if lang == 'zh' %}<p class="paper-translation">{{ pub.title_zh }}</p>{% endif %}
+  {% if pub.acceptance %}<p class="paper-status"><time datetime="{{ pub.accepted_month }}">{{ pub.acceptance[lang] }}</time></p>{% endif %}
+  {% if pub.authors %}<p class="paper-authors" lang="en">{{ pub.authors | escape | replace: 'Jiangping Huang', '<strong>Jiangping Huang</strong>' }}</p>{% endif %}
+  {% unless include.summary %}{% if pub.doi %}<a class="paper-doi" href="https://doi.org/{{ pub.doi }}">DOI: {{ pub.doi }} <span aria-hidden="true">↗</span></a>{% endif %}{% endunless %}
+</div></li>
+{% endfor %}</ol>

@@ -1,0 +1,8 @@
+{% assign project_heading = include.heading | default: 'h3' %}
+{% assign project_state = include.state | default: 'ongoing' %}
+{% assign projects = site.data.projects | where: 'state', project_state %}
+<ol class="project-list">
+{% for item in projects %}<li id="{{ item.id }}"><div class="project-meta"><span>{{ item.period }}</span><span class="status{% if item.state == 'archived' %} status--archived{% endif %}"><span aria-hidden="true"></span>{{ item.status[lang] }}</span></div><{{ project_heading }}>{% if include.summary %}<a href="{{ prefix | append: '/projects/#' | append: item.id | relative_url }}">{{ item.title[lang] | escape }}</a>{% else %}{{ item.title[lang] | escape }}{% endif %}</{{ project_heading }}>
+{% assign project_description = item.description[lang] %}{% if include.summary %}{% assign project_description = item.short[lang] | default: project_description %}{% endif %}
+{% if project_description %}<p class="project-description">{{ project_description }}</p>{% endif %}</li>{% endfor %}
+</ol>

@@ -1,0 +1,31 @@
+- id: multi-agent-collaboration
+  state: ongoing
+  title:
+    en: Research on Multi-Agent Collaboration-Driven Methods for Reverse Analysis of *** and Automatic Generation
+      of ***
+    zh: 多智能体协同驱动的***逆向解析与***自动生成方法研究
+  short:
+    en: Explores multi-agent collaboration for reverse analysis and automated generation, with an emphasis on consistent and reliable results.
+    zh: 探索多智能体协作支持逆向解析与自动生成的方法，关注结果的一致性与可靠性。
+  description:
+    en: Investigates how agents coordinate and share information across reverse analysis and automated generation tasks. The project focuses on connecting analysis with generation and improving the consistency and reliability of results.
+    zh: 研究多智能体在逆向解析与自动生成任务中的分工协作与信息整合机制。关注分析与生成过程的有效衔接，以及结果的一致性与可靠性。
+  period: 2025–2028
+  status:
+    en: Ongoing
+    zh: 在研
+- id: code-generation
+  state: ongoing
+  title:
+    en: Research on *** Code Generation Jointly Driven by *** Requirements Analysis and ***
+    zh: '***需求解析与***协同驱动的***代码生成研究'
+  short:
+    en: Connects requirements understanding with code generation, focusing on alignment between stated needs and program behavior.
+    zh: 探索需求理解与代码生成的有效衔接，关注需求意图与程序行为的一致性。
+  description:
+    en: Investigates how requirements understanding can guide code generation, from stated needs to program implementation. The project focuses on consistency between requirements and generated code, together with code quality and reliability.
+    zh: 研究如何以需求理解引导代码生成，衔接需求表达与程序实现。关注需求语义与生成代码之间的一致性，以及代码质量与可靠性。
+  period: 2026–2029
+  status:
+    en: Ongoing
+    zh: 在研

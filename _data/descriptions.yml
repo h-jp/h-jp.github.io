@@ -1,0 +1,40 @@
+home:
+  en: My research connects artificial intelligence, intelligent software engineering, and intelligent robotics to address fundamental and real-world problems.
+  zh: 研究人工智能、智能软件工程与智能机器人的交叉融合，探索相关理论、方法及其实际应用。
+news:
+  en: Recent publications and research updates.
+  zh: 近期论文发表与科研动态。
+research:
+  en: Artificial intelligence, intelligent software engineering, and intelligent robotics.
+  zh: 人工智能、智能软件工程与智能机器人。
+projects:
+  en: Ongoing research projects.
+  zh: 在研科研项目。
+publications:
+  en: Recent selected conference and journal papers.
+  zh: 近期代表性会议与期刊论文。
+teaching:
+  en: Student supervision, research opportunities, and courses.
+  zh: 学生指导、科研机会与授课课程。
+blog:
+  en: Writing on research, learning, and academic life.
+  zh: 关于科研、学习与学术生活的记录。
+about:
+  en: Biography, experience, and academic service.
+  zh: 个人简介、工作经历与学术服务。
+archives:
+  news:
+    en: For a fuller view of my research activities, please click More on the right to browse earlier updates and publication news.
+    zh: 如想进一步了解以往的科研进展与论文动态，请点击右侧“更多”浏览历史记录。
+  projects:
+    en: To learn about past research projects, please click More on the right to visit the archive. Project details are being prepared and will be added over time.
+    zh: 如想了解先前开展的研究项目，请点击右侧“更多”访问项目归档；相关资料正在整理，将陆续补充。
+  publications:
+    en: To explore more of my research, please click More on the right to browse additional conference and journal papers.
+    zh: 如想进一步了解我的研究工作，请点击右侧“更多”查看其他会议与期刊论文。
+  teaching:
+    en: For a broader view of my teaching, please click More on the right to explore courses offered in previous years.
+    zh: 如想了解我在不同阶段开设的课程与教学内容，请点击右侧“更多”浏览以往课程。
+  blog:
+    en: If you are interested in more reflections on research, learning, and academic life, please click More on the right to browse earlier posts.
+    zh: 如对科研、学习与学术生活中的更多思考感兴趣，请点击右侧“更多”阅读以往文章。

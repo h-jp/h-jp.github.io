@@ -1,4 +1,40 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<script>
+  (function () {
+    var skipLink = document.querySelector('.skip-link');
+    var mainContent = document.getElementById('site-content');
+    if (skipLink && mainContent) {
+      skipLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        mainContent.focus();
+        mainContent.scrollIntoView();
+      }, true);
+    }
+
+    var navigation = document.getElementById('site-nav');
+    if (!navigation) return;
+
+    var toggle = navigation.querySelector('button[aria-controls="site-nav-hidden-links"]');
+    var hiddenLinks = document.getElementById('site-nav-hidden-links');
+    if (!toggle || !hiddenLinks) return;
+
+    var syncExpandedState = function () {
+      toggle.setAttribute('aria-expanded', hiddenLinks.classList.contains('hidden') ? 'false' : 'true');
+    };
+
+    toggle.addEventListener('click', function () {
+      window.setTimeout(syncExpandedState, 0);
+    });
+
+    if (window.MutationObserver) {
+      new MutationObserver(syncExpandedState).observe(hiddenLinks, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    syncExpandedState();
+  }());
+</script>
+
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}

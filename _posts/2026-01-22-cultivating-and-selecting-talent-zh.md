@@ -14,8 +14,6 @@ lang: zh
 translation: /posts/2026/01/cultivating-and-selecting-talent/
 ---
 
-[English](/posts/2026/01/cultivating-and-selecting-talent/)
-
 天赋固然需要培养。学生并非仅仅加入研究小组就能成为成熟的研究人员。研究能力、工程能力、学术写作能力和沟通技巧都需要通过实际任务来培养。学生需要机会阅读论文、搭建系统、设计实验、讨论想法、获得反馈并反复修改自己的工作。缺乏培养，许多有潜力的学生可能永远无法发掘自身的潜能。
 
 但单靠培养是不够的，人才还需要选拔。

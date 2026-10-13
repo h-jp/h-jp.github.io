@@ -1,191 +1,131 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
-
-# Site Settings
-locale                   : "en-US"
-title                    : "Jiangping Huang"
-title_separator          : "-"
-name                     : &name "Jiangping Huang"
-description              : &description "Assistant Professor at CQUPT. AI, Intelligent Software Engineering, Multi-Agent Systems, and Intelligent Robotics."
-url                      : https://h-jp.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "h-jp/h-jp.github.io"
-teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-breadcrumbs              : false # true, false (default)
-words_per_minute         : 160
-future                   : true
-read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : false #change to true to add link to talkmap on talks page
+locale: en-US
+title: Jiangping Huang
+title_separator: '-'
+name: Jiangping Huang
+description: 'Academic homepage of Jiangping Huang: artificial intelligence, intelligent software engineering,
+  and intelligent robotics.'
+url: https://h-jp.github.io
+baseurl: ''
+repository: h-jp/h-jp.github.io
+teaser: null
+breadcrumbs: false
+words_per_minute: 160
+news_page_size: 3
+teaching_page_size: 3
+chinese_enabled: false
+chinese_blog_enabled: true
+future: true
+read_more: disabled
+talkmap_link: false
 comments:
-  provider               : giscus # false (default), "giscus", "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
-  enabled                : true
-  giscus:
-    repo                 : "h-jp/h-jp.github.io"
-    repo_id              : "REPLACE_WITH_GISCUS_REPO_ID"
-    category             : "General"
-    category_id          : "REPLACE_WITH_GISCUS_CATEGORY_ID"
-    mapping              : "pathname"
-    strict               : "0"
-    reactions_enabled    : "1"
-    emit_metadata        : "0"
-    input_position       : "bottom"
-    theme                : "light"
-    lang                 : "zh-CN"
-    loading              : "lazy"
-  disqus:
-    shortname            :
-  discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
-  facebook:
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
+  provider: false
+  enabled: false
 staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages" # "master", "gh-pages"
-  commitMessage          : "New comment."
-  filename               : comment-{@timestamp}
-  format                 : "yml"
-  moderation             : true
-  path                   : "_data/comments/{options.slug}"
-  requiredFields         : ['name', 'email', 'message']
+  allowedFields:
+  - name
+  - email
+  - url
+  - message
+  branch: gh-pages
+  commitMessage: New comment.
+  filename: comment-{@timestamp}
+  format: yml
+  moderation: true
+  path: _data/comments/{options.slug}
+  requiredFields:
+  - name
+  - email
+  - message
   transforms:
-    email                : "md5"
+    email: md5
   generatedFields:
     date:
-      type               : "date"
+      type: date
       options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+        format: iso8601
 atom_feed:
-  path                   : # blank (default) uses feed.xml
-
-# SEO Related
-google_site_verification :
-bing_site_verification   :
-alexa_site_verification  :
-yandex_site_verification :
-
-# Social Sharing
+  path: null
+google_site_verification: null
+bing_site_verification: null
+alexa_site_verification: null
+yandex_site_verification: null
 twitter:
-  username               : &twitter
+  username: null
 facebook:
-  username               :
-  app_id                 :
-  publisher              :
-og_image                 :  # Open Graph/Twitter default site image
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
+  username: null
+  app_id: null
+  publisher: null
+og_image: null
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
-
-
-# Analytics
+  type: null
+  name: null
+  links: null
 analytics:
-  provider               : goatcounter # false (default), "goatcounter", "google", "google-universal", "custom"
-  goatcounter:
-    enabled              : true
-    code                 : "REPLACE_WITH_GOATCOUNTER_CODE"
-  google:
-    tracking_id          :
-
+  provider: false
 post_views:
-  enabled                : true
-  provider               : goatcounter
-
-
-# Site Author
+  enabled: false
 author:
-  name             : "Jiangping Huang"
-  avatar           : "hjp_github.png"
-  bio              : "Assistant Professor, CQUPT | AI + Intelligent Software Engineering + Multi-Agent Systems"
-  location         : "Chongqing, China"
-  employer         : "CQUPT"
-  #pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  #googlescholar    : "https://scholar.google.com/citations?user=IulnddEAAAAJ&hl=zh-CN"
-  email            : "huangjp@cqupt.edu.cn"
-  wechat           : "jiangpinghuang"
-  research_group   : "https://csma-research-group.github.io"
-  institutional_homepage: "http://faculty.cqupt.edu.cn/hjp/zh_CN/index.htm"
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              : "http://faculty.cqupt.edu.cn/hjp/zh_CN/index.htm"
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "h-jp"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         :
-  #orcid            : "http://orcid.org/yourorcidurl"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : "jiangpinghuang"
-  vine             :
-  weibo            : "jiangpinghuang"
-  xing             :
-  youtube          :
-  wikipedia        :
-
-
-# Reading Files
+  name: Jiangping Huang
+  avatar: bio-photo-new.jpg
+  email: huangjp@cqupt.edu.cn
+  research_group: https://csma-research-group.github.io
+  weibo: jiangpinghuang
 include:
-  - .htaccess
-  - _pages
-  - files
+- .htaccess
+- _pages
+- files
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - CHANGELOG
-  - Capfile
-  - Gemfile
-  - Gruntfile.js
-  - LICENSE
-  - README
-  - Rakefile
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
-  - config
-  - gulpfile.js
-  - log
-  - node_modules
-  - package.json
-  - tmp
-  - vendor
+- '*.sublime-project'
+- '*.sublime-workspace'
+- .asset-cache
+- .bundle
+- .jekyll-assets-cache
+- .sass-cache
+- CHANGELOG
+- CHANGELOG.md
+- CONTRIBUTING.md
+- Capfile
+- Gemfile
+- Gemfile.lock
+- Gruntfile.js
+- LICENSE
+- README
+- README.md
+- Rakefile
+- _archive
+- assets/js/_main.js
+- assets/js/plugins
+- assets/js/vendor
+- config
+- docs
+- docs/site-maintenance.md
+- gulpfile.js
+- log
+- markdown_generator
+- node_modules
+- package-lock.json
+- package.json
+- personal_homepage_and_repo_guide.md
+- scripts
+- talkmap
+- test
+- tests
+- tmp
+- vendor
+- work
 keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-
-# Conversion
+- .git
+- .svn
+encoding: utf-8
+markdown_ext: markdown,mkdown,mkdn,mkd,md
 markdown: kramdown
 highlighter: rouge
 lsi: false
-excerpt_separator: "\n\n"
+excerpt_separator: '
+
+
+  '
 incremental: false
-
-
-# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
@@ -195,9 +135,6 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-
-
-# Collections
 collections:
   teaching:
     output: true
@@ -211,124 +148,48 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
-
-
-# Defaults
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _publications
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
-
-# Sass/SCSS
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: single
+    section: blog
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: section
+- scope:
+    path: ''
+    type: publications
+  values:
+    layout: publication
+    section: publications
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-
-# Outputting
+  style: compressed
 permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-
-# Plugins
+timezone: Asia/Shanghai
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-redirect-from
-# mimic GitHub Pages with --safe
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-gist
+- jekyll-feed
+- jekyll-redirect-from
 whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-
-
-# Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-gist
+- jekyll-feed
+- jemoji
+- jekyll-redirect-from
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
-
-
-# HTML Compression
-# - http://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:

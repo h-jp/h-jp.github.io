@@ -1,0 +1,5 @@
+<div class="personal-links">
+  <a href="mailto:{{ profile.email }}">{% if include.full_email %}{{ profile.email }}{% else %}{{ ui.email[lang] }}{% endif %}</a>
+  <a href="{{ profile.group.url }}">{{ profile.group.name[lang] }}</a>
+  <a href="{{ profile.weibo }}">{{ ui.weibo[lang] }}</a>
+</div>

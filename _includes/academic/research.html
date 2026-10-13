@@ -1,0 +1,3 @@
+{% include academic/context.html %}
+<div class="research-areas">{% for item in profile.research %}<section class="research-area" id="{{ item.id }}"><span class="section-number" aria-hidden="true">0{{ forloop.index }}</span><div><h2>{{ item.title[lang] }}</h2><p>{{ item.description[lang] }}</p></div></section>{% endfor %}</div>
+<section class="quiet-section research-group"><div class="section-heading"><h2>{{ ui.group[lang] }}</h2><a class="text-link more-link" href="{{ profile.group.url }}" aria-label="{{ ui.more[lang] }}: {{ profile.group.name[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">↗</span></a></div><p>{{ profile.group.description[lang] }}</p></section>

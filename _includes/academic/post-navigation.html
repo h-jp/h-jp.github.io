@@ -1,0 +1,16 @@
+{% assign chronological_posts = site.posts | where: 'lang', lang | sort: 'date' %}
+{% assign previous_post = nil %}
+{% assign next_post = nil %}
+{% for post in chronological_posts %}
+  {% if post.url == page.url %}
+    {% unless forloop.first %}{% assign previous_index = forloop.index0 | minus: 1 %}{% assign previous_post = chronological_posts[previous_index] %}{% endunless %}
+    {% unless forloop.last %}{% assign next_index = forloop.index0 | plus: 1 %}{% assign next_post = chronological_posts[next_index] %}{% endunless %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% if previous_post or next_post %}
+<nav class="post-navigation" aria-label="{{ ui.post_navigation[lang] }}">
+  {% if previous_post %}<a class="text-link" href="{{ previous_post.url | relative_url }}" rel="prev" aria-label="{{ ui.previous_post[lang] }}: {{ previous_post.title | escape }}" title="{{ previous_post.title | escape }}"><span aria-hidden="true">←</span> {{ ui.previous_post[lang] }}</a>{% endif %}
+  {% if next_post %}<a class="text-link" href="{{ next_post.url | relative_url }}" rel="next" aria-label="{{ ui.next_post[lang] }}: {{ next_post.title | escape }}" title="{{ next_post.title | escape }}">{{ ui.next_post[lang] }} <span aria-hidden="true">→</span></a>{% endif %}
+</nav>
+{% endif %}
