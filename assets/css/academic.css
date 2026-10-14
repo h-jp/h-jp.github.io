@@ -171,13 +171,16 @@ html:lang(zh) .brand { letter-spacing: .045em; }
 .course p { font-size: 16px; line-height: 1.85; margin: 0; }
 .student-group:first-child { margin-top: 0; }
 .student-group + .student-group, .student-admissions { border-top: 1px solid var(--line); padding-top: 30px; }
+.student-group:has(> .student-category:last-child > .archive-nav) + .student-group { border-top: 0; padding-top: 0; }
 .student-group p, .student-admissions p { font-size: 16px; line-height: 1.85; }
-.student-category .archive-nav > p { font-size: 14px; line-height: 1.8; text-align: left; }
+.student-category .archive-nav { align-items: flex-end; border-top: 0; border-bottom: 1px solid var(--line); margin-top: 0; padding: 0 0 12px; }
+.student-category .archive-nav > p { margin: 0; font-size: 14px; line-height: 1.8; text-align: left; }
 .student-group > p:last-child, .student-admissions p:last-child { margin-bottom: 0; }
 .student-category { margin-top: 30px; }
 .student-category > h3 { font-size: 19px; margin-bottom: 18px; }
-.student-achievements { list-style: none; padding: 0; margin: 0; }
-.student-achievements li { display: grid; grid-template-columns: 85px minmax(0, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
+.student-achievements { --student-year-width: 85px; --student-column-gap: 24px; --student-rule-offset: calc(var(--student-year-width) + var(--student-column-gap)); list-style: none; padding: 0; margin: 0; }
+.student-achievements li { position: relative; display: grid; grid-template-columns: var(--student-year-width) minmax(0, 1fr); gap: var(--student-column-gap); padding: 22px 0; }
+.student-achievements li::before { content: ""; position: absolute; top: 0; left: var(--student-rule-offset); right: 0; border-top: 1px solid var(--line); }
 .achievement-year { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; padding-top: 4px; }
 .student-achievements .achievement-title { color: var(--ink); font-size: 18px; font-weight: 600; line-height: 1.5; margin: 0 0 8px; overflow-wrap: break-word; }
 .achievement-title a { display: block; color: var(--ink); text-decoration: none; }
@@ -342,6 +345,7 @@ main :is(h1, h2, h3, .achievement-title)[data-fit-heading] { font-size: var(--ba
   .course p { font-size: 16px; }
   .student-group:first-child { margin-top: 0; }
   .student-group + .student-group, .student-admissions { padding-top: 24px; }
+  .student-achievements { --student-rule-offset: 0px; }
   .student-achievements li { grid-template-columns: 1fr; gap: 6px; }
   .student-category .archive-nav > p { font-size: 13px; }
   .achievement-year { padding-top: 0; }
