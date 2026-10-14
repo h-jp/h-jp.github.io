@@ -1,0 +1,25 @@
+{% assign achievement_heading = include.heading | default: 'h4' %}
+<ul class="student-achievements">
+  {% for achievement in include.achievements %}
+  {% assign student_paper = nil %}
+  {% assign achievement_title = achievement.title[lang] %}
+  {% assign achievement_url = achievement.url %}
+  {% if achievement.publication_id %}
+    {% assign student_paper = site.publications | where: 'pub_id', achievement.publication_id | first %}
+    {% assign achievement_title = student_paper.title %}
+    {% assign achievement_url = student_paper.url %}
+    {% if lang == 'zh' %}
+      {% assign achievement_title = student_paper.title_zh | default: student_paper.title %}
+      {% assign achievement_url = student_paper.translation %}
+    {% endif %}
+  {% endif %}
+  <li id="{{ achievement.id }}">
+    <span class="achievement-year">{{ achievement.year_label[lang] | default: achievement.year }}</span>
+    <div>
+      <{{ achievement_heading }} class="achievement-title">{% if achievement_url %}<a href="{{ achievement_url | relative_url }}">{{ achievement_title }}</a>{% else %}{{ achievement_title }}{% endif %}</{{ achievement_heading }}>
+      <p class="achievement-students">{% if student_paper %}{{ ui.student_coauthor[lang] }}{% if lang == 'zh' %}：{% else %}: {% endif %}{% endif %}{{ achievement.students[lang] }}</p>
+      {% if student_paper %}{% assign student_venue = student_paper.venue_short | default: student_paper.venue %}{% assign student_paper_year = student_paper.date | date: '%Y' %}<p>{{ student_venue }}{% unless student_venue contains student_paper_year %} {{ student_paper_year }}{% endunless %}{% if student_paper.rating %} · {{ student_paper.rating }}{% endif %}</p>{% else %}<p>{{ achievement.description[lang] }}</p>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>

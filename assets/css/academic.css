@@ -52,6 +52,8 @@ html:lang(zh) .brand { letter-spacing: .045em; }
 .hero h1 { font-size: 50px; line-height: 1.12; margin-bottom: 12px; }
 .hero-institution { font-size: 16px; color: var(--muted); margin-bottom: 18px; }
 .hero-intro { font-size: 20px; line-height: 1.7; color: var(--ink); max-width: 690px; margin-bottom: 23px; }
+.portrait-picture { display: contents; }
+.portrait-picture > source { display: none; }
 .portrait { width: auto; height: 360px; max-width: none; align-self: start; object-fit: contain; border-radius: 12px; box-shadow: 0 0 0 1px rgba(29, 53, 67, .06), 0 8px 24px rgba(29, 53, 67, .06); }
 .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-bottom: 20px; }
 .primary-link { border-radius: 6px; background: var(--accent); color: white; padding: 10px 17px; text-decoration: none; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 18px; }
@@ -170,6 +172,7 @@ html:lang(zh) .brand { letter-spacing: .045em; }
 .student-group:first-child { margin-top: 0; }
 .student-group + .student-group, .student-admissions { border-top: 1px solid var(--line); padding-top: 30px; }
 .student-group p, .student-admissions p { font-size: 16px; line-height: 1.85; }
+.student-category .archive-nav > p { font-size: 14px; line-height: 1.8; text-align: left; }
 .student-group > p:last-child, .student-admissions p:last-child { margin-bottom: 0; }
 .student-category { margin-top: 30px; }
 .student-category > h3 { font-size: 19px; margin-bottom: 18px; }
@@ -340,6 +343,7 @@ main :is(h1, h2, h3, .achievement-title)[data-fit-heading] { font-size: var(--ba
   .student-group:first-child { margin-top: 0; }
   .student-group + .student-group, .student-admissions { padding-top: 24px; }
   .student-achievements li { grid-template-columns: 1fr; gap: 6px; }
+  .student-category .archive-nav > p { font-size: 13px; }
   .achievement-year { padding-top: 0; }
   .experience-list > div { grid-template-columns: 1fr; gap: 6px; }
   .experience-list dd { font-size: 16px; }

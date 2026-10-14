@@ -158,6 +158,10 @@ groups:
       description:
         en: University-level project under the Undergraduate Innovation and Entrepreneurship Training Program.
         zh: 校级大学生创新创业训练计划项目。
+    preview_limit: 3
+    archive_description:
+      en: For earlier innovation and entrepreneurship projects, please click More on the right.
+      zh: 以往创新创业训练计划项目，请点击右侧“更多”查看。
   - id: undergraduate-capstone-awards
     title:
       en: Outstanding Undergraduate Theses
@@ -273,6 +277,10 @@ groups:
       description:
         en: Third Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）三等奖。
+    preview_limit: 3
+    archive_description:
+      en: For earlier outstanding undergraduate theses, please click More on the right.
+      zh: 以往优秀本科毕业论文，请点击右侧“更多”查看。
 - id: masters
   title:
     en: Master's Students

@@ -100,6 +100,9 @@ students_contact:
 student_coauthor:
   en: Co-author
   zh: 共同作者
+back_students:
+  en: Back to Students
+  zh: 返回学生栏目
 biography:
   en: Biography
   zh: 个人简介

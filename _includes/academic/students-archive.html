@@ -1,0 +1,13 @@
+{% include academic/context.html %}
+{% for group in site.data.students.groups %}
+{% for category in group.categories %}
+{% if category.preview_limit and category.achievements.size > category.preview_limit %}
+<section class="student-group quiet-section" aria-labelledby="{{ category.id }}-heading">
+  <h2 id="{{ category.id }}-heading">{{ category.title[lang] }}</h2>
+  {% assign archived_achievements = category.achievements | slice: category.preview_limit, category.achievements.size %}
+  {% include academic/student-achievements.html achievements=archived_achievements heading='h3' %}
+  <div class="archive-nav archive-nav--back"><a class="text-link" href="{{ prefix | append: '/students/#' | append: category.id | append: '-heading' | relative_url }}"><span aria-hidden="true">←</span> {{ ui.back_students[lang] }}</a></div>
+</section>
+{% endif %}
+{% endfor %}
+{% endfor %}

@@ -8,7 +8,10 @@
     <div class="hero-actions"><a class="primary-link" href="{{ prefix | append: '/publications/' | relative_url }}">{{ ui.selected_papers[lang] }} <span aria-hidden="true">→</span></a><a class="primary-link" href="{{ prefix | append: '/research/' | relative_url }}">{{ ui.research_heading[lang] }} <span aria-hidden="true">→</span></a></div>
     {% include academic/personal-links.html %}
   </div>
-  <img class="portrait" src="{{ profile.portrait | relative_url }}" alt="{{ profile.name[lang] }}" width="1214" height="1295" fetchpriority="high">
+  <picture class="portrait-picture">
+    <source type="image/webp" srcset="{% for variant in profile.portrait_variants %}{{ variant.url | relative_url }} {{ variant.width }}w{% unless forloop.last %}, {% endunless %}{% endfor %}" sizes="(max-width: 680px) 104px, (max-width: 980px) 200px, 338px">
+    <img class="portrait" src="{{ profile.portrait_display | relative_url }}" alt="{{ profile.name[lang] }}" width="1214" height="1295" fetchpriority="high" decoding="async">
+  </picture>
 </section>
 <section class="home-section" aria-labelledby="news-title"><div class="section-heading"><h2 id="news-title">{{ ui.news[lang] }}</h2><a class="text-link more-link" href="{{ prefix | append: '/news/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.news[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div>{% include academic/news-list.html limit=site.news_page_size %}</section>
 <section class="home-section" aria-labelledby="papers-title"><div class="section-heading"><h2 id="papers-title">{{ ui.selected_papers[lang] }}</h2><a class="text-link more-link" href="{{ prefix | append: '/publications/' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ ui.selected_papers[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div>{% include academic/paper-list.html summary=true %}</section>

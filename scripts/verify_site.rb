@@ -13,6 +13,7 @@ root = File.expand_path(ARGV[0] || '_site', source)
 report_path = ARGV[1] && File.expand_path(ARGV[1])
 load_yaml = ->(path) { YAML.safe_load(File.read(path), permitted_classes: [Date, Time], aliases: true) }
 config = load_yaml.call(File.join(source, '_config.yml'))
+profile = load_yaml.call(File.join(source, '_data/profile.yml'))
 config.merge!(load_yaml.call(ARGV[2])) if ARGV[2]
 chinese_enabled = config['chinese_enabled'] == true
 chinese_blog_enabled = config['chinese_blog_enabled'] == true
@@ -78,7 +79,7 @@ check.call(navigation.map { |item| item['id'] } == %w[home news research project
 html.each do |path, doc|
   rel = Pathname.new(path).relative_path_from(Pathname.new(root)).to_s
   raw = File.read(path)
-  check.call(!private_content.call(raw, %w[students/index.html zh/students/index.html].include?(rel)), "Private or outdated content: #{rel}")
+  check.call(!private_content.call(raw, %w[students/index.html zh/students/index.html students/archive/index.html zh/students/archive/index.html].include?(rel)), "Private or outdated content: #{rel}")
   check.call(!raw.match?(retired), "Retired route reference: #{rel}")
   if doc.at_css('meta[http-equiv="refresh"]')
     redirects << rel
@@ -91,6 +92,7 @@ html.each do |path, doc|
   check.call(doc.css('h1').size == 1 && doc.css('main').size == 1, "Missing or duplicated page landmark: #{rel}")
   check.call(%w[en zh-CN].include?(doc.at_css('html')['lang']), "Missing language: #{rel}")
   check.call(doc.at_css('meta[name="description"]')['content'].to_s.size > 0, "Missing description: #{rel}")
+  check.call(doc.at_css('link[rel="icon"]')&.[]('href') == profile['portrait_icon'] && doc.at_css('link[rel="icon"]')&.[]('type') == 'image/png', "Lightweight portrait favicon: #{rel}")
   chinese_page_enabled = chinese_enabled || (chinese_blog_enabled && blog_routes.include?(canonical))
   notice_expected = doc.at_css('html')['lang'] == 'zh-CN' && !chinese_page_enabled
   check.call(!!doc.at_css('.language-notice') == notice_expected, "Chinese visibility setting: #{rel}")
@@ -109,6 +111,12 @@ html.each do |path, doc|
   target_language = doc.at_css('html')['lang'] == 'zh-CN' ? 'EN' : 'ZH'
   check.call(language_switcher.text.strip == target_language && language_switcher.css('a').size == 1 && language_switcher.css('[aria-current]').empty?, "Target language only: #{rel}")
   doc.css('img').each { |img| check.call(!img['alt'].to_s.empty?, "Missing image alternative: #{rel}") }
+  doc.css('source[srcset], img[srcset]').each do |node|
+    node['srcset'].split(',').each do |candidate|
+      image_url = candidate.strip.split(/\s+/).first
+      check.call(resolve.call(image_url, path)&.first, "Missing responsive image: #{rel}: #{image_url}")
+    end
+  end
   switch = doc.at_css('[data-translation]')
   target = switch && resolve.call(switch['href'], path)&.first
   check.call(target && html.key?(target), "Missing translation: #{rel}")
@@ -131,6 +139,23 @@ html.each do |path, doc|
     end
   end
 end
+
+['/', '/zh/'].each do |url|
+  doc = html.fetch(resolve.call(url, File.join(root, 'index.html')).first)
+  next if doc.at_css('.language-notice')
+  portrait = doc.at_css('.portrait')
+  webp = doc.at_css('.portrait-picture source[type="image/webp"]')
+  expected_srcset = profile['portrait_variants'].map { |variant| "#{variant['url']} #{variant['width']}w" }.join(', ')
+  check.call(portrait&.[]('src') == profile['portrait_display'] && portrait['width'] == '1214' && portrait['height'] == '1295' && portrait['fetchpriority'] == 'high' && portrait['loading'] != 'lazy', "Portrait fallback and first-screen loading: #{url}")
+  check.call(webp&.[]('srcset') == expected_srcset && webp['sizes'] == '(max-width: 680px) 104px, (max-width: 980px) 200px, 338px', "Responsive portrait variants: #{url}")
+  check.call(doc.at_css('meta[property="og:image"]')['content'].end_with?(profile['portrait_share']), "Optimized sharing image: #{url}")
+end
+profile['portrait_variants'].each do |variant|
+  path = File.join(root, variant['url'])
+  header = File.binread(path, 12)
+  check.call(File.size(path) < 128_000 && header.start_with?('RIFF') && header[8, 4] == 'WEBP', "Portrait WebP format and byte budget: #{variant['url']}")
+end
+check.call(File.size(File.join(root, profile['portrait_icon'])) < 16_384 && File.binread(File.join(root, profile['portrait_icon']), 24)[16, 8].unpack('NN') == [64, 64], 'Small square portrait favicon')
 
 ['/','/zh/','/publications/','/zh/publications/'].each do |url|
   path = resolve.call(url, File.join(root, 'index.html')).first
@@ -165,16 +190,26 @@ end
 check.call(student_records.map { |record| record['id'] }.uniq.size == student_records.size, 'Unique student record IDs')
 check.call(student_categories.map { |category| category['achievements'].size } == [3, 1, 8, 10, 2, 1], 'Verified student record counts')
 check.call(student_categories.all? { |category| category['achievements'].map { |record| record['year'] } == category['achievements'].map { |record| record['year'] }.sort.reverse }, 'Student records in descending year order')
+recent_student_records = student_categories.flat_map { |category| category['achievements'].take(category['preview_limit'] || category['achievements'].size) }
+archived_student_records = student_categories.flat_map { |category| category['achievements'].drop(category['preview_limit'] || category['achievements'].size) }
+check.call(recent_student_records.size == 13 && archived_student_records.size == 12, 'Student main page and archive counts')
 ['/students/','/zh/students/'].each do |url|
   doc = html.fetch(resolve.call(url, File.join(root,'index.html')).first)
   next if doc.at_css('.language-notice')
   language = url.start_with?('/zh/') ? 'zh' : 'en'
+  archive_url = url + 'archive/'
+  archive = html.fetch(resolve.call(archive_url, File.join(root, 'index.html')).first)
   check.call(doc.css('.student-group').map { |group| group['id'] } == %w[undergraduates masters], "Student groups: #{url}")
   check.call(doc.css('.student-group').all? { |group| group.at_css('h2') && group.at_css('p').text.size > 30 }, "Student introductions: #{url}")
   check.call(doc.css('.student-category > h3').map { |heading| heading['id'] } == student_categories.map { |category| category['id'] + '-heading' }, "Student achievement categories: #{url}")
-  check.call(doc.css('.student-achievements > li').map { |item| item['id'] } == student_records.map { |record| record['id'] }, "Student achievement coverage and order: #{url}")
+  check.call(doc.css('.student-achievements > li').map { |item| item['id'] } == recent_student_records.map { |record| record['id'] }, "Recent student achievement coverage and order: #{url}")
+  check.call(archive.css('.student-achievements > li').map { |item| item['id'] } == archived_student_records.map { |record| record['id'] }, "Archived student achievement coverage and order: #{archive_url}")
+  check.call(archive.css('.student-admissions').empty?, "Admissions remain on Students main page: #{archive_url}")
+  more_categories = student_categories.select { |category| category['preview_limit'] && category['achievements'].size > category['preview_limit'] }
+  check.call(doc.css('.archive-nav a').map { |a| a['href'] } == more_categories.map { |category| "#{archive_url}##{category['id']}-heading" }, "Student More destinations: #{url}")
+  check.call(archive.css('.archive-nav--back a').map { |a| a['href'] } == more_categories.map { |category| "#{url}##{category['id']}-heading" }, "Student archive return anchors: #{archive_url}")
   student_records.each do |record|
-    item = doc.at_css("##{record['id']}")
+    item = doc.at_css("##{record['id']}") || archive.at_css("##{record['id']}")
     check.call(item && !item.at_css('.achievement-title').text.strip.empty? && item.at_css('.achievement-students').text.include?(record['students'][language]) && item.css('p').last.text.strip.size > 5, "Complete student record: #{url}##{record['id']}")
     expected_year = record.dig('year_label', language) || record['year'].to_s
     check.call(item&.at_css('.achievement-year')&.text == expected_year, "Student date precision: #{url}##{record['id']}")
@@ -269,7 +304,6 @@ Dir.glob(File.join(root, '*.{xml,json,txt}')).each do |path|
   content = File.read(path)
   check.call(!private_content.call(content) && !content.match?(retired), "Forbidden content in #{File.basename(path)}")
 end
-profile = YAML.safe_load(File.read(File.join(source,'_data/profile.yml')), permitted_classes: [Date, Time], aliases: true)
 check.call((profile.keys & %w[students prospective_students awards contact]).empty?, 'Private legacy profile fields remain')
 report = { status: errors.empty? ? 'pass' : 'fail', chinese_enabled: chinese_enabled, chinese_blog_enabled: chinese_blog_enabled, checks: checks, content_pages: paths.size, redirects: redirects.size, language_pairs: paths.size / 2, routes: paths, redirect_files: redirects, errors: errors }
 File.write(report_path, JSON.pretty_generate(report) + "\n") if report_path

@@ -8,6 +8,16 @@ institution:
   en: Chongqing University of Posts and Telecommunications
   zh: 重庆邮电大学
 portrait: /images/bio-photo-new.jpg
+portrait_display: /images/bio-photo-680.jpg
+portrait_share: /images/bio-photo-1024.jpg
+portrait_icon: /images/bio-photo-icon-64.png
+portrait_variants:
+- url: /images/bio-photo-320.webp
+  width: 320
+- url: /images/bio-photo-680.webp
+  width: 680
+- url: /images/bio-photo-1024.webp
+  width: 1024
 intro:
   en: My research connects artificial intelligence, intelligent software engineering, and intelligent robotics to address fundamental and real-world problems.
   zh: 研究人工智能、智能软件工程与智能机器人的交叉融合，探索相关理论、方法及其实际应用。

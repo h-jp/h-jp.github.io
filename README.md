@@ -32,6 +32,8 @@ git diff --check
 
 入口与数据结构见 [维护说明](docs/site-maintenance.md)。博客原有 URL 和保留的历史别名继续可用；CV、Contact 及 `/resume` 已停止生成。个人信息组件只保留姓名、Email、研究组和 Weibo。
 
-Students 紧接 Teaching，分为本科生、硕士生及科研机会与招生三个部分。培养介绍、招生要求和 Email 联系入口从 Teaching 迁至 Students；学生成果在 `_data/students.yml` 按学位和成果类别维护，已整理 25 条竞赛荣誉、科研训练计划、创新创业训练计划、优秀本科毕业论文、论文发表及硕士学位论文获奖记录。Teaching 专注课程教学。
+Students 紧接 Teaching，分为本科生、硕士生及科研机会与招生三个部分。学生成果在 `_data/students.yml` 按学位和成果类别维护，共 25 条记录。创新创业训练计划和优秀本科毕业论文各显示最近 3 项，其余通过各栏 More 进入 `/students/archive/`；主页面显示 13 条，归档显示 12 条，培养和招生说明完整展示。Teaching 专注课程教学。
+
+首页照片使用 WebP 响应式资源和 JPEG 后备图，标签图标使用同一照片生成的 64 像素小图。原图 `images/bio-photo-new.jpg` 作为母版保留；更换照片后运行 `bash scripts/optimize-portrait.sh` 重新生成显示资源，详见维护说明。
 
 博客在 `_data/blog.yml` 配置置顶、最新标记和展示数量，默认五篇；其余文章从 More 进入归档。Teaching 显示近期三门课，以往四门进入归档，各课程均有独立主页入口。News、Projects、Publications、Teaching、Blog 的底部采用左对齐说明与右侧 More，说明中明确引导点击右侧入口。

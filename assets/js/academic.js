@@ -9,7 +9,7 @@
   window.addEventListener('hashchange', redirectLegacySupervision);
   if (redirectLegacySupervision()) return;
   // Shared anchors identify the same section or course in both languages.
-  const sharedAnchors = new Set(['news-title', 'papers-title', 'research-title', 'projects-title', 'teaching-title', 'blog-title', 'about-title', 'artificial-intelligence', 'intelligent-software-engineering', 'intelligent-robotics', 'multi-agent-collaboration', 'code-generation', 'intro-computer-science', 'data-structures', 'computer-networks', 'cross-media', 'linux-programming', 'requirements-engineering', 'large-models-principles-practice', 'student-supervision', 'undergraduates', 'masters', 'admissions', 'courses-heading']);
+  const sharedAnchors = new Set(['news-title', 'papers-title', 'research-title', 'projects-title', 'teaching-title', 'blog-title', 'about-title', 'artificial-intelligence', 'intelligent-software-engineering', 'intelligent-robotics', 'multi-agent-collaboration', 'code-generation', 'intro-computer-science', 'data-structures', 'computer-networks', 'cross-media', 'linux-programming', 'requirements-engineering', 'large-models-principles-practice', 'student-supervision', 'undergraduates', 'masters', 'admissions', 'undergraduate-innovation-projects-heading', 'undergraduate-capstone-awards-heading', 'courses-heading']);
   document.querySelectorAll('[data-translation][data-preserve-anchor]').forEach(link => {
     link.addEventListener('click', () => {
       const target = new URL(link.href);

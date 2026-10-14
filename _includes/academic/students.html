@@ -9,30 +9,12 @@
   {% if category.achievements.size > 0 %}
   <section class="student-category" aria-labelledby="{{ category.id }}-heading">
   <h3 id="{{ category.id }}-heading">{{ category.title[lang] }}</h3>
-  <ul class="student-achievements">
-    {% for achievement in category.achievements %}
-    {% assign student_paper = nil %}
-    {% assign achievement_title = achievement.title[lang] %}
-    {% assign achievement_url = achievement.url %}
-    {% if achievement.publication_id %}
-      {% assign student_paper = site.publications | where: 'pub_id', achievement.publication_id | first %}
-      {% assign achievement_title = student_paper.title %}
-      {% assign achievement_url = student_paper.url %}
-      {% if lang == 'zh' %}
-        {% assign achievement_title = student_paper.title_zh | default: student_paper.title %}
-        {% assign achievement_url = student_paper.translation %}
-      {% endif %}
-    {% endif %}
-    <li id="{{ achievement.id }}">
-      <span class="achievement-year">{{ achievement.year_label[lang] | default: achievement.year }}</span>
-      <div>
-        <h4 class="achievement-title">{% if achievement_url %}<a href="{{ achievement_url | relative_url }}">{{ achievement_title }}</a>{% else %}{{ achievement_title }}{% endif %}</h4>
-        <p class="achievement-students">{% if student_paper %}{{ ui.student_coauthor[lang] }}{% if lang == 'zh' %}：{% else %}: {% endif %}{% endif %}{{ achievement.students[lang] }}</p>
-        {% if student_paper %}{% assign student_venue = student_paper.venue_short | default: student_paper.venue %}{% assign student_paper_year = student_paper.date | date: '%Y' %}<p>{{ student_venue }}{% unless student_venue contains student_paper_year %} {{ student_paper_year }}{% endunless %}{% if student_paper.rating %} · {{ student_paper.rating }}{% endif %}</p>{% else %}<p>{{ achievement.description[lang] }}</p>{% endif %}
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+  {% assign preview_limit = category.preview_limit | default: category.achievements.size %}
+  {% assign visible_achievements = category.achievements | slice: 0, preview_limit %}
+  {% include academic/student-achievements.html achievements=visible_achievements %}
+  {% if category.achievements.size > preview_limit %}
+  <div class="archive-nav"><p>{{ category.archive_description[lang] }}</p><a class="text-link more-link" href="{{ prefix | append: '/students/archive/#' | append: category.id | append: '-heading' | relative_url }}" aria-label="{{ ui.more[lang] }}: {{ category.title[lang] }}">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a></div>
+  {% endif %}
   </section>
   {% endif %}
   {% endfor %}
