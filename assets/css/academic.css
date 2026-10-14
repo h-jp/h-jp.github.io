@@ -171,7 +171,7 @@ html:lang(zh) .brand { letter-spacing: .045em; }
 .course p { font-size: 16px; line-height: 1.85; margin: 0; }
 .student-group:first-child { margin-top: 0; }
 .student-group + .student-group, .student-admissions { border-top: 1px solid var(--line); padding-top: 30px; }
-.student-group:has(> .student-category:last-child > .archive-nav) + .student-group { border-top: 0; padding-top: 0; }
+#student-supervision > .student-group + .student-group, #student-supervision + .student-admissions { border-top: 0; padding-top: 0; }
 .student-group p, .student-admissions p { font-size: 16px; line-height: 1.85; }
 .student-category .archive-nav { align-items: flex-end; border-top: 0; border-bottom: 1px solid var(--line); margin-top: 0; padding: 0 0 12px; }
 .student-category .archive-nav > p { margin: 0; font-size: 14px; line-height: 1.8; text-align: left; }
@@ -181,6 +181,8 @@ html:lang(zh) .brand { letter-spacing: .045em; }
 .student-achievements { --student-year-width: 85px; --student-column-gap: 24px; --student-rule-offset: calc(var(--student-year-width) + var(--student-column-gap)); list-style: none; padding: 0; margin: 0; }
 .student-achievements li { position: relative; display: grid; grid-template-columns: var(--student-year-width) minmax(0, 1fr); gap: var(--student-column-gap); padding: 22px 0; }
 .student-achievements li::before { content: ""; position: absolute; top: 0; left: var(--student-rule-offset); right: 0; border-top: 1px solid var(--line); }
+.student-achievements li:first-child::before { left: 0; }
+.student-category > .student-achievements:last-child { border-bottom: 1px solid var(--line); }
 .achievement-year { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; padding-top: 4px; }
 .student-achievements .achievement-title { color: var(--ink); font-size: 18px; font-weight: 600; line-height: 1.5; margin: 0 0 8px; overflow-wrap: break-word; }
 .achievement-title a { display: block; color: var(--ink); text-decoration: none; }
