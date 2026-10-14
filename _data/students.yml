@@ -24,9 +24,6 @@ groups:
       description:
         en: Second Prize in the National Finals, Python Programming (University Group B). Advisor recognized as an Outstanding Instructor.
         zh: 全国总决赛Python程序设计大学B组二等奖。指导教师获评优秀指导教师。
-      year_label:
-        en: '2024.06'
-        zh: '2024.06'
     - id: lanqiao-2024-jiewei-zhang
       year: 2024
       title:
@@ -38,9 +35,6 @@ groups:
       description:
         en: Third Prize in the National Finals, Python Programming (University Group B). Advisor recognized as an Outstanding Instructor.
         zh: 全国总决赛Python程序设计大学B组三等奖。指导教师获评优秀指导教师。
-      year_label:
-        en: '2024.06'
-        zh: '2024.06'
     - id: shuixin-zhao-competitions-honors
       year: 2024
       title:
