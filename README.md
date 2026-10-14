@@ -1,10 +1,10 @@
 # Jiangping Huang · 黄江平
 
-当前版本：**v1.1（正式定稿版，2026-10-14）**。站点：[h-jp.github.io](https://h-jp.github.io/)。由 `main` 分支发布，`v1.1` 标签保留本次定稿，`v1.0` 标签保留上一正式版本。
+最近定稿版本：**v1.1（2026-10-14）**。站点：[h-jp.github.io](https://h-jp.github.io/)。由 `main` 分支发布后续内容更新，`v1.1` 标签保留该定稿快照，`v1.0` 标签保留上一正式版本。
 
 基于 Jekyll 的中英文个人学术主页。默认显示英文，根地址 `/` 为英文首页；语言入口只显示目标语言：英文页显示 `ZH`，中文页显示 `EN`。完整中文源码保留。当前以 `chinese_blog_enabled: true` 单独开放中文博客及其列表、归档；其余中文页面显示“正在建设中，敬请期待。”。将 `_config.yml` 的 `chinese_enabled` 改为 `true` 并重新构建即可开放全部中文页面。
 
-导航：Home · News · Research · Projects · Publications · Teaching · Blog · About。
+导航：Home · News · Research · Projects · Publications · Teaching · Students · Blog · About。
 
 2026-10-13 已确认整体架构与布局；2026-10-14 完成中英文文案、联系说明及正文排版修订，定稿为 v1.1，作为后续维护基线。后续内容更新保持中英文同步，继续遵循既定公开范围与项目脱敏要求。
 
@@ -30,6 +30,8 @@ git diff --check
 
 ## 内容维护
 
-入口与数据结构见 [维护说明](docs/site-maintenance.md)。博客原有 URL 和保留的历史别名继续可用；Students、CV、Contact 及 `/resume` 已停止生成。个人信息组件只保留姓名、Email、研究组和 Weibo。
+入口与数据结构见 [维护说明](docs/site-maintenance.md)。博客原有 URL 和保留的历史别名继续可用；CV、Contact 及 `/resume` 已停止生成。个人信息组件只保留姓名、Email、研究组和 Weibo。
+
+Students 紧接 Teaching，分为本科生、硕士生及科研机会与招生三个部分。培养介绍、招生要求和 Email 联系入口从 Teaching 迁至 Students；学生成果在 `_data/students.yml` 按学位和成果类别维护，已整理 23 条竞赛荣誉、科研项目、毕业设计、论文及硕士学位论文获奖记录。Teaching 专注课程教学。
 
 博客在 `_data/blog.yml` 配置置顶、最新标记和展示数量，默认五篇；其余文章从 More 进入归档。Teaching 显示近期三门课，以往四门进入归档，各课程均有独立主页入口。News、Projects、Publications、Teaching、Blog 的底部采用左对齐说明与右侧 More，说明中明确引导点击右侧入口。

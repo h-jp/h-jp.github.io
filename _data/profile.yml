@@ -57,13 +57,6 @@ positions:
   role:
     en: Postdoctoral Research Fellow
     zh: 博士后
-supervision:
-  summary:
-    en: I supervise undergraduate research, capstone projects, and master's theses. Several undergraduate students I have mentored have been admitted to graduate programs at universities in China's Double First-Class Initiative through the recommendation-based pathway. I also help my master's students apply for doctoral programs at these universities, including former Project 985 institutions, and provide recommendations.
-    zh: 指导本科生科研、毕业设计与硕士学位论文。所指导的本科生中，多人通过推免进入“双一流”高校深造；同时，支持并推荐所指导的硕士生赴原“985工程”等“双一流”高校攻读博士学位。
-  invitation:
-    en: I welcome motivated undergraduate and graduate students with strong foundations who are interested in sustained research collaboration. I also welcome international students with prior research experience, particularly those who have published full-length research papers at conferences or in journals ranked A or B by the <a href="https://www.ccf.org.cn/Academic_Evaluation/By_category/" title="CCF recommended conferences and journals">China Computer Federation (CCF)</a>.
-    zh: 欢迎基础扎实、主动学习且愿意长期投入科研的优秀本科生与研究生加入，围绕共同的研究问题开展持续合作。同时欢迎具有研究基础的国际学生；在 <a href="https://www.ccf.org.cn/Academic_Evaluation/By_category/" title="中国计算机学会推荐国际学术会议和期刊目录">CCF A/B 类会议或期刊</a>发表过正式会议长文或期刊研究论文者优先考虑。
 service:
   en: Invited reviewer for AAAI, EMNLP, NLPCC, PRICAI, ACM TKDD, ACM TALLIP, and Journal of Software.
   zh: 受邀担任AAAI、EMNLP、NLPCC、PRICAI等国际会议以及ACM TKDD、ACM TALLIP、软件学报等期刊审稿人。

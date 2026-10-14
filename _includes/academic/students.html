@@ -1,0 +1,47 @@
+{% include academic/context.html %}
+{% assign students = site.data.students %}
+<div id="student-supervision">
+{% for group in students.groups %}
+<section class="student-group quiet-section" id="{{ group.id }}" aria-labelledby="{{ group.id }}-heading">
+  <h2 id="{{ group.id }}-heading">{{ group.title[lang] }}</h2>
+  <p>{{ group.introduction[lang] }}</p>
+  {% for category in group.categories %}
+  {% if category.achievements.size > 0 %}
+  <section class="student-category" aria-labelledby="{{ category.id }}-heading">
+  <h3 id="{{ category.id }}-heading">{{ category.title[lang] }}</h3>
+  <ul class="student-achievements">
+    {% for achievement in category.achievements %}
+    {% assign student_paper = nil %}
+    {% assign achievement_title = achievement.title[lang] %}
+    {% assign achievement_url = achievement.url %}
+    {% if achievement.publication_id %}
+      {% assign student_paper = site.publications | where: 'pub_id', achievement.publication_id | first %}
+      {% assign achievement_title = student_paper.title %}
+      {% assign achievement_url = student_paper.url %}
+      {% if lang == 'zh' %}
+        {% assign achievement_title = student_paper.title_zh | default: student_paper.title %}
+        {% assign achievement_url = student_paper.translation %}
+      {% endif %}
+    {% endif %}
+    <li id="{{ achievement.id }}">
+      <span class="achievement-year">{{ achievement.year_label[lang] | default: achievement.year }}</span>
+      <div>
+        <h4 class="achievement-title">{% if achievement_url %}<a href="{{ achievement_url | relative_url }}">{{ achievement_title }}</a>{% else %}{{ achievement_title }}{% endif %}</h4>
+        <p class="achievement-students">{% if student_paper %}{{ ui.student_coauthor[lang] }}{% if lang == 'zh' %}：{% else %}: {% endif %}{% endif %}{{ achievement.students[lang] }}</p>
+        {% if student_paper %}<p>{{ student_paper.venue }}{% if student_paper.rating %} · {{ student_paper.rating }}{% endif %}</p>{% else %}<p>{{ achievement.description[lang] }}</p>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  </section>
+  {% endif %}
+  {% endfor %}
+</section>
+{% endfor %}
+</div>
+<section class="student-admissions quiet-section" id="admissions" aria-labelledby="admissions-heading">
+  <h2 id="admissions-heading">{{ students.admissions.title[lang] }}</h2>
+  <p>{{ profile.intro[lang] }}</p>
+  <p>{{ students.admissions.invitation[lang] }}</p>
+  <p>{{ ui.students_contact[lang] }}{% if lang == 'zh' %}：{% else %}: {% endif %}<a href="mailto:{{ profile.email }}">{{ ui.email[lang] }}</a>{% if lang == 'zh' %}。{% else %}.{% endif %}</p>
+</section>

@@ -19,6 +19,9 @@ publications:
 teaching:
   en: Teaching
   zh: 教学
+students:
+  en: Students
+  zh: 学生
 blog:
   en: Blog
   zh: 博客
@@ -91,12 +94,12 @@ courses_heading:
 upcoming_course:
   en: Planned course
   zh: 计划开设
-supervision_heading:
-  en: Student Supervision
-  zh: 学生指导
-supervision_contact:
+students_contact:
   en: Please get in touch
   zh: 欢迎联系交流
+student_coauthor:
+  en: Co-author
+  zh: 共同作者
 biography:
   en: Biography
   zh: 个人简介

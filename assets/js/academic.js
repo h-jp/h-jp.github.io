@@ -1,6 +1,15 @@
 (() => {
+  // Keep links to the former Teaching supervision section useful after the move.
+  const redirectLegacySupervision = () => {
+    const legacyTeaching = location.pathname.match(/^\/(zh\/)?teaching\/?$/);
+    if (!legacyTeaching || location.hash !== '#student-supervision') return false;
+    location.replace(`${legacyTeaching[1] ? '/zh' : ''}/students/#student-supervision`);
+    return true;
+  };
+  window.addEventListener('hashchange', redirectLegacySupervision);
+  if (redirectLegacySupervision()) return;
   // Shared anchors identify the same section or course in both languages.
-  const sharedAnchors = new Set(['news-title', 'papers-title', 'research-title', 'projects-title', 'teaching-title', 'blog-title', 'about-title', 'artificial-intelligence', 'intelligent-software-engineering', 'intelligent-robotics', 'multi-agent-collaboration', 'code-generation', 'intro-computer-science', 'data-structures', 'computer-networks', 'cross-media', 'linux-programming', 'requirements-engineering', 'large-models-principles-practice', 'student-supervision', 'courses-heading']);
+  const sharedAnchors = new Set(['news-title', 'papers-title', 'research-title', 'projects-title', 'teaching-title', 'blog-title', 'about-title', 'artificial-intelligence', 'intelligent-software-engineering', 'intelligent-robotics', 'multi-agent-collaboration', 'code-generation', 'intro-computer-science', 'data-structures', 'computer-networks', 'cross-media', 'linux-programming', 'requirements-engineering', 'large-models-principles-practice', 'student-supervision', 'undergraduates', 'masters', 'admissions', 'courses-heading']);
   document.querySelectorAll('[data-translation][data-preserve-anchor]').forEach(link => {
     link.addEventListener('click', () => {
       const target = new URL(link.href);
@@ -24,7 +33,7 @@
 (() => {
   // Progressive enhancement: rebalance short endings without editing the content.
   if (!window.Intl?.Segmenter || !CSS.supports('text-wrap', 'balance')) return;
-  const candidates = [...document.querySelectorAll('main p, main h1, main h2, main h3, main li, .verse-line')].filter(element =>
+  const candidates = [...document.querySelectorAll('main p, main h1, main h2, main h3, main .achievement-title, main li, .verse-line')].filter(element =>
     !element.querySelector('p, h1, h2, h3, ul, ol, br, pre, code, .verse-line') &&
     !element.closest('.post-tags, .post-navigation')
   );
@@ -122,7 +131,7 @@
     probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;inline-size:max-content;max-inline-size:none;pointer-events:none';
     // Very narrow headings may need a smaller font to fit their last two words.
     // Keep the size above body text; never change the title or break a word to fit it.
-    if (/^H[1-3]$/.test(element.tagName) && words.length >= 2) {
+    if ((/^H[1-3]$/.test(element.tagName) || element.matches('.achievement-title')) && words.length >= 2) {
       probe.append(endingRange(root, words[words.length - 2]).cloneContents());
       root.append(probe);
       const minimumWidth = probe.getBoundingClientRect().width;

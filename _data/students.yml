@@ -1,0 +1,299 @@
+---
+groups:
+- id: undergraduates
+  title:
+    en: Undergraduate Students
+    zh: 本科生
+  introduction:
+    en: I supervise undergraduate research and capstone projects. Several students I have mentored have been admitted to graduate programs at universities in China's Double First-Class Initiative through the recommendation-based pathway.
+    zh: 指导本科生科研与毕业设计。所指导的本科生中，多人通过推免进入“双一流”高校深造。
+  categories:
+  - id: undergraduate-competitions-honors
+    title:
+      en: Competitions and Honors
+      zh: 竞赛与荣誉
+    achievements:
+    - id: shuixin-zhao-competitions-honors
+      year: 2024
+      title:
+        en: National Scholarship, Competition Awards, and Graduate Honors
+        zh: 国家奖学金、竞赛获奖与优秀毕业生荣誉
+      students:
+        en: Shuixin Zhao
+        zh: 赵水心
+      description:
+        en: Recipient of the National Scholarship; a Chongqing silver award in the 13th “Challenge Cup” entrepreneurship competition; a Chongqing second prize in the China Undergraduate Mathematical Contest in Modeling; and the Outstanding Graduate of Chongqing honor. Admitted to a master’s program at Beijing University of Posts and Telecommunications through the recommendation-based pathway.
+        zh: 获国家奖学金、第十三届“挑战杯”中国大学生创业计划竞赛重庆市银奖、全国大学生数学建模竞赛重庆市二等奖及重庆市优秀毕业生荣誉。通过推免进入北京邮电大学攻读硕士学位。
+      year_label:
+        en: Class of 2024
+        zh: 2024届
+  - id: undergraduate-research-projects
+    title:
+      en: Research and Innovation Projects
+      zh: 科研训练与创新项目
+    achievements:
+    - id: research-training-2026-code-generation
+      year: 2026
+      title:
+        en: Fine-Grained Root Cause Classification and Repair of Code Generation Failures
+        zh: 代码生成失败的细粒度根因分类与修复方法研究
+      students:
+        en: Weidong Yuan, Yihang Wang, Na Tan, Zhiwen Zheng, and Yufei Zhou
+        zh: 袁伟栋、王翊航、谭娜、郑智文、周宇飞
+      description:
+        en: 'Approved undergraduate research training project. Project period: July 2026 to June 2028.'
+        zh: 本科生科研训练项目，已立项。计划周期为2026年7月至2028年6月。
+      year_label:
+        en: 2026–2028
+        zh: 2026–2028
+    - id: innovation-2023-weibo-sentiment
+      year: 2023
+      title:
+        en: Sentiment Analysis of Chinese Weibo Comments
+        zh: 中文微博评论情感分析系统
+      students:
+        en: 'Project lead: Weiliang Shao'
+        zh: 主持人：邵伟亮
+      description:
+        en: Chongqing municipal-level innovation training project.
+        zh: 市级大学生创新训练项目。
+    - id: innovation-2022-joint-program-learning
+      year: 2022
+      title:
+        en: Intelligent Learning Support for Courses in Joint International Programs
+        zh: 面向中外合作办学课程的智能辅助学习系统研究与实现
+      students:
+        en: 'Project lead: Shuixin Zhao'
+        zh: 主持人：赵水心
+      description:
+        en: National-level innovation training project.
+        zh: 国家级大学生创新训练项目。
+    - id: innovation-2022-openeuler-time-management
+      year: 2022
+      title:
+        en: Time Management Methods Based on openEuler
+        zh: 基于openEuler的时间管理方法研究
+      students:
+        en: 'Project lead: Chengyu Liu'
+        zh: 主持人：刘诚宇
+      description:
+        en: Chongqing municipal-level innovation training project.
+        zh: 市级大学生创新训练项目。
+    - id: innovation-2021-social-media-events
+      year: 2021
+      title:
+        en: 'Smart Eye: Intelligent Detection of Trending Events on Domestic and International Social Media'
+        zh: "“智慧眼”国内外社交媒体热点事件智能检测系统2021"
+      students:
+        en: 'Project lead: Yuchen Yan'
+        zh: 主持人：严雨晨
+      description:
+        en: Chongqing municipal-level innovation training project.
+        zh: 市级大学生创新训练项目。
+    - id: innovation-2021-tourism-knowledge-graph
+      year: 2021
+      title:
+        en: Tourism Recommendations Using Knowledge Graphs
+        zh: 基于知识图谱的旅游推荐系统
+      students:
+        en: 'Project lead: Xinyuan Tang'
+        zh: 主持人：唐心远
+      description:
+        en: Chongqing municipal-level innovation training project.
+        zh: 市级大学生创新训练项目。
+    - id: innovation-2021-openeuler-personal-app
+      year: 2021
+      title:
+        en: Design and Development of a Personal Time Management App Based on openEuler
+        zh: 基于openEuler的个人时间管理App设计与开发2021
+      students:
+        en: 'Project lead: Chengyu Liu'
+        zh: 主持人：刘诚宇
+      description:
+        en: University-level innovation training project.
+        zh: 校级大学生创新训练项目。
+    - id: innovation-2020-student-emotion-monitoring
+      year: 2020
+      title:
+        en: Monitoring University Students’ Emotions in Real Time Using LSTM Networks and Web Crawling
+        zh: 基于LSTM神经网络与爬虫技术的大学生情绪实时监测系统2020
+      students:
+        en: 'Project lead: Zihong Ye'
+        zh: 主持人：叶子弘
+      description:
+        en: Chongqing municipal-level innovation training project.
+        zh: 市级大学生创新训练项目。
+    - id: innovation-2020-smart-classroom
+      year: 2020
+      title:
+        en: Intelligent Classroom Monitoring System
+        zh: 智慧课堂智能监测系统2020
+      students:
+        en: 'Project lead: Renjie Tang'
+        zh: 主持人：唐仁杰
+      description:
+        en: University-level innovation training project.
+        zh: 校级大学生创新训练项目。
+  - id: undergraduate-capstone-awards
+    title:
+      en: Outstanding Capstone Projects
+      zh: 优秀毕业设计（论文）
+    achievements:
+    - id: capstone-2025-yongli-bao
+      year: 2025
+      title:
+        en: Design and Implementation of a System for Intelligent Software Requirements Extraction with Knowledge Integration
+        zh: 融合知识的智能软件需求提取系统设计与实现
+      students:
+        en: Yongli Bao
+        zh: 鲍勇利
+      description:
+        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        zh: 校级优秀本科毕业设计（论文）三等奖。
+    - id: capstone-2024-shuixin-zhao
+      year: 2024
+      title:
+        en: Design and Implementation of an Intelligent Learning Support System for Joint International Programs
+        zh: 面向中外合作办学的智能辅助学习系统设计与实现
+      students:
+        en: Shuixin Zhao
+        zh: 赵水心
+      description:
+        en: Second Prize, University Outstanding Undergraduate Capstone Awards.
+        zh: 校级优秀本科毕业设计（论文）二等奖。
+    - id: capstone-2022-lu-wen
+      year: 2022
+      title:
+        en: Design and Implementation of an Abstractive Text Summarization System Based on BERT
+        zh: 基于BERT预训练模型的生成式文本摘要系统的设计与实现
+      students:
+        en: Lu Wen
+        zh: 文路
+      description:
+        en: Second Prize, University Outstanding Undergraduate Capstone Awards.
+        zh: 校级优秀本科毕业设计（论文）二等奖。
+    - id: capstone-2022-jiake-yin
+      year: 2022
+      title:
+        en: Design and Implementation of Smart Internet of Things Applications Using Raspberry Pi
+        zh: 基于树莓派的智能物联网案例设计与实现
+      students:
+        en: Jiake Yin
+        zh: 尹嘉珂
+      description:
+        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        zh: 校级优秀本科毕业设计（论文）三等奖。
+    - id: capstone-2022-yuxin-pu
+      year: 2022
+      title:
+        en: Design and Implementation of a Story Generation System Using Pretrained Language Models
+        zh: 基于预训练语言模型的故事生成系统设计与实现
+      students:
+        en: Yuxin Pu
+        zh: 蒲雨欣
+      description:
+        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        zh: 校级优秀本科毕业设计（论文）三等奖。
+    - id: capstone-2021-zixuan-wang
+      year: 2021
+      title:
+        en: Emotion Recognition in Conversations Using Graph Convolutional Networks
+        zh: 基于图卷积神经网络的对话情绪识别研究
+      students:
+        en: Zixuan Wang
+        zh: 王梓璇
+      description:
+        en: Second Prize, University Outstanding Undergraduate Capstone Awards.
+        zh: 校级优秀本科毕业设计（论文）二等奖。
+    - id: capstone-2020-shuwei-yuan
+      year: 2020
+      title:
+        en: Chinese Humor Recognition and Its Applications Using Attention Mechanisms
+        zh: 基于注意力机制的中文幽默识别与应用研究
+      students:
+        en: Shuwei Yuan
+        zh: 袁书伟
+      description:
+        en: Second Prize, University Outstanding Undergraduate Capstone Awards.
+        zh: 校级优秀本科毕业设计（论文）二等奖。
+    - id: capstone-2020-ziyu-huang
+      year: 2020
+      title:
+        en: Real-Time Facial Expression Detection and Its Applications Using PyTorch
+        zh: 基于PyTorch的实时人脸表情检测与应用研究
+      students:
+        en: Ziyu Huang
+        zh: 黄子彧
+      description:
+        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        zh: 校级优秀本科毕业设计（论文）三等奖。
+    - id: capstone-2020-taiguo-qu
+      year: 2020
+      title:
+        en: Semantic Similarity Recognition and Its Applications Using Deep Siamese Neural Networks
+        zh: 基于孪生深度神经网络的语义相似性识别与应用研究
+      students:
+        en: Taiguo Qu
+        zh: 屈太国
+      description:
+        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        zh: 校级优秀本科毕业设计（论文）三等奖。
+    - id: capstone-2020-jiajun-yang
+      year: 2020
+      title:
+        en: Facial Expression Recognition and Its Applications Using Deep Neural Networks
+        zh: 基于深度神经网络的面部表情识别与应用研究
+      students:
+        en: Jiajun Yang
+        zh: 杨家俊
+      description:
+        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        zh: 校级优秀本科毕业设计（论文）三等奖。
+- id: masters
+  title:
+    en: Master's Students
+    zh: 硕士生
+  introduction:
+    en: I supervise master's research and theses. I also support and recommend my students for doctoral programs at universities in China's Double First-Class Initiative, including former Project 985 institutions.
+    zh: 指导硕士生科研与学位论文，支持并推荐所指导的硕士生赴原“985工程”等“双一流”高校攻读博士学位。
+  categories:
+  - id: masters-publications
+    title:
+      en: Publications
+      zh: 论文发表
+    achievements:
+    - id: cross-model-collaboration-tosem-2026
+      year: 2026
+      publication_id: cross-model-collaboration-tosem-2026
+      students:
+        en: Wenguang Ye
+        zh: 叶文广
+    - id: tracecoder-icse-2026
+      year: 2026
+      publication_id: tracecoder-icse-2026
+      students:
+        en: Wenguang Ye
+        zh: 叶文广
+  - id: masters-awards
+    title:
+      en: Awards
+      zh: 获奖
+    achievements:
+    - id: wenguang-ye-outstanding-masters-thesis
+      year: 2026
+      title:
+        en: Methods for Code Generation and Self-Repair through Multi-Agent Collaboration
+        zh: 多智能体协同驱动的代码生成与自修复方法研究
+      students:
+        en: Wenguang Ye
+        zh: 叶文广
+      description:
+        en: University Outstanding Master’s Thesis Award; professional master’s degree in Software Engineering.
+        zh: 校级优秀硕士学位论文，软件工程硕士专业学位。
+admissions:
+  title:
+    en: Research Opportunities and Admissions
+    zh: 科研机会与招生
+  invitation:
+    en: I welcome motivated undergraduate and graduate students with strong foundations who are interested in sustained research collaboration. I also welcome international students with prior research experience, particularly those who have published full-length research papers at conferences or in journals ranked A or B by the <a href="https://www.ccf.org.cn/Academic_Evaluation/By_category/" title="CCF recommended conferences and journals">China Computer Federation (CCF)</a>.
+    zh: 欢迎基础扎实、主动学习且愿意长期投入科研的优秀本科生与研究生加入，围绕共同的研究问题开展持续合作。同时欢迎具有研究基础的国际学生；在 <a href="https://www.ccf.org.cn/Academic_Evaluation/By_category/" title="中国计算机学会推荐国际学术会议和期刊目录">CCF A/B 类会议或期刊</a>发表过正式会议长文或期刊研究论文者优先考虑。

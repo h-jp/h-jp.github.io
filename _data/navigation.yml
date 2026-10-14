@@ -41,6 +41,13 @@ main:
   url:
     en: /teaching/
     zh: /zh/teaching/
+- id: students
+  title:
+    en: Students
+    zh: 学生
+  url:
+    en: /students/
+    zh: /zh/students/
 - id: blog
   title:
     en: Blog

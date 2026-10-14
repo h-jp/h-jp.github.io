@@ -58,17 +58,27 @@ private_name_digests = %w[
   cae5abac7c547545507ea9c3899842226980a2f9a201c2f5d2efbb37ba312449
   3e13ae941b3e0183572b44e69fa41999a899541f8d7276dd811518e33ee85fff
 ].freeze
-private_content = lambda do |text|
+students = load_yaml.call(File.join(source, '_data/students.yml'))
+student_categories = students['groups'].flat_map { |group| group['categories'] }
+student_records = student_categories.flat_map { |category| category['achievements'] }
+# Source-backed student names are public only on the dedicated Students pages.
+public_student_digests = student_records.flat_map do |record|
+  record['students']['zh'].sub(/\A主持人：/, '').split('、')
+end.uniq.map { |name| Digest::SHA256.hexdigest(name) }
+private_content = lambda do |text, student_page = false|
+  restricted_digests = student_page ? private_name_digests - public_student_digests : private_name_digests
   text.match?(forbidden) || text.scan(/\p{Han}{3,}/).any? do |run|
-    run.each_char.each_cons(3).any? { |chars| private_name_digests.include?(Digest::SHA256.hexdigest(chars.join)) }
+    run.each_char.each_cons(3).any? { |chars| restricted_digests.include?(Digest::SHA256.hexdigest(chars.join)) }
   end
 end
-retired = %r{/(?:zh/)?(?:students|cv|contact|resume)(?:/|\.html|["'<\s]|$)}
+retired = %r{/(?:zh/)?(?:cv|contact|resume)(?:/|\.html|["'<\s]|$)}
+navigation = load_yaml.call(File.join(source, '_data/navigation.yml'))['main']
+check.call(navigation.map { |item| item['id'] } == %w[home news research projects publications teaching students blog about], 'Primary navigation order')
 
 html.each do |path, doc|
   rel = Pathname.new(path).relative_path_from(Pathname.new(root)).to_s
   raw = File.read(path)
-  check.call(!private_content.call(raw), "Private or outdated content: #{rel}")
+  check.call(!private_content.call(raw, %w[students/index.html zh/students/index.html].include?(rel)), "Private or outdated content: #{rel}")
   check.call(!raw.match?(retired), "Retired route reference: #{rel}")
   if doc.at_css('meta[http-equiv="refresh"]')
     redirects << rel
@@ -90,7 +100,9 @@ html.each do |path, doc|
     check.call(doc.at_css('meta[name="robots"]')&.[]('content') == 'noindex,follow', "Placeholder indexing: #{rel}")
     check.call(doc.css('.desktop-nav, .mobile-menu').empty?, "Placeholder navigation: #{rel}")
   else
-    check.call(doc.css('.desktop-nav a').size == 8 && doc.css('.mobile-menu nav a').size == 8, "Navigation count: #{rel}")
+    language = doc.at_css('html')['lang'] == 'zh-CN' ? 'zh' : 'en'
+    expected_navigation = navigation.map { |item| item['url'][language] }
+    check.call(doc.css('.desktop-nav a').map { |link| link['href'] } == expected_navigation && doc.css('.mobile-menu nav a').map { |link| link['href'] } == expected_navigation, "Navigation order and links: #{rel}")
     check.call(!doc.at_css('.mobile-menu summary')&.[]('aria-label').to_s.empty?, "Missing mobile menu label: #{rel}")
   end
   language_switcher = doc.at_css('.language-switcher')
@@ -147,10 +159,33 @@ end
   next if doc.at_css('.language-notice')
   check.call(doc.css('.course').size == 3, "Recent course count: #{url}")
   check.call(doc.css('.course').all? { |c| c.at_css('h3') && c.at_css('p').text.size > 40 && c.at_css('.course-meta').text.size > 10 }, "Incomplete course description: #{url}")
-  supervision = doc.at_css('.supervision')
-  check.call(supervision && doc.css('.supervision p').size == 2 && supervision.previous_element.nil? && supervision.next_element&.[]('aria-labelledby') == 'courses-heading', "Supervision placement: #{url}")
+  check.call(doc.css('.supervision, .student-group, .student-admissions').empty? && doc.at_css('.section-content > section')&.[]('aria-labelledby') == 'courses-heading', "Teaching focuses on courses: #{url}")
   check.call(doc.css('.course').map { |c| c['id'] } == %w[large-models-principles-practice requirements-engineering linux-programming], "Recent course order: #{url}")
-  check.call(doc.at_css('.supervision a[href="mailto:huangjp@cqupt.edu.cn"]'), "Supervision email link: #{url}")
+end
+check.call(student_records.map { |record| record['id'] }.uniq.size == student_records.size, 'Unique student record IDs')
+check.call(student_categories.map { |category| category['achievements'].size } == [1, 9, 10, 2, 1], 'Verified student record counts')
+check.call(student_categories.all? { |category| category['achievements'].map { |record| record['year'] } == category['achievements'].map { |record| record['year'] }.sort.reverse }, 'Student records in descending year order')
+['/students/','/zh/students/'].each do |url|
+  doc = html.fetch(resolve.call(url, File.join(root,'index.html')).first)
+  next if doc.at_css('.language-notice')
+  language = url.start_with?('/zh/') ? 'zh' : 'en'
+  check.call(doc.css('.student-group').map { |group| group['id'] } == %w[undergraduates masters], "Student groups: #{url}")
+  check.call(doc.css('.student-group').all? { |group| group.at_css('h2') && group.at_css('p').text.size > 30 }, "Student introductions: #{url}")
+  check.call(doc.css('.student-category > h3').map { |heading| heading['id'] } == student_categories.map { |category| category['id'] + '-heading' }, "Student achievement categories: #{url}")
+  check.call(doc.css('.student-achievements > li').map { |item| item['id'] } == student_records.map { |record| record['id'] }, "Student achievement coverage and order: #{url}")
+  student_records.each do |record|
+    item = doc.at_css("##{record['id']}")
+    check.call(item && !item.at_css('.achievement-title').text.strip.empty? && item.at_css('.achievement-students').text.include?(record['students'][language]) && item.css('p').last.text.strip.size > 5, "Complete student record: #{url}##{record['id']}")
+    expected_year = record.dig('year_label', language) || record['year'].to_s
+    check.call(item&.at_css('.achievement-year')&.text == expected_year, "Student date precision: #{url}##{record['id']}")
+    next unless record['publication_id']
+    prefix = language == 'zh' ? '/zh' : ''
+    check.call(item&.at_css('.achievement-title a')&.[]('href') == "#{prefix}/publication/#{record['publication_id']}" && item.at_css('.achievement-students').text.start_with?(language == 'zh' ? '共同作者：' : 'Co-author: '), "Student publication link and authorship: #{url}##{record['id']}")
+  end
+  admissions = doc.at_css('#admissions')
+  check.call(admissions && admissions.at_css('h2') && admissions.css('p').size == 3, "Admissions section: #{url}")
+  check.call(admissions&.at_css('a[href="https://www.ccf.org.cn/Academic_Evaluation/By_category/"]'), "Admissions CCF directory: #{url}")
+  check.call(admissions&.at_css('a[href="mailto:huangjp@cqupt.edu.cn"]')&.text == 'Email', "Admissions Email link label: #{url}")
 end
 ['/','/zh/','/news/','/zh/news/'].each do |url|
   doc = html.fetch(resolve.call(url, File.join(root,'index.html')).first)
@@ -221,7 +256,7 @@ blog_prefixes.each do |prefix|
     end
   end
 end
-%w[/students/ /cv/ /contact/ /resume /zh/students/ /zh/cv/ /zh/contact/].each do |url|
+%w[/cv/ /contact/ /resume /zh/cv/ /zh/contact/].each do |url|
   check.call(resolve.call(url, File.join(root,'index.html')).first.nil?, "Retired route still generated: #{url}")
 end
 %w[docs work _archive scripts talkmap markdown_generator].each do |name|
