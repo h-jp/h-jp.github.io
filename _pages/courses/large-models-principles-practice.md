@@ -1,6 +1,6 @@
 ---
 layout: section
-title: 'Large Models: Principles and Practice'
+title: 'Large Language Models: Principles and Practice'
 permalink: /teaching/large-models-principles-practice/
 lang: en
 translation: /zh/teaching/large-models-principles-practice/

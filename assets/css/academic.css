@@ -170,7 +170,7 @@ html:lang(zh) .brand { letter-spacing: .045em; }
 .supervision { border-bottom: 1px solid var(--line); padding-bottom: 30px; margin: 0 0 36px; max-width: none; }
 .supervision p { font-size: 16px; line-height: 1.85; }
 .supervision p:last-child { margin-bottom: 0; }
-.supervision a { white-space: nowrap; }
+.supervision a { white-space: normal; }
 .about-content { width: 100%; }
 .biography h2 { font-size: 23px; margin-bottom: 18px; }
 .experience-list { margin: 0; }
@@ -228,9 +228,17 @@ html:lang(zh) .brand { letter-spacing: .045em; }
     text-align: justify;
     text-align-last: start;
     text-wrap: pretty;
-    hyphens: auto;
+    hyphens: manual;
   }
 }
+/* Keep short headings and paragraph endings together across viewport changes.
+   The script measures the last line against the preceding line (minimum 65%). */
+main :is(h1, h2, h3), .verse-line { text-wrap: balance; }
+main .balanced-copy, .inner-page p.balanced-copy, main .balanced-copy > a { text-wrap: balance; text-align: start; }
+.balanced-ending { display: block; text-wrap: balance; text-align: inherit; text-align-last: start; }
+.balanced-last-words { white-space: nowrap; }
+main :is(h1, h2, h3)[data-fit-heading] { font-size: var(--balanced-heading-size); }
+.verse-line { display: block; text-align: start; }
 @media (max-width: 1100px) {
   .header-inner { gap: 18px; }
   .desktop-nav { gap: 14px; }
@@ -269,7 +277,8 @@ html:lang(zh) .brand { letter-spacing: .045em; }
   .hero { padding-block: 34px 36px; grid-template-columns: minmax(0, 1fr) 104px; gap: 16px; align-items: start; }
   .hero-copy { display: contents; }
   .hero-role { grid-column: 1; grid-row: 1; font-size: 11px; margin: 0; padding-top: 3px; }
-  .hero h1 { grid-column: 1; grid-row: 2; font-size: clamp(27px, 8.5vw, 34px); margin: -9px 0 0; }
+  .hero h1 { grid-column: 1; grid-row: 2; font-size: clamp(27px, 8.5vw, 34px); white-space: nowrap; margin: -9px 0 0; }
+  html:lang(en) .hero h1 { font-size: clamp(18px, calc(12vw - 20px), 34px); }
   .hero-institution { grid-column: 1 / -1; grid-row: 3; font-size: 13px; margin: -2px 0 0; }
   .portrait { grid-column: 2; grid-row: 1 / span 2; width: 104px; align-self: start; border-radius: 8px; }
   .hero-intro { grid-column: 1 / -1; grid-row: 4; font-size: 18px; margin: 0; }
@@ -316,8 +325,8 @@ html:lang(zh) .brand { letter-spacing: .045em; }
   .course { grid-template-columns: 1fr; gap: 12px; padding-block: 26px; }
   .course-meta { font-size: 12px; padding-top: 0; }
   .course :is(h2, h3) { font-size: 20px; margin-bottom: 10px; }
-  .course-heading { gap: 12px; margin-bottom: 10px; }
-  .course-heading :is(h2, h3) { margin-bottom: 0; }
+  .course-heading { gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .course-heading :is(h2, h3) { margin-bottom: 0; flex-basis: 100%; }
   .course p { font-size: 16px; }
   .supervision { margin: 0 0 30px; padding-bottom: 24px; }
   .experience-list > div { grid-template-columns: 1fr; gap: 6px; }

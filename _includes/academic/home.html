@@ -1,7 +1,7 @@
 {% include academic/context.html %}
 <section class="hero" aria-labelledby="home-title">
   <div class="hero-copy">
-    <p class="hero-role">{{ profile.role[lang] }}</p>
+    <p class="hero-role">{{ profile.role[lang] | replace: ' ·', '&nbsp;·' }}</p>
     <h1 id="home-title">{{ profile.name[lang] }}</h1>
     <p class="hero-institution">{{ profile.institution[lang] }}</p>
     <p class="hero-intro">{{ profile.intro[lang] }}</p>

@@ -1,15 +1,15 @@
 - id: large-models-principles-practice
   title:
-    en: "Large Models: Principles and Practice"
+    en: "Large Language Models: Principles and Practice"
     zh: 大模型原理与实践
   period:
     en: Spring semester, 2027
     zh: 2027 春季
   status: upcoming
   description:
-    en: Planned for spring 2027—stay tuned. The course will connect the principles of large models
+    en: Planned for spring 2027—stay tuned. The course will connect the principles of large language models
       with hands-on exploration of their capabilities and applications.
-    zh: 计划于2027年春季开设，敬请期待。课程将围绕大模型的基本原理与实践方法，结合理论学习与动手探索，理解模型能力及其应用。
+    zh: 计划于2027年春季开设，敬请期待。课程将围绕大语言模型的基本原理与实践方法，结合理论学习与动手探索，理解模型能力及其应用。
   featured: true
 - id: requirements-engineering
   title:
@@ -47,8 +47,8 @@
   description:
     en: Introduces program development in Linux, including development tools, building and debugging programs,
       and systems programming concepts such as files, processes, and interprocess communication. The course
-      emphasizes how programs interact with the operating system and develops approaches to implementing functionality,
-      analyzing behavior, and diagnosing faults in Linux environments.
+      emphasizes how programs interact with the operating system and helps students develop the skills to implement functionality,
+      analyze program behavior, and diagnose faults in Linux environments.
     zh: 介绍Linux环境下的程序开发方法，涵盖常用开发工具、程序构建与调试，以及文件、进程和进程间通信等系统编程基础。强调理解程序与操作系统之间的交互，形成在Linux环境中实现功能、分析行为和排查故障的基本能力。
   featured: false
 - id: cross-media
@@ -106,7 +106,7 @@
     zh: 主讲
   description:
     en: Introduces the principles, layered architectures, and major communication protocols of computer networks.
-      Through data transmission, addressing, routing, and end-to-end communication, the course connects protocol
+      By examining data transmission, addressing, routing, and end-to-end communication, the course connects protocol
       mechanisms with network behavior and familiar network applications.
     zh: 介绍计算机网络的基本原理、分层体系结构与主要通信协议，围绕数据传输、寻址、路由和端到端通信理解网络如何运行。结合常见网络应用，帮助学生建立从协议机制到系统行为的分析思路。
   featured: false

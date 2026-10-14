@@ -5,7 +5,7 @@ permalink: /publications/
 lang: en
 translation: /zh/publications/
 section: publications
-description: Recent selected conference and journal papers.
+description: Selected recent conference and journal papers.
 ---
 
 {% include academic/publications.html %}
