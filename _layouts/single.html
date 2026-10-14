@@ -6,7 +6,7 @@ layout: default
   <article>
     <header class="article-header">
       <div class="article-meta"><a href="{{ prefix | append: '/blogs/' | relative_url }}">{{ ui.blog[lang] }}</a><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y.%m.%d' }}</time></div>
-      <h1>{{ page.title }}</h1>
+      <h1 class="post-title">{{ page.title }}</h1>
       {% if page.excerpt %}<p class="article-excerpt">{{ page.excerpt | strip_html }}{% if page.translation %} <a class="article-translation" href="{{ page.translation | relative_url }}" {% if lang == 'zh' %}lang="en" hreflang="en" aria-label="Read this article in English">[English]{% else %}lang="zh-CN" hreflang="zh-CN" aria-label="阅读本文中文版">[中文]{% endif %}</a>{% endif %}</p>{% endif %}
     </header>
     <div class="prose">{{ content }}</div>

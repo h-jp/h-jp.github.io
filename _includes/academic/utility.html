@@ -5,7 +5,7 @@
   {% assign groups = site.categories %}{% if page.utility == 'tags' %}{% assign groups = site.tags %}{% endif %}
   {% for group in groups %}
     {% assign matching_count = 0 %}{% for post in group[1] %}{% assign pl = post.lang | slice: 0, 2 %}{% if pl == lang %}{% assign matching_count = matching_count | plus: 1 %}{% endif %}{% endfor %}
-    {% if matching_count > 0 %}<section class="taxonomy-group" id="{{ group[0] | slugify }}"><h2>{% if page.utility == 'categories' %}{{ site.data.category_labels[group[0]][lang] | default: group[0] }}{% else %}{{ group[0] }}{% endif %}</h2><ul>{% for post in group[1] %}{% assign pl = post.lang | slice: 0, 2 %}{% if pl == lang %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endif %}{% endfor %}</ul></section>{% endif %}
+    {% if matching_count > 0 %}<section class="taxonomy-group" id="{{ group[0] | slugify }}"><h2>{% if page.utility == 'categories' %}{{ site.data.category_labels[group[0]][lang] | default: group[0] }}{% else %}{{ group[0] }}{% endif %}</h2><ul>{% for post in group[1] %}{% assign pl = post.lang | slice: 0, 2 %}{% if pl == lang %}<li class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endif %}{% endfor %}</ul></section>{% endif %}
   {% endfor %}
 {% when 'sitemap' or 'collections' %}
   <ul class="page-index">{% for item in site.data.navigation.main %}<li><a href="{{ item.url[lang] | relative_url }}">{{ item.title[lang] }}</a></li>{% endfor %}</ul>

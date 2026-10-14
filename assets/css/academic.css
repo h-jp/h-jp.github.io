@@ -255,6 +255,8 @@ main .balanced-copy, .inner-page p.balanced-copy, main .balanced-copy > a { text
 .balanced-last-words { white-space: nowrap; }
 .balanced-last-words a { white-space: inherit; }
 main :is(h1, h2, h3, .achievement-title)[data-fit-heading] { font-size: var(--balanced-heading-size); }
+/* Blog titles follow the available width without balancing their line endings. */
+main .post-title, main .post-title > a { text-wrap: wrap; }
 .verse-line { display: block; text-align: start; }
 @media (max-width: 1100px) {
   .header-inner { gap: 18px; }

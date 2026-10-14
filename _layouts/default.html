@@ -29,7 +29,7 @@
   <link rel="icon" type="image/png" sizes="64x64" href="{{ profile.portrait_icon | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/images/hjp-icon-192.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/academic.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-  <script defer src="{{ '/assets/js/academic.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/academic.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">{{ ui.skip[lang] }}</a>

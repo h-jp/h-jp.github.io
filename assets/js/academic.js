@@ -35,7 +35,7 @@
   if (!window.Intl?.Segmenter || !CSS.supports('text-wrap', 'balance')) return;
   const candidates = [...document.querySelectorAll('main p, main h1, main h2, main h3, main .achievement-title, main li, .verse-line')].filter(element =>
     !element.querySelector('p, h1, h2, h3, ul, ol, br, pre, code, .verse-line') &&
-    !element.closest('.post-tags, .post-navigation')
+    !element.closest('.post-tags, .post-navigation, .post-title')
   );
   const segmenter = new Intl.Segmenter(document.documentElement.lang || 'en', {granularity: 'word'});
   const lineBoxes = element => {

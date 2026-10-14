@@ -5,6 +5,6 @@
 {% assign post_limit = include.limit | default: listed_posts.size %}
 <ol class="post-list">
 {% for post in listed_posts limit:post_limit %}
-<li><div class="post-meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y.%m.%d' }}</time>{% if pinned_posts contains post %}<span class="post-badge post-badge--pinned">{{ ui.pinned[lang] }}</span>{% endif %}{% if latest_posts contains post %}<span class="post-badge post-badge--latest">{{ ui.latest[lang] }}</span>{% endif %}</div><{{ post_heading }}><a href="{{ post.url | relative_url }}">{{ post.title }}</a></{{ post_heading }}>{% unless include.compact %}<p>{{ post.excerpt | strip_html }}</p>{% endunless %}</li>
+<li><div class="post-meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y.%m.%d' }}</time>{% if pinned_posts contains post %}<span class="post-badge post-badge--pinned">{{ ui.pinned[lang] }}</span>{% endif %}{% if latest_posts contains post %}<span class="post-badge post-badge--latest">{{ ui.latest[lang] }}</span>{% endif %}</div><{{ post_heading }} class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></{{ post_heading }}>{% unless include.compact %}<p>{{ post.excerpt | strip_html }}</p>{% endunless %}</li>
 {% endfor %}
 </ol>
