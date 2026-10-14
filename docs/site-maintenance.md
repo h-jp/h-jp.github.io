@@ -121,7 +121,7 @@ pinned_posts:
 
 ## 个人信息范围
 
-个人信息仅保留姓名、Email、研究组、Weibo。中英文页面的邮件链接统一显示 `Email`，具体地址只用于 `mailto:` 链接，不直接显示在正文中。首页和页脚的紧凑链接共用 `_includes/academic/personal-links.html`。About 正文末尾采用“Get in touch／交流与合作”下的三段中英文说明，分别说明邮件联系、本人主导的研究组及微博关注入口；文案在 `_includes/academic/about.html` 中维护，链接地址继续引用 `_data/profile.yml`。微信、电话、个人地理位置、额外社交入口、单位个人主页与个人荣誉不出现在公开页面或元信息中。机构名称只用于教育、任职和研究背景。
+个人信息仅保留姓名、Email、研究组、Weibo。中英文页面的邮件链接统一显示 `Email`，具体地址只用于 `mailto:` 链接，不直接显示在正文中。首页和页脚的紧凑链接共用 `_includes/academic/personal-links.html`。About 正文末尾采用“Get in touch／交流与合作”下的三段中英文说明，分别说明邮件联系（包括主页错误或不妥之处的反馈）、我们创建的研究组及微博关注入口；文案在 `_includes/academic/about.html` 中维护，链接地址继续引用 `_data/profile.yml`。微信、电话、个人地理位置、额外社交入口、单位个人主页与个人荣誉不出现在公开页面或元信息中。机构名称只用于教育、任职和研究背景。
 
 微博沿用原账号 `jiangpinghuang`，目标为 `https://weibo.com/jiangpinghuang`。2026-10-13 请求进入微博访客校验，未据此确认账号归属；不要推测替换账号。
 
