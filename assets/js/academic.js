@@ -67,11 +67,11 @@
       if (lo < node.length) return {node, offset: lo};
     }
   };
-  // Allow a small margin above the requested 65% of the preceding line.
-  const needsBalancing = (element, lines) => {
+  // A longer ending is a preference; natural spacing takes priority in justified text.
+  const needsBalancing = (element, lines, minimum = .67) => {
     if (lines.length < 2) return false;
     const last = lines.at(-1), previous = lines.at(-2);
-    if (last.right - last.left < .67 * (previous.right - previous.left)) return true;
+    if (last.right - last.left < minimum * (previous.right - previous.left)) return true;
     const start = startOfLine(element, last.middle);
     if (!start) return false;
     const range = document.createRange();
@@ -83,7 +83,7 @@
     element.classList.remove('balanced-copy');
     element.removeAttribute('data-fit-heading');
     element.style.removeProperty('--balanced-heading-size');
-    element.querySelectorAll('.balanced-ending, .balanced-last-words').forEach(tail => tail.replaceWith(...tail.childNodes));
+    element.querySelectorAll('.balanced-last-words').forEach(tail => tail.replaceWith(...tail.childNodes));
     element.normalize();
   };
   const endingRange = (root, start) => {
@@ -107,13 +107,7 @@
     tail.append(range.extractContents()); range.insertNode(tail);
     return tail;
   };
-  const wrapEnding = (element, lines) => {
-    const root = rootFor(element);
-    // Native balancing has a line-count limit; only rebalance the last five lines.
-    const start = startOfLine(root, lines[lines.length - 5].middle);
-    if (start) wrapRange(endingRange(root, start), 'balanced-ending');
-  };
-  const keepLastWords = element => {
+  const keepLastWords = (element, minimum = .7) => {
     const root = rootFor(element);
     const width = root.getBoundingClientRect().width;
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
@@ -151,21 +145,87 @@
       probe.remove();
       if (length > width) break;
       chosen = words[i];
-      if (length >= width * .7) break;
+      if (length >= width * minimum) break;
     }
     if (chosen) wrapRange(endingRange(root, chosen), 'balanced-last-words');
   };
+  const context = document.createElement('canvas').getContext('2d');
+  const naturalSpaces = new Map();
+  const spacing = element => {
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+    const range = document.createRange();
+    let maximum = 1, excess = 0;
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const style = getComputedStyle(node.parentElement);
+      const font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+      if (!naturalSpaces.has(font)) {
+        context.font = font;
+        naturalSpaces.set(font, context.measureText(' ').width);
+      }
+      const natural = naturalSpaces.get(font);
+      for (const match of node.textContent.matchAll(/[ \t\r\n]/g)) {
+        range.setStart(node, match.index); range.setEnd(node, match.index + 1);
+        const ratio = range.getBoundingClientRect().width / natural;
+        maximum = Math.max(maximum, ratio);
+        excess += Math.max(0, ratio - 2.5);
+      }
+    }
+    // Chinese justification also expands gaps between characters, without spaces.
+    let fill = 1;
+    if (document.documentElement.lang.startsWith('zh')) {
+      const alignment = element.style.getPropertyValue('text-align');
+      const priority = element.style.getPropertyPriority('text-align');
+      element.style.setProperty('text-align', 'start');
+      fill = Math.min(1, ...lineBoxes(element).slice(0, -1).map(line => (line.right - line.left) / element.clientWidth));
+      if (alignment) element.style.setProperty('text-align', alignment, priority);
+      else element.style.removeProperty('text-align');
+    }
+    return {maximum, excess, fill};
+  };
+  const balanceJustified = element => {
+    if (!context || !needsBalancing(element, lineBoxes(element), .65)) return;
+    const original = spacing(element);
+    const readable = () => {
+      const current = spacing(element);
+      return current.maximum <= Math.max(2.5, original.maximum + .05) &&
+        current.excess <= original.excess + .1 &&
+        current.fill >= Math.min(.9, original.fill - .005);
+    };
+    // Keep one continuous paragraph. Never insert block boundaries to force a ratio.
+    keepLastWords(element, .66);
+    if (!needsBalancing(element, lineBoxes(element), .65) && readable()) return;
+    reset(element);
+    element.classList.add('balanced-copy');
+    if (!needsBalancing(element, lineBoxes(element), .65) && readable()) return;
+    reset(element);
+    // If the longer ending would stretch words, retain natural wrapping.
+    if (needsBalancing(element, lineBoxes(element), 0)) {
+      keepLastWords(element, 0);
+      if (!readable()) reset(element);
+    }
+  };
   const balance = () => {
+    naturalSpaces.clear();
     for (const element of candidates) {
       reset(element);
       if (!element.getClientRects().length) continue;
       const lines = lineBoxes(element);
       if (!needsBalancing(element, lines)) continue;
+      if (getComputedStyle(element).textAlign === 'justify') {
+        balanceJustified(element);
+        continue;
+      }
       if (lines.length <= 5) element.classList.add('balanced-copy');
-      else wrapEnding(element, lines);
       if (needsBalancing(element, lineBoxes(element))) {
         reset(element);
-        keepLastWords(element);
+        const last = lines.at(-1), previous = lines.at(-2);
+        const minimum = .41 * (last.right - last.left + previous.right - previous.left) / element.clientWidth;
+        keepLastWords(element, Math.min(.7, minimum));
+        if (needsBalancing(element, lineBoxes(element))) {
+          reset(element);
+          keepLastWords(element);
+        }
       }
     }
   };
