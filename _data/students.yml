@@ -13,6 +13,34 @@ groups:
       en: Competitions and Honors
       zh: 竞赛与荣誉
     achievements:
+    - id: lanqiao-2024-mingyu-zhou
+      year: 2024
+      title:
+        en: 15th Lanqiao Cup National Software and Information Technology Competition
+        zh: 第十五届蓝桥杯全国软件和信息技术专业人才大赛
+      students:
+        en: Mingyu Zhou
+        zh: 周明宇
+      description:
+        en: Second Prize in the National Finals, Python Programming (University Group B). Advisor recognized as an Outstanding Instructor.
+        zh: 全国总决赛Python程序设计大学B组二等奖。指导教师获评优秀指导教师。
+      year_label:
+        en: '2024.06'
+        zh: '2024.06'
+    - id: lanqiao-2024-jiewei-zhang
+      year: 2024
+      title:
+        en: 15th Lanqiao Cup National Software and Information Technology Competition
+        zh: 第十五届蓝桥杯全国软件和信息技术专业人才大赛
+      students:
+        en: Jiewei Zhang
+        zh: 张杰为
+      description:
+        en: Third Prize in the National Finals, Python Programming (University Group B). Advisor recognized as an Outstanding Instructor.
+        zh: 全国总决赛Python程序设计大学B组三等奖。指导教师获评优秀指导教师。
+      year_label:
+        en: '2024.06'
+        zh: '2024.06'
     - id: shuixin-zhao-competitions-honors
       year: 2024
       title:
@@ -24,13 +52,10 @@ groups:
       description:
         en: Recipient of the National Scholarship; a Chongqing silver award in the 13th “Challenge Cup” entrepreneurship competition; a Chongqing second prize in the China Undergraduate Mathematical Contest in Modeling; and the Outstanding Graduate of Chongqing honor. Admitted to a master’s program at Beijing University of Posts and Telecommunications through the recommendation-based pathway.
         zh: 获国家奖学金、第十三届“挑战杯”中国大学生创业计划竞赛重庆市银奖、全国大学生数学建模竞赛重庆市二等奖及重庆市优秀毕业生荣誉。通过推免进入北京邮电大学攻读硕士学位。
-      year_label:
-        en: Class of 2024
-        zh: 2024届
   - id: undergraduate-research-projects
     title:
-      en: Research and Innovation Projects
-      zh: 科研训练与创新项目
+      en: Undergraduate Research Training Program
+      zh: 大学生科研训练计划
     achievements:
     - id: research-training-2026-code-generation
       year: 2026
@@ -41,11 +66,16 @@ groups:
         en: Weidong Yuan, Yihang Wang, Na Tan, Zhiwen Zheng, and Yufei Zhou
         zh: 袁伟栋、王翊航、谭娜、郑智文、周宇飞
       description:
-        en: 'Approved undergraduate research training project. Project period: July 2026 to June 2028.'
-        zh: 本科生科研训练项目，已立项。计划周期为2026年7月至2028年6月。
+        en: 'Approved project under the Undergraduate Research Training Program. Project period: July 2026 to June 2028.'
+        zh: 大学生科研训练计划项目，已立项。计划周期为2026年7月至2028年6月。
       year_label:
         en: 2026–2028
         zh: 2026–2028
+  - id: undergraduate-innovation-projects
+    title:
+      en: Undergraduate Innovation and Entrepreneurship Training Program
+      zh: 大学生创新创业训练计划
+    achievements:
     - id: innovation-2023-weibo-sentiment
       year: 2023
       title:
@@ -55,8 +85,8 @@ groups:
         en: 'Project lead: Weiliang Shao'
         zh: 主持人：邵伟亮
       description:
-        en: Chongqing municipal-level innovation training project.
-        zh: 市级大学生创新训练项目。
+        en: Chongqing municipal-level project under the Undergraduate Innovation and Entrepreneurship Training Program.
+        zh: 市级大学生创新创业训练计划项目。
     - id: innovation-2022-joint-program-learning
       year: 2022
       title:
@@ -66,8 +96,8 @@ groups:
         en: 'Project lead: Shuixin Zhao'
         zh: 主持人：赵水心
       description:
-        en: National-level innovation training project.
-        zh: 国家级大学生创新训练项目。
+        en: National-level project under the Undergraduate Innovation and Entrepreneurship Training Program.
+        zh: 国家级大学生创新创业训练计划项目。
     - id: innovation-2022-openeuler-time-management
       year: 2022
       title:
@@ -77,8 +107,8 @@ groups:
         en: 'Project lead: Chengyu Liu'
         zh: 主持人：刘诚宇
       description:
-        en: Chongqing municipal-level innovation training project.
-        zh: 市级大学生创新训练项目。
+        en: Chongqing municipal-level project under the Undergraduate Innovation and Entrepreneurship Training Program.
+        zh: 市级大学生创新创业训练计划项目。
     - id: innovation-2021-social-media-events
       year: 2021
       title:
@@ -88,8 +118,8 @@ groups:
         en: 'Project lead: Yuchen Yan'
         zh: 主持人：严雨晨
       description:
-        en: Chongqing municipal-level innovation training project.
-        zh: 市级大学生创新训练项目。
+        en: Chongqing municipal-level project under the Undergraduate Innovation and Entrepreneurship Training Program.
+        zh: 市级大学生创新创业训练计划项目。
     - id: innovation-2021-tourism-knowledge-graph
       year: 2021
       title:
@@ -99,8 +129,8 @@ groups:
         en: 'Project lead: Xinyuan Tang'
         zh: 主持人：唐心远
       description:
-        en: Chongqing municipal-level innovation training project.
-        zh: 市级大学生创新训练项目。
+        en: Chongqing municipal-level project under the Undergraduate Innovation and Entrepreneurship Training Program.
+        zh: 市级大学生创新创业训练计划项目。
     - id: innovation-2021-openeuler-personal-app
       year: 2021
       title:
@@ -110,8 +140,8 @@ groups:
         en: 'Project lead: Chengyu Liu'
         zh: 主持人：刘诚宇
       description:
-        en: University-level innovation training project.
-        zh: 校级大学生创新训练项目。
+        en: University-level project under the Undergraduate Innovation and Entrepreneurship Training Program.
+        zh: 校级大学生创新创业训练计划项目。
     - id: innovation-2020-student-emotion-monitoring
       year: 2020
       title:
@@ -121,8 +151,8 @@ groups:
         en: 'Project lead: Zihong Ye'
         zh: 主持人：叶子弘
       description:
-        en: Chongqing municipal-level innovation training project.
-        zh: 市级大学生创新训练项目。
+        en: Chongqing municipal-level project under the Undergraduate Innovation and Entrepreneurship Training Program.
+        zh: 市级大学生创新创业训练计划项目。
     - id: innovation-2020-smart-classroom
       year: 2020
       title:
@@ -132,12 +162,12 @@ groups:
         en: 'Project lead: Renjie Tang'
         zh: 主持人：唐仁杰
       description:
-        en: University-level innovation training project.
-        zh: 校级大学生创新训练项目。
+        en: University-level project under the Undergraduate Innovation and Entrepreneurship Training Program.
+        zh: 校级大学生创新创业训练计划项目。
   - id: undergraduate-capstone-awards
     title:
-      en: Outstanding Capstone Projects
-      zh: 优秀毕业设计（论文）
+      en: Outstanding Undergraduate Theses
+      zh: 优秀本科毕业论文
     achievements:
     - id: capstone-2025-yongli-bao
       year: 2025
@@ -148,7 +178,7 @@ groups:
         en: Yongli Bao
         zh: 鲍勇利
       description:
-        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        en: Third Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）三等奖。
     - id: capstone-2024-shuixin-zhao
       year: 2024
@@ -159,7 +189,7 @@ groups:
         en: Shuixin Zhao
         zh: 赵水心
       description:
-        en: Second Prize, University Outstanding Undergraduate Capstone Awards.
+        en: Second Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）二等奖。
     - id: capstone-2022-lu-wen
       year: 2022
@@ -170,7 +200,7 @@ groups:
         en: Lu Wen
         zh: 文路
       description:
-        en: Second Prize, University Outstanding Undergraduate Capstone Awards.
+        en: Second Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）二等奖。
     - id: capstone-2022-jiake-yin
       year: 2022
@@ -181,7 +211,7 @@ groups:
         en: Jiake Yin
         zh: 尹嘉珂
       description:
-        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        en: Third Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）三等奖。
     - id: capstone-2022-yuxin-pu
       year: 2022
@@ -192,7 +222,7 @@ groups:
         en: Yuxin Pu
         zh: 蒲雨欣
       description:
-        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        en: Third Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）三等奖。
     - id: capstone-2021-zixuan-wang
       year: 2021
@@ -203,7 +233,7 @@ groups:
         en: Zixuan Wang
         zh: 王梓璇
       description:
-        en: Second Prize, University Outstanding Undergraduate Capstone Awards.
+        en: Second Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）二等奖。
     - id: capstone-2020-shuwei-yuan
       year: 2020
@@ -214,7 +244,7 @@ groups:
         en: Shuwei Yuan
         zh: 袁书伟
       description:
-        en: Second Prize, University Outstanding Undergraduate Capstone Awards.
+        en: Second Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）二等奖。
     - id: capstone-2020-ziyu-huang
       year: 2020
@@ -225,7 +255,7 @@ groups:
         en: Ziyu Huang
         zh: 黄子彧
       description:
-        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        en: Third Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）三等奖。
     - id: capstone-2020-taiguo-qu
       year: 2020
@@ -236,7 +266,7 @@ groups:
         en: Taiguo Qu
         zh: 屈太国
       description:
-        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        en: Third Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）三等奖。
     - id: capstone-2020-jiajun-yang
       year: 2020
@@ -247,7 +277,7 @@ groups:
         en: Jiajun Yang
         zh: 杨家俊
       description:
-        en: Third Prize, University Outstanding Undergraduate Capstone Awards.
+        en: Third Prize, University Outstanding Undergraduate Thesis Awards.
         zh: 校级优秀本科毕业设计（论文）三等奖。
 - id: masters
   title:

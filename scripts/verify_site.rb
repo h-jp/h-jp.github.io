@@ -163,7 +163,7 @@ end
   check.call(doc.css('.course').map { |c| c['id'] } == %w[large-models-principles-practice requirements-engineering linux-programming], "Recent course order: #{url}")
 end
 check.call(student_records.map { |record| record['id'] }.uniq.size == student_records.size, 'Unique student record IDs')
-check.call(student_categories.map { |category| category['achievements'].size } == [1, 9, 10, 2, 1], 'Verified student record counts')
+check.call(student_categories.map { |category| category['achievements'].size } == [3, 1, 8, 10, 2, 1], 'Verified student record counts')
 check.call(student_categories.all? { |category| category['achievements'].map { |record| record['year'] } == category['achievements'].map { |record| record['year'] }.sort.reverse }, 'Student records in descending year order')
 ['/students/','/zh/students/'].each do |url|
   doc = html.fetch(resolve.call(url, File.join(root,'index.html')).first)
@@ -183,7 +183,10 @@ check.call(student_categories.all? { |category| category['achievements'].map { |
     check.call(item&.at_css('.achievement-title a')&.[]('href') == "#{prefix}/publication/#{record['publication_id']}" && item.at_css('.achievement-students').text.start_with?(language == 'zh' ? '共同作者：' : 'Co-author: '), "Student publication link and authorship: #{url}##{record['id']}")
   end
   admissions = doc.at_css('#admissions')
-  check.call(admissions && admissions.at_css('h2') && admissions.css('p').size == 3, "Admissions section: #{url}")
+  check.call(admissions && admissions.at_css('h2') && admissions.css('p').size == 2, "Admissions section: #{url}")
+  check.call(admissions&.css('p')&.last&.at_css('a[href^="mailto:"]') && admissions.css('p').last.at_css('a[href="https://www.ccf.org.cn/Academic_Evaluation/By_category/"]'), "Admissions Email in invitation paragraph: #{url}")
+  check.call(doc.at_css('#shuixin-zhao-competitions-honors .achievement-year')&.text == '2024', "Student year label: #{url}")
+  check.call(doc.at_css('#cross-model-collaboration-tosem-2026 p:last-child')&.text == 'TOSEM 2026 · CCF A' && doc.at_css('#tracecoder-icse-2026 p:last-child')&.text == 'ICSE 2026 · CCF A', "Consistent student publication venues: #{url}")
   check.call(admissions&.at_css('a[href="https://www.ccf.org.cn/Academic_Evaluation/By_category/"]'), "Admissions CCF directory: #{url}")
   check.call(admissions&.at_css('a[href="mailto:huangjp@cqupt.edu.cn"]')&.text == 'Email', "Admissions Email link label: #{url}")
 end

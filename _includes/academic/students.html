@@ -28,7 +28,7 @@
       <div>
         <h4 class="achievement-title">{% if achievement_url %}<a href="{{ achievement_url | relative_url }}">{{ achievement_title }}</a>{% else %}{{ achievement_title }}{% endif %}</h4>
         <p class="achievement-students">{% if student_paper %}{{ ui.student_coauthor[lang] }}{% if lang == 'zh' %}：{% else %}: {% endif %}{% endif %}{{ achievement.students[lang] }}</p>
-        {% if student_paper %}<p>{{ student_paper.venue }}{% if student_paper.rating %} · {{ student_paper.rating }}{% endif %}</p>{% else %}<p>{{ achievement.description[lang] }}</p>{% endif %}
+        {% if student_paper %}{% assign student_venue = student_paper.venue_short | default: student_paper.venue %}{% assign student_paper_year = student_paper.date | date: '%Y' %}<p>{{ student_venue }}{% unless student_venue contains student_paper_year %} {{ student_paper_year }}{% endunless %}{% if student_paper.rating %} · {{ student_paper.rating }}{% endif %}</p>{% else %}<p>{{ achievement.description[lang] }}</p>{% endif %}
       </div>
     </li>
     {% endfor %}
@@ -42,6 +42,5 @@
 <section class="student-admissions quiet-section" id="admissions" aria-labelledby="admissions-heading">
   <h2 id="admissions-heading">{{ students.admissions.title[lang] }}</h2>
   <p>{{ profile.intro[lang] }}</p>
-  <p>{{ students.admissions.invitation[lang] }}</p>
-  <p>{{ ui.students_contact[lang] }}{% if lang == 'zh' %}：{% else %}: {% endif %}<a href="mailto:{{ profile.email }}">{{ ui.email[lang] }}</a>{% if lang == 'zh' %}。{% else %}.{% endif %}</p>
+  <p>{{ students.admissions.invitation[lang] }} {% if lang == 'zh' %}{{ ui.students_contact[lang] }}：{% else %}{{ ui.students_contact[lang] }}: {% endif %}<a href="mailto:{{ profile.email }}">{{ ui.email[lang] }}</a>{% if lang == 'zh' %}。{% else %}.{% endif %}</p>
 </section>
