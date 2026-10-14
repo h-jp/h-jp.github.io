@@ -95,8 +95,8 @@ supervision_heading:
   en: Student Supervision
   zh: 学生指导
 supervision_contact:
-  en: Please get in touch by email
-  zh: 欢迎邮件联系交流
+  en: Please get in touch
+  zh: 欢迎联系交流
 biography:
   en: Biography
   zh: 个人简介
@@ -117,7 +117,7 @@ group:
   zh: 科研团队
 email:
   en: Email
-  zh: 邮箱
+  zh: Email
 weibo:
   en: Weibo
   zh: 微博

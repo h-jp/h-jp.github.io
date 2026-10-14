@@ -6,7 +6,7 @@
     <p class="hero-institution">{{ profile.institution[lang] }}</p>
     <p class="hero-intro">{{ profile.intro[lang] }}</p>
     <div class="hero-actions"><a class="primary-link" href="{{ prefix | append: '/publications/' | relative_url }}">{{ ui.selected_papers[lang] }} <span aria-hidden="true">→</span></a><a class="primary-link" href="{{ prefix | append: '/research/' | relative_url }}">{{ ui.research_heading[lang] }} <span aria-hidden="true">→</span></a></div>
-    {% include academic/personal-links.html full_email=true %}
+    {% include academic/personal-links.html %}
   </div>
   <img class="portrait" src="{{ profile.portrait | relative_url }}" alt="{{ profile.name[lang] }}" width="1214" height="1295" fetchpriority="high">
 </section>

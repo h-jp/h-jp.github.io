@@ -6,11 +6,11 @@
 <section class="about-links quiet-section" aria-labelledby="get-in-touch-title">
   <h2 id="get-in-touch-title">{{ ui.get_in_touch[lang] }}</h2>
   {% if lang == 'zh' %}
-  <p>欢迎通过 <a href="mailto:{{ profile.email }}">{{ profile.email }}</a> 与我交流研究问题、项目合作或学生科研机会。</p>
+  <p>欢迎通过 <a href="mailto:{{ profile.email }}">{{ ui.email[lang] }}</a> 与我交流研究问题、项目合作或学生科研机会。</p>
   <p>我主导 <a href="{{ profile.group.url }}">{{ profile.group.name[lang] }}</a> 的研究工作，关注人工智能、智能软件工程与智能机器人。欢迎访问研究组主页，了解我们的研究与进展。</p>
   <p>也欢迎关注我的 <a href="{{ profile.weibo }}">{{ ui.weibo[lang] }}</a>，保持交流。</p>
   {% else %}
-  <p>For research discussions, collaboration, or student research opportunities, please email me at <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>.</p>
+  <p>For research discussions, collaboration, or student research opportunities, please get in touch: <a href="mailto:{{ profile.email }}">{{ ui.email[lang] }}</a>.</p>
   <p>I lead the <a href="{{ profile.group.url }}">{{ profile.group.name[lang] }}</a>, where we work on artificial intelligence, intelligent software engineering, and intelligent robotics. Visit our group website to learn more about our research and recent work.</p>
   <p>You are also welcome to follow me on <a href="{{ profile.weibo }}">{{ ui.weibo[lang] }}</a> and stay in touch.</p>
   {% endif %}

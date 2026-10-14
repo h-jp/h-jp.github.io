@@ -229,12 +229,15 @@ html:lang(zh) .brand { letter-spacing: .045em; }
     text-align-last: start;
     text-wrap: pretty;
     hyphens: manual;
+    --balanced-lead-alignment: justify;
   }
 }
 /* Keep short headings and paragraph endings together across viewport changes.
    The script measures the last line against the preceding line (minimum 65%). */
 main :is(h1, h2, h3), .verse-line { text-wrap: balance; }
-main .balanced-copy, .inner-page p.balanced-copy, main .balanced-copy > a { text-wrap: balance; text-align: start; }
+main .balanced-copy, .inner-page p.balanced-copy, main .balanced-copy > a { text-wrap: balance; }
+/* The line before a balanced ending is still an interior paragraph line. */
+main :has(> .balanced-ending) { text-align-last: var(--balanced-lead-alignment, start); }
 .balanced-ending { display: block; text-wrap: balance; text-align: inherit; text-align-last: start; }
 .balanced-last-words { white-space: nowrap; }
 main :is(h1, h2, h3)[data-fit-heading] { font-size: var(--balanced-heading-size); }
