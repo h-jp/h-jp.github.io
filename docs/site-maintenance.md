@@ -53,7 +53,7 @@ v2.0 继承 v1.1 已确认的文案、正文排版与公开范围，纳入 Stude
 | 本科生与硕士生培养、学生成果、招生要求 | `_data/students.yml` |
 | 六门已有课程、一门计划开设课程及中英文介绍 | `_data/courses.yml` |
 | 两个脱敏在研项目 | `_data/projects.yml` |
-| 三条近期动态与四条历史动态 | `_data/news.yml` |
+| 三条近期动态与五条历史动态 | `_data/news.yml` |
 | 界面用语与栏目摘要 | `_data/labels.yml`、`_data/descriptions.yml` |
 | 论文原始记录、代表作选择、中文摘要 | `_publications/` |
 | 中文论文详情入口 | `_pages/zh/papers/`，通过 `pub_id` 复用论文数据 |
@@ -64,7 +64,9 @@ v2.0 继承 v1.1 已确认的文案、正文排版与公开范围，纳入 Stude
 
 代表论文采用 `selected: true` 与 `selected_order`，首页和 Publications 共用同一列表。当前仅 TraceCoder 与 TOSEM 两篇，顺序固定。论文作者、DOI、年份放在各自正式记录中，中文详情不重复维护这些事实。
 
-SemFaith 已于 2026 年 8 月被 PRICAI 2026（CCF C）录用，按用户确认的时间先后排列在科研动态首位，其后依次为 TOSEM 和 TraceCoder。新增双语详情和完整摘要，通过动态中的“More / 更多”链接进入；`selected: false`，不增加代表作数量。录用时间仅精确到月，使用 `accepted_month` 与对应语言的 `acceptance`，不填补具体日期。作者、DOI、卷页信息尚未提供；录用状态的详情页不生成正式引用区块。英文摘要保留用户原文，仅转换 LaTeX 样式并分段，中文对应保留检查器依赖和人工校准限制。会议名称据[官网](https://2026.pricai.org/)，CCF C 与用户资料及[会议征稿通知](https://2026.pricai.org/files/CFP_PRICAI2026_scnu.pdf)一致。
+SemFaith 已于 2026 年 8 月被 PRICAI 2026（CCF C）录用，科研论文动态按用户确认的时间先后排列为 SemFaith、TOSEM 和 TraceCoder。新增双语详情和完整摘要，通过动态中的“More / 更多”链接进入；`selected: false`，不增加代表作数量。录用时间仅精确到月，使用 `accepted_month` 与对应语言的 `acceptance`，不填补具体日期。作者、DOI、卷页信息尚未提供；录用状态的详情页不生成正式引用区块。英文摘要保留用户原文，仅转换 LaTeX 样式并分段，中文对应保留检查器依赖和人工校准限制。会议名称据[官网](https://2026.pricai.org/)，CCF C 与用户资料及[会议征稿通知](https://2026.pricai.org/files/CFP_PRICAI2026_scnu.pdf)一致。
+
+2026-10-17 博文《画饼是一种长期主义》列为首页与 News 的首条动态，英文对应文章为 “A Shared Vision and Long-Term Thinking”。动态按 `_data/news.yml` 中的顺序展示；博客等内容使用双语 `url` 字段，论文继续使用双语 `paper` 字段，行末“More / 更多”进入当前语言的对应正文。近期三条依次为该博文、SemFaith 和 TOSEM，TraceCoder 顺延至归档。
 
 项目题名是已经脱敏的最终文本。中英文第一项各有两处 `[MASK]`，第二项各有三处；保留字面标记，不恢复省略词，不添加能反推省略词的摘要或元信息。
 
@@ -110,7 +112,7 @@ Students 的培养与招生正文使用页面内容区的完整宽度；成果�
 
 ## More 与归档
 
-- News 主列表保留最近三条，页底 More 进入 `/news/archive/`。历史四条从原目录备份恢复，原资料只有年份，继续仅显示年份，不补造月份。
+- News 主列表保留最近三条，页底 More 进入 `/news/archive/`。归档当前为五条，首先是日期为 `2026.04` 的 TraceCoder；其余四条从原目录备份恢复，原资料只有年份，继续仅显示年份，不补造月份。
 - Research 的 Research group 标题行右侧放置 More，指向 `https://csma-research-group.github.io`；不再重复设置底部研究组入口。
 - Projects 只展示 `state: ongoing` 的在研项目；页底 More 进入 `/projects/archive/`。历史项目尚无可用的名称、年份和状态清单，页面暂显示待补充。以后在 `_data/projects.yml` 中增加 `state: archived` 的完整双语记录即可显示；旧研究系统不直接当作已结项项目。
 - Publications 使用“近期代表性会议与期刊论文”的概述，不显示作品数量。页底 More 进入 `/publications/archive/`，展示其余六项成果，SemFaith 保留录用状态和 2026 年 8 月时间，不补造 DOI 或作者。

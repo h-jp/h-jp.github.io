@@ -228,8 +228,9 @@ end
 ['/','/zh/','/news/','/zh/news/'].each do |url|
   doc = html.fetch(resolve.call(url, File.join(root,'index.html')).first)
   next if doc.at_css('.language-notice')
-  check.call(doc.css('.news-list time').map(&:text) == ['2026.08','2026.08','2026.04'], "News order: #{url}")
-  check.call(doc.css('.news-list li').map(&:text).zip(['SemFaith','Cross-Model Collaboration','TraceCoder']).all? { |item, title| item.include?(title) }, "News sequence: #{url}")
+  blog_title = url.start_with?('/zh') ? '画饼是一种长期主义' : 'A Shared Vision and Long-Term Thinking'
+  check.call(doc.css('.news-list time').map(&:text) == ['2026.10.17','2026.08','2026.08'], "News order: #{url}")
+  check.call(doc.css('.news-list li').map(&:text).zip([blog_title,'SemFaith','Cross-Model Collaboration']).all? { |item, title| item.include?(title) }, "News sequence: #{url}")
 end
 prefixes = chinese_enabled ? ['', '/zh'] : ['']
 blog_settings = load_yaml.call(File.join(source, '_data/blog.yml'))
@@ -247,7 +248,7 @@ prefixes.each do |prefix|
   group = page_doc.call('/research/').css('.research-group .section-heading a')
   check.call(group.size == 1 && group.first['href'] == 'https://csma-research-group.github.io', "Research group More link: #{prefix}")
   news_archive = page_doc.call('/news/archive/')
-  check.call(news_archive.css('.news-list li').size == 4 && news_archive.css('.news-date').map(&:text) == %w[2026 2025 2024 2024], "News archive and date precision: #{prefix}")
+  check.call(news_archive.css('.news-list li').size == 5 && news_archive.at_css('.news-list li').text.include?('TraceCoder') && news_archive.css('.news-list time').map(&:text) == ['2026.04'] && news_archive.css('.news-date').map(&:text) == %w[2026 2025 2024 2024], "News archive and date precision: #{prefix}")
   paper_archive = page_doc.call('/publications/archive/')
   check.call(paper_archive.css('.paper-item').size == 6 && paper_archive.at_css('.paper-item').text.include?('SemFaith') && paper_archive.at_css('.paper-status time')&.[]('datetime') == '2026-08', "Publication archive and acceptance: #{prefix}")
   check.call(page_doc.call('/projects/archive/').at_css('.empty-note'), "Past projects pending source data: #{prefix}")

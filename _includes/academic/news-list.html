@@ -1,5 +1,5 @@
 {% assign news_offset = include.offset | default: 0 %}
 {% assign news_limit = include.limit | default: site.data.news.size %}
 <ol class="news-list">
-{% for item in site.data.news offset:news_offset limit:news_limit %}<li>{% if item.datetime %}<time datetime="{{ item.datetime }}">{{ item.date }}</time>{% else %}<span class="news-date">{{ item.date }}</span>{% endif %}<p>{{ item.text[lang] }} {% if item.paper %}<a href="{{ item.paper[lang] | relative_url }}" class="inline-more more-link">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a>{% endif %}</p></li>{% endfor %}
+{% for item in site.data.news offset:news_offset limit:news_limit %}{% assign news_url = item.url[lang] | default: item.paper[lang] %}<li>{% if item.datetime %}<time datetime="{{ item.datetime }}">{{ item.date }}</time>{% else %}<span class="news-date">{{ item.date }}</span>{% endif %}<p>{{ item.text[lang] }} {% if news_url %}<a href="{{ news_url | relative_url }}" class="inline-more more-link">{{ ui.more[lang] }} <span aria-hidden="true">→</span></a>{% endif %}</p></li>{% endfor %}
 </ol>

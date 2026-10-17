@@ -1,3 +1,11 @@
+- date: '2026.10.17'
+  datetime: 2026-10-17
+  text:
+    en: 'New blog post “A Shared Vision and Long-Term Thinking” explores short-termism, selfishness, and the sustained effort and fair sharing behind a credible vision.'
+    zh: '新博文《画饼是一种长期主义》：讨论短视、利己主义与共同愿景，以及长期投入和公平分享。'
+  url:
+    en: /posts/2026/10/shared-vision-and-long-term-thinking/
+    zh: /posts/2026/10/shared-vision-and-long-term-thinking-zh/
 - date: '2026.08'
   datetime: 2026-08
   text:
