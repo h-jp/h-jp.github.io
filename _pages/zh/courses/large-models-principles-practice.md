@@ -6,7 +6,6 @@ lang: zh
 translation: /teaching/large-models-principles-practice/
 section: teaching
 course_id: large-models-principles-practice
-description: 即将上线，敬请期待。
 ---
 
 {% include academic/course-page.html %}

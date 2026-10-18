@@ -54,7 +54,7 @@ back_news:
   zh: 返回近期动态
 projects_archive:
   en: Past projects
-  zh: 先前项目
+  zh: 历史项目
 back_projects:
   en: Back to ongoing projects
   zh: 返回在研项目
@@ -73,6 +73,12 @@ back_teaching:
 back_courses:
   en: Back to courses
   zh: 返回课程列表
+course_overview:
+  en: Course overview
+  zh: 课程简介
+course_materials_pending:
+  en: Course materials are not yet available on this page.
+  zh: 本页暂未提供课程资料。
 blog_archive:
   en: Earlier posts
   zh: 博客归档
@@ -141,7 +147,7 @@ authors:
   zh: 作者
 venue:
   en: Published in
-  zh: 发表载体
+  zh: 发表刊物／会议
 year:
   en: Year
   zh: 年份

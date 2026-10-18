@@ -1,0 +1,38 @@
+---
+layout: null
+permalink: /sitemap.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% assign sitemap_documents = site.html_pages %}
+  {% assign sitemap_collections = site.collections | where_exp: 'collection', 'collection.output != false' %}
+  {% for collection in sitemap_collections %}
+    {% assign sitemap_documents = sitemap_documents | concat: collection.docs %}
+  {% endfor %}
+  {% for doc in sitemap_documents %}
+    {% assign sitemap_language = doc.lang | default: 'en' | slice: 0, 2 %}
+    {% assign sitemap_visible = true %}
+    {% if sitemap_language == 'zh' and site.chinese_enabled != true %}
+      {% assign sitemap_visible = false %}
+      {% if doc.section == 'blog' and site.chinese_blog_enabled == true %}{% assign sitemap_visible = true %}{% endif %}
+    {% endif %}
+    {% if sitemap_visible and doc.sitemap != false and doc.url != '/404.html' %}
+      <url>
+        <loc>{{ doc.url | replace: '/index.html', '/' | absolute_url | xml_escape }}</loc>
+        {% assign sitemap_lastmod = doc.last_modified_at %}
+        {% if doc.collection and sitemap_lastmod == nil %}{% assign sitemap_lastmod = doc.date %}{% endif %}
+        {% if sitemap_lastmod %}<lastmod>{{ sitemap_lastmod | date_to_xmlschema }}</lastmod>{% endif %}
+      </url>
+    {% endif %}
+  {% endfor %}
+  {% assign sitemap_static_extensions = '.htm,.html,.xhtml,.pdf' | split: ',' %}
+  {% for file in site.static_files %}
+    {% if sitemap_static_extensions contains file.extname and file.sitemap != false and file.name != '404.html' %}
+      <url>
+        <loc>{{ file.path | replace: '/index.html', '/' | absolute_url | xml_escape }}</loc>
+        <lastmod>{{ file.modified_time | date_to_xmlschema }}</lastmod>
+      </url>
+    {% endif %}
+  {% endfor %}
+</urlset>

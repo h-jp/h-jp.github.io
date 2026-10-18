@@ -1,6 +1,6 @@
 ---
 layout: section
-title: 先前项目
+title: 历史项目
 permalink: /zh/projects/archive/
 lang: zh
 translation: /projects/archive/

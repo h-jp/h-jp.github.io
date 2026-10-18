@@ -6,6 +6,7 @@
 {% if lang == 'zh' and chinese_page_enabled != true %}{% assign chinese_unavailable = true %}{% endif %}
 {% assign page_title = page.title %}
 {% assign page_description = page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines %}
+{% if page.course_id %}{% assign metadata_course = site.data.courses | where: 'id', page.course_id | first %}{% assign page_description = metadata_course.description[lang] | strip_html | strip_newlines %}{% endif %}
 {% if chinese_unavailable %}{% assign page_title = '中文主页' %}{% assign page_description = '正在建设中，敬请期待。' %}{% endif %}
 <html lang="{% if lang == 'zh' %}zh-CN{% else %}en{% endif %}">
 <head>

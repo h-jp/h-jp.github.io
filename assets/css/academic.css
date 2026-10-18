@@ -164,6 +164,7 @@ html:lang(zh) .brand { letter-spacing: .045em; }
 .course:first-child { border-top: 0; padding-top: 0; }
 .course-meta { color: var(--muted); font-size: 13px; line-height: 1.85; padding-top: 3px; }
 .course-meta span { display: block; }
+.course-detail .course-meta { margin-bottom: 24px; }
 .course :is(h2, h3) { font-size: 21px; margin-bottom: 12px; }
 .course-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
 .course-heading :is(h2, h3) { min-width: 0; margin-bottom: 0; }

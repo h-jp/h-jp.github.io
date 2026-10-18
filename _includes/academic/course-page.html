@@ -1,6 +1,12 @@
 {% include academic/context.html %}
+{% assign current_course = site.data.courses | where: 'id', page.course_id | first %}
 {% assign recent_courses = site.data.courses | slice: 0, site.teaching_page_size %}
 {% assign recent_course = recent_courses | where: 'id', page.course_id | first %}
 {% assign course_parent = '/teaching/' %}
 {% unless recent_course %}{% assign course_parent = '/teaching/archive/' %}{% endunless %}
-<a class="text-link" href="{{ prefix | append: course_parent | append: '#' | append: page.course_id | relative_url }}"><span aria-hidden="true">←</span> {{ ui.back_courses[lang] }}</a>
+<div class="course-detail">
+  <div class="course-meta"><span>{{ current_course.period[lang] }}</span>{% if current_course.status == 'upcoming' %}<span>{{ ui.upcoming_course[lang] }}</span>{% endif %}{% if current_course.audience[lang] or current_course.role[lang] %}<span>{{ current_course.audience[lang] }}{% if current_course.audience[lang] and current_course.role[lang] %} · {% endif %}{{ current_course.role[lang] }}</span>{% endif %}</div>
+  <section class="prose" aria-labelledby="course-overview"><h2 id="course-overview">{{ ui.course_overview[lang] }}</h2><p>{{ current_course.description[lang] }}</p></section>
+  <p class="empty-note">{{ ui.course_materials_pending[lang] }}</p>
+</div>
+<div class="archive-nav archive-nav--back"><a class="text-link" href="{{ prefix | append: course_parent | append: '#' | append: page.course_id | relative_url }}"><span aria-hidden="true">←</span> {{ ui.back_courses[lang] }}</a></div>

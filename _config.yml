@@ -12,7 +12,7 @@ breadcrumbs: false
 words_per_minute: 160
 news_page_size: 3
 teaching_page_size: 3
-chinese_enabled: false
+chinese_enabled: true
 chinese_blog_enabled: true
 future: true
 read_more: disabled

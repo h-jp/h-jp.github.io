@@ -14,6 +14,7 @@ report_path = ARGV[1] && File.expand_path(ARGV[1])
 load_yaml = ->(path) { YAML.safe_load(File.read(path), permitted_classes: [Date, Time], aliases: true) }
 config = load_yaml.call(File.join(source, '_config.yml'))
 profile = load_yaml.call(File.join(source, '_data/profile.yml'))
+courses = load_yaml.call(File.join(source, '_data/courses.yml'))
 config.merge!(load_yaml.call(ARGV[2])) if ARGV[2]
 chinese_enabled = config['chinese_enabled'] == true
 chinese_blog_enabled = config['chinese_blog_enabled'] == true
@@ -102,6 +103,7 @@ html.each do |path, doc|
     check.call(doc.at_css('meta[name="robots"]')&.[]('content') == 'noindex,follow', "Placeholder indexing: #{rel}")
     check.call(doc.css('.desktop-nav, .mobile-menu').empty?, "Placeholder navigation: #{rel}")
   else
+    check.call(!doc.at_css('meta[name="robots"]')&.[]('content').to_s.include?('noindex'), "Open page excluded from indexing: #{rel}")
     language = doc.at_css('html')['lang'] == 'zh-CN' ? 'zh' : 'en'
     expected_navigation = navigation.map { |item| item['url'][language] }
     check.call(doc.css('.desktop-nav a').map { |link| link['href'] } == expected_navigation && doc.css('.mobile-menu nav a').map { |link| link['href'] } == expected_navigation, "Navigation order and links: #{rel}")
@@ -260,8 +262,11 @@ prefixes.each do |prefix|
       expected = "#{prefix}/teaching/#{course['id']}/"
       check.call(more.size == 1 && more.first['href'] == expected, "Course More link: #{expected}")
       detail = html.fetch(resolve.call(expected, File.join(root,'index.html')).first)
-      message = prefix.empty? ? 'Coming soon. Stay tuned.' : '即将上线，敬请期待。'
-      check.call(detail.at_css('.page-header p')&.text == message, "Course placeholder: #{expected}")
+      language = prefix.empty? ? 'en' : 'zh'
+      data = courses.find { |item| item['id'] == course['id'] }
+      check.call(detail.at_css('.course-detail .prose p')&.text == data['description'][language], "Course overview: #{expected}")
+      check.call(detail.at_css('.course-detail .course-meta')&.text.to_s.include?(data['period'][language]), "Course period: #{expected}")
+      check.call(detail.at_css('meta[name="description"]')&.[]('content') == data['description'][language], "Course metadata: #{expected}")
       check.call(detail.at_css('.section-content a')['href'].end_with?("##{course['id']}"), "Course return anchor: #{expected}")
     end
   end

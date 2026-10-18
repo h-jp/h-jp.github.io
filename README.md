@@ -2,7 +2,7 @@
 
 最近定稿版本：**v2.0（2026-10-14）**。站点：[h-jp.github.io](https://h-jp.github.io/)。由 `main` 分支发布后续内容更新，`v2.0` 标签保留本次定稿快照，`v1.1` 与 `v1.0` 标签保留历史正式版本。
 
-基于 Jekyll 的中英文个人学术主页。默认显示英文，根地址 `/` 为英文首页；语言入口只显示目标语言：英文页显示 `ZH`，中文页显示 `EN`。完整中文源码保留。当前以 `chinese_blog_enabled: true` 单独开放中文博客及其列表、归档；其余中文页面显示“正在建设中，敬请期待。”。将 `_config.yml` 的 `chinese_enabled` 改为 `true` 并重新构建即可开放全部中文页面。
+基于 Jekyll 的中英文个人学术主页。默认显示英文，根地址 `/` 为英文首页，`/zh/` 为中文首页；语言入口只显示目标语言：英文页显示 `ZH`，中文页显示 `EN`。2026-10-18 完善中文内容后开放全部中文页面，当前配置为 `chinese_enabled: true`。课程详情复用已确认的简介、授课时间与对象；课程资料仍待补充。
 
 导航：Home · News · Research · Projects · Publications · Teaching · Students · Blog · About。
 

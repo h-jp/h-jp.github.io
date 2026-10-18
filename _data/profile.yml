@@ -31,7 +31,7 @@ bio:
     applications, and registered more than 10 software copyrights. He has been invited to review for international
     conferences including AAAI, EMNLP, NLPCC, and PRICAI, and journals including ACM TKDD, ACM TALLIP, and
     Journal of Software.
-  zh: 黄江平，博士，硕士生导师。博士毕业于武汉大学，新加坡南洋理工大学博士后。先后参与国家自然科学基金重点项目1项，主研国家自然科学基金面上项目3项、国家社科基金项目1项，主持省部级项目5项。发表学术论文近20篇，申请国家发明专利10余项，登记软件著作权10余项。受邀担任AAAI、EMNLP、NLPCC、PRICAI等国际会议以及ACM
+  zh: 黄江平，重庆邮电大学教师、硕士生导师。获武汉大学博士学位，曾在新加坡南洋理工大学从事博士后研究。先后参与国家自然科学基金重点项目1项，主研国家自然科学基金面上项目3项、国家社科基金项目1项，主持省部级项目5项。发表学术论文近20篇，申请国家发明专利10余项，登记软件著作权10余项。受邀担任AAAI、EMNLP、NLPCC、PRICAI等国际会议以及ACM
     TKDD、ACM TALLIP、软件学报等期刊审稿人。
 email: huangjp@cqupt.edu.cn
 weibo: https://weibo.com/jiangpinghuang
@@ -69,7 +69,7 @@ positions:
     zh: 博士后
 service:
   en: Invited reviewer for AAAI, EMNLP, NLPCC, PRICAI, ACM TKDD, ACM TALLIP, and Journal of Software.
-  zh: 受邀担任AAAI、EMNLP、NLPCC、PRICAI等国际会议以及ACM TKDD、ACM TALLIP、软件学报等期刊审稿人。
+  zh: 受邀担任AAAI、EMNLP、NLPCC、PRICAI等国际会议，以及ACM TKDD、ACM TALLIP和《软件学报》等期刊的审稿人。
 research:
 - id: artificial-intelligence
   title:
@@ -78,7 +78,7 @@ research:
   description:
     en: We study cognition, reasoning, and collaboration in multi-agent systems, exploring theories, methods,
       and implementation approaches for agents whose behavior can be verified and whose capabilities can evolve.
-    zh: 研究多智能体的认知、推理与协同机制，探索可验证、可演化的智能体关键理论方法与实现路径。
+    zh: 研究多智能体的认知、推理与协同机制，探索构建可验证、可演化智能体的理论、方法与实现路径。
   short:
     en: Cognition, reasoning, and collaboration in verifiable, evolving multi-agent systems.
     zh: 多智能体认知、推理与协同，以及可验证、可演化的智能体。
@@ -101,7 +101,7 @@ research:
   description:
     en: We study perception, decision-making, planning, and control for intelligent robots in complex environments,
       exploring the mechanisms of human–robot collaboration and strategies for the continual evolution of robotic capabilities.
-    zh: 研究智能机器人在复杂环境中的感知、决策、规划与控制能力，探索人机协同的核心机制与持续能力进化策略。
+    zh: 研究智能机器人在复杂环境中的感知、决策、规划与控制能力，探索人机协同机制与机器人能力持续演化的方法。
   short:
     en: Perception, planning, and control in complex environments, with human–robot collaboration and continual capability evolution.
-    zh: 复杂环境中的感知、决策、规划与控制，以及人机协同与持续能力进化。
+    zh: 复杂环境中的感知、决策、规划与控制，以及人机协同与能力持续演化。

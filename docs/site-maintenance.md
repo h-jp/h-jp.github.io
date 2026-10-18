@@ -57,7 +57,7 @@ v2.0 继承 v1.1 已确认的文案、正文排版与公开范围，纳入 Stude
 | 界面用语与栏目摘要 | `_data/labels.yml`、`_data/descriptions.yml` |
 | 论文原始记录、代表作选择、中文摘要 | `_publications/` |
 | 中文论文详情入口 | `_pages/zh/papers/`，通过 `pub_id` 复用论文数据 |
-| 八组双语博客 | `_posts/` |
+| 九组双语博客 | `_posts/` |
 | 博客置顶、最新标记与列表数量 | `_data/blog.yml` |
 | 主栏目页面 | `_pages/` 与 `_pages/zh/` |
 | 版式与交互 | `_layouts/`、`_includes/academic/`、`assets/css/academic.css`、`assets/js/academic.js` |
@@ -76,7 +76,11 @@ SemFaith 已于 2026 年 8 月被 PRICAI 2026（CCF C）录用，科研论文动
 
 默认语言为英文。访问根地址 `/` 显示英文首页，页面未单独指定语言时也以英文为默认值。语言入口仅显示可切换的目标语言：英文页为 `ZH`，中文页（含建设中提示页）为 `EN`，不再显示当前语言或分隔符；`zh` 是中文语言代码，HTML 中使用 `zh-CN`。不根据浏览器语言自动跳转。
 
-`_config.yml` 中保留 `chinese_enabled: false`，另以 `chinese_blog_enabled: true` 单独开放中文博客。所有 `section: blog` 的文章、博客列表、归档及分类／标签归档均可正常访问；其他中文栏目、论文、课程地址仍显示“正在建设中，敬请期待。”及返回对应英文页面的链接。只有这些建设中页面不输出正文并设置 `noindex,follow`，已开放的博客保留正文、摘要和双语元信息。将 `chinese_blog_enabled` 改为 `false` 可再次关闭中文博客；后续将 `chinese_enabled` 改为 `true` 可开放全部中文页面。配置修改后须重新构建。两项开关属于静态站点显示配置，不是访问控制或登录后台。
+2026-10-18 按用户要求完善中文内容并开放中文主体页面，`_config.yml` 使用 `chinese_enabled: true`，保留 `chinese_blog_enabled: true`。中文首页、九个主栏目、论文详情、课程详情及归档均正常显示，不再使用建设中提示，也不输出 `noindex`。中文简介、研究表述、栏目用语与错误页说明同步润色，个人信息、成果记录及项目脱敏范围沿用已有确认。
+
+如需恢复仅开放中文博客的状态，可设 `chinese_enabled: false`、`chinese_blog_enabled: true`；所有 `section: blog` 的文章、列表和归档继续开放，其余中文页面显示建设中提示、返回英文的链接及 `noindex,follow`。同时关闭两项开关时，全部中文页面显示建设中提示。全站开关为 `true` 时，不受博客开关影响。配置修改后须重新构建；这些开关控制静态显示，不是访问控制或登录后台。
+
+`sitemap.xml` 与上述显示开关同步：建设中的中文页面不列入网站地图；已开放的中文博客与英文页面正常列入，完整中文开放后自动纳入对应页面。显式标记 `sitemap: false` 的页面及错误页继续排除，静态 HTML 与 PDF 沿用原有收录规则。修改语言开关后，除检查正文与 `noindex`，还应检查生成的网站地图，避免同时提交暂不参与收录的页面。
 
 主栏目为 `/`、`/news/`、`/research/`、`/projects/`、`/publications/`、`/teaching/`、`/students/`、`/blogs/`、`/about/`，中文地址分别加 `/zh` 前缀。
 
@@ -100,7 +104,9 @@ Students 分为本科生、硕士生及科研机会与招生三个部分。前�
 
 Teaching 主列表仅显示最近三门课程：大模型原理与实践、软件需求工程、Linux程序开发。页底 More 进入 `/teaching/archive/`，依次展示跨媒体信息处理技术、计算机科学导论、计算机网络、数据与算法基础。七门课程统一按最近授课年份或计划开设年份倒序，同年按开始授课年份较新者在前；顺序维护在 `_data/courses.yml` 中，近期数量在 `_config.yml` 的 `teaching_page_size` 中维护。首页仍展示新课预告与软件需求工程。
 
-所有课程在桌面标题行右侧显示 More，手机端移到标题下方，避免挤压长课名。点击 More 进入 `/teaching/<course.id>/` 的独立主页；中文版路径加 `/zh`。课程主页目前显示 `Coming soon. Stay tuned.`／“即将上线，敬请期待。”，并提供返回原课程列表位置的链接。入口源文件为 `_pages/courses/` 与 `_pages/zh/courses/`；后续可在各文件中替换占位说明并补充课程正文，保留 permalink、lang、translation 和 course_id。中文未开放期间先显示全站建设中提示，开启后自动恢复课程页面。
+所有课程在桌面标题行右侧显示 More，手机端移到标题下方，避免挤压长课名。点击 More 进入 `/teaching/<course.id>/` 的独立主页；中文版路径加 `/zh`。课程详情显示已确认的授课时间、开课状态、对象与职责，以及课程简介，并提供返回原课程列表位置的链接。简介和元信息共用 `_data/courses.yml`，通过 `_includes/academic/course-page.html` 与 `_layouts/default.html` 渲染，中英文同步，避免详情与列表维护两套介绍。尚未公开的课程资料仅说明“本页暂未提供课程资料”，不编写未提供的教学大纲、作业、考核方式或下载链接。
+
+课程入口源文件位于 `_pages/courses/` 与 `_pages/zh/courses/`；后续补充资料时，保留 permalink、lang、translation 和 course_id，并替换相应课程的资料提示。课程摘要由课程数据生成，无需在入口文件重复填写 `description`。
 
 “大模型原理与实践 / Large Language Models: Principles and Practice”计划于 2027 年春季开设，使用 `status: upcoming`，中英文均显示计划状态与“敬请期待 / stay tuned”。不注明面向班级；未提供的授课对象层次与授课职责不填补，模板省略缺失字段及其分隔符。后续正式开课信息由用户提供后再更新。
 
@@ -139,7 +145,7 @@ pinned_posts:
 
 `pinned_count` 和 `latest_count` 各限制为 1–3。`pinned_posts` 按优先级列出英文文章地址，模板自动匹配同一文章的中文版本；默认仅第一篇生效。当前默认置顶 AI 编程工具文章，可直接替换该地址。最新标记按真实文章日期自动选择，无需手工更新。
 
-博客主列表目标数量为 `regular_count + pinned_count + latest_count`，限制在 5–10 篇。默认 1＋1＋3＝5 篇；置顶与最新各设为 3 篇时，目标为 3＋3＋3＝9 篇；此时将 `regular_count` 改为 4，可展示最多 10 篇。文章不足时按实际数量显示，当前每种语言各有 8 篇。若某篇同时属于置顶和最新，只展示一次并同时标记，其他文章补足目标数量。
+博客主列表目标数量为 `regular_count + pinned_count + latest_count`，限制在 5–10 篇。默认 1＋1＋3＝5 篇；置顶与最新各设为 3 篇时，目标为 3＋3＋3＝9 篇；此时将 `regular_count` 改为 4，可展示最多 10 篇。文章不足时按实际数量显示，当前每种语言各有 9 篇。若某篇同时属于置顶和最新，只展示一次并同时标记，其他文章补足目标数量。
 
 置顶文章在前，其余按时间倒序；超出数量的文章进入 More 归档，主列表与归档不重复且不丢失文章。首页 Blog 区块沿用相同排序和标记，展示两篇文章，每篇标题下使用 `excerpt` 的一至两句介绍；新增文章时保持中英文摘要长度适当。没有剩余文章时不显示主列表底部的 More。中英文使用同一份配置。
 
@@ -169,16 +175,16 @@ git diff --check
 bundle exec ruby scripts/verify_site.rb _site /tmp/homepage-site-audit.json
 ```
 
-当前构建包含 102 个页面（51 对语言页面，含两个错误页）与 7 个历史跳转页。当前中文博客及其关联归档页正常开放，其余中文地址为建设中页面；全站中文开关开启后恢复全部内容。包含 12 个归档页面和 14 个课程页面。维护后重新检查内容数、语言对应关系、链接、脱敏及删除页面是否残留。浏览器重点检查主栏目与归档在 320、390、768、1024、1280、1440 像素下的排版，以及手机菜单、More 和语言切换；照片还需检查不同像素密度下的候选文件和 JPEG 后备图，确认未请求母版。
+当前构建包含 104 个页面（52 对语言页面，含两个错误页）与 7 个历史跳转页，中英文均已开放。包含 12 个归档页面和 14 个课程页面。维护后重新检查内容数、语言对应关系、链接、脱敏及删除页面是否残留。浏览器重点检查主栏目与归档在 320、390、768、1024、1280、1440 像素下的排版，以及手机菜单、More 和语言切换；照片还需检查不同像素密度下的候选文件和 JPEG 后备图，确认未请求母版。
 
-验证完整中文内容时，可在站点目录之外新建仅含 `chinese_enabled: true` 的 YAML 配置，再使用独立构建目录：
+默认构建用于验证完整双语内容。如需验证语言关闭后的回退状态，可在站点目录之外新建包含 `chinese_enabled: false`、`chinese_blog_enabled: true` 的 YAML 配置，再使用独立构建目录：
 
 ```bash
-bundle exec jekyll build --safe --config _config.yml,/tmp/hjp-zh-preview.yml --destination /tmp/hjp-bilingual-preview
-bundle exec ruby scripts/verify_site.rb /tmp/hjp-bilingual-preview /tmp/hjp-bilingual-audit.json /tmp/hjp-zh-preview.yml
+bundle exec jekyll build --safe --config _config.yml,/tmp/hjp-zh-fallback.yml --destination /tmp/hjp-fallback-preview
+bundle exec ruby scripts/verify_site.rb /tmp/hjp-fallback-preview /tmp/hjp-fallback-audit.json /tmp/hjp-zh-fallback.yml
 ```
 
-正式本地预览继续使用 `_site` 的默认关闭状态，不要把用于完整双语检查的构建目录当作发布目录。
+同时将回退配置的 `chinese_blog_enabled` 设为 `false`，可检查全部中文关闭状态。正式本地预览与发布均采用 `_config.yml` 的完整双语配置，不使用回退构建目录。
 
 `docs/`、`work/`、`_archive/`、`scripts/`、旧地图和模板开发材料不进入站点构建目录。其中 `work/`、`_archive/` 与本地使用指南由 Git 忽略，不提交到公开仓库；维护说明和验证脚本作为源码提交。旧样式及工具文件保留作为历史源码，当前页面加载 `academic.css` 与 `academic.js`。样式与脚本链接均使用构建时间作为 `v` 参数，同一次构建中的页面共用同一版本；部署新构建后地址随之更新，避免新页面继续复用旧版本的浏览器样式或换行脚本缓存。评论、访问统计和广告脚本未启用。
 

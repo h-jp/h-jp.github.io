@@ -6,7 +6,6 @@ lang: zh
 translation: /teaching/computer-networks/
 section: teaching
 course_id: computer-networks
-description: 即将上线，敬请期待。
 ---
 
 {% include academic/course-page.html %}

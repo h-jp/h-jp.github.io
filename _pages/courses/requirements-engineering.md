@@ -6,7 +6,6 @@ lang: en
 translation: /zh/teaching/requirements-engineering/
 section: teaching
 course_id: requirements-engineering
-description: Coming soon. Stay tuned.
 ---
 
 {% include academic/course-page.html %}

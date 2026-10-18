@@ -6,7 +6,6 @@ lang: en
 translation: /zh/teaching/intro-computer-science/
 section: teaching
 course_id: intro-computer-science
-description: Coming soon. Stay tuned.
 ---
 
 {% include academic/course-page.html %}

@@ -6,7 +6,6 @@ lang: en
 translation: /zh/teaching/cross-media/
 section: teaching
 course_id: cross-media
-description: Coming soon. Stay tuned.
 ---
 
 {% include academic/course-page.html %}
