@@ -21,8 +21,10 @@ chinese_blog_enabled = config['chinese_blog_enabled'] == true
 load_frontmatter = ->(path) { YAML.safe_load(File.read(path).split(/^---\s*$/, 3)[1], permitted_classes: [Date, Time], aliases: true) || {} }
 post_data = Dir.glob(File.join(source, '_posts/*')).map { |path| load_frontmatter.call(path) }
 blog_routes = post_data.map { |post| post['permalink'] }
+page_by_url = post_data.to_h { |post| [post['permalink'], post] }
 Dir.glob(File.join(source, '_pages/**/*.{md,html}')).each do |path|
   page_data = load_frontmatter.call(path)
+  page_by_url[page_data['permalink']] = page_data
   blog_routes << page_data['permalink'] if page_data['section'] == 'blog'
 end
 errors = []
@@ -76,6 +78,25 @@ end
 retired = %r{/(?:zh/)?(?:cv|contact|resume)(?:/|\.html|["'<\s]|$)}
 navigation = load_yaml.call(File.join(source, '_data/navigation.yml'))['main']
 check.call(navigation.map { |item| item['id'] } == %w[home news research projects publications teaching students blog about], 'Primary navigation order')
+comments_config = config.fetch('comments', {})
+giscus_config = comments_config.fetch('giscus', {})
+comments_enabled = comments_config['enabled'] == true && comments_config['provider'] == 'giscus'
+comments_configured = %w[repo repo_id category category_id].all? { |key| !giscus_config[key].to_s.strip.empty? && !giscus_config[key].to_s.include?('REPLACE') }
+check.call(!comments_enabled || comments_configured, 'Enabled comments need a verified repository and category')
+analytics_config = config.fetch('analytics', {})
+cloudflare_config = analytics_config.fetch('cloudflare', {})
+analytics_enabled = analytics_config['enabled'] == true && analytics_config['provider'] == 'cloudflare'
+analytics_configured = cloudflare_config['token'].to_s.match?(/\A[a-f0-9]{32}\z/i) && cloudflare_config['hostname'] == 'h-jp.github.io'
+check.call(!analytics_enabled || analytics_configured, 'Enabled analytics need a public beacon token and the production hostname')
+post_by_url = post_data.to_h { |post| [post['permalink'], post] }
+post_data.each do |post|
+  check.call(post['comment_id'].to_s.match?(%r{\Ablog/[a-z0-9/-]+\z}), "Stable discussion id: #{post['permalink']}")
+  counterpart = post_by_url[post['translation']]
+  check.call(counterpart && counterpart['comment_id'] == post['comment_id'], "Shared bilingual discussion: #{post['permalink']}")
+end
+post_data.group_by { |post| post['comment_id'] }.each do |id, posts|
+  check.call(posts.size == 2 && posts.map { |post| post['lang'] }.sort == %w[en zh], "Discussion id must identify exactly one article pair: #{id}")
+end
 
 html.each do |path, doc|
   rel = Pathname.new(path).relative_path_from(Pathname.new(root)).to_s
@@ -96,6 +117,25 @@ html.each do |path, doc|
   check.call(doc.at_css('link[rel="icon"]')&.[]('href') == profile['portrait_icon'] && doc.at_css('link[rel="icon"]')&.[]('type') == 'image/png', "Lightweight portrait favicon: #{rel}")
   chinese_page_enabled = chinese_enabled || (chinese_blog_enabled && blog_routes.include?(canonical))
   notice_expected = doc.at_css('html')['lang'] == 'zh-CN' && !chinese_page_enabled
+  post = post_by_url[canonical]
+  comments_expected = comments_enabled && comments_configured && post && post['comments'] != false && !notice_expected
+  comment_widgets = doc.css('.article-comments')
+  comment_scripts = doc.css('script[src="https://giscus.app/client.js"]')
+  check.call(comment_widgets.size == (comments_expected ? 1 : 0) && comment_scripts.size == comment_widgets.size, "Comments confined to visible, opted-in blog articles: #{rel}")
+  if comments_expected
+    widget = comment_scripts.first
+    check.call(widget['data-term'] == post['comment_id'] && widget['data-mapping'] == 'specific' && widget['data-strict'] == '1', "Stable discussion mapping: #{rel}")
+    check.call(widget['data-lang'] == doc.at_css('html')['lang'] && widget['data-loading'] == 'lazy', "Comment language and lazy loading: #{rel}")
+    check.call(widget['data-repo'] == giscus_config['repo'] && widget['data-repo-id'] == giscus_config['repo_id'] && widget['data-category-id'] == giscus_config['category_id'], "Configured comment repository and category: #{rel}")
+    check.call(comment_widgets.first.at_css('.comments-fallback a')&.[]('href').to_s.start_with?("https://github.com/#{giscus_config['repo']}/discussions?"), "Comment fallback link: #{rel}")
+  end
+  analytics_expected = analytics_enabled && analytics_configured && ENV['JEKYLL_ENV'] == 'production' && blog_routes.include?(canonical) && page_by_url[canonical]&.[]('analytics') != false && !notice_expected
+  beacons = doc.css('script[data-cf-token]')
+  check.call(beacons.size == (analytics_expected ? 1 : 0), "Analytics confined to visible blog pages in production: #{rel}")
+  check.call(doc.css('script[src*="cloudflareinsights.com"], script[src*="goatcounter.com"]').empty?, "No unguarded or duplicate analytics provider: #{rel}")
+  if analytics_expected
+    check.call(beacons.first['data-cf-hostname'] == 'h-jp.github.io' && beacons.first['data-cf-token'] == cloudflare_config['token'], "Analytics site configuration: #{rel}")
+  end
   check.call(!!doc.at_css('.language-notice') == notice_expected, "Chinese visibility setting: #{rel}")
   check.call(!!doc.at_css('link[rel="alternate"][hreflang="zh-CN"]') == chinese_page_enabled, "Chinese alternate visibility: #{rel}")
   if notice_expected

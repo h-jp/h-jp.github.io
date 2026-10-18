@@ -1,6 +1,7 @@
 ---
 title: "Cognitive Growth: A Path to Clarity and Inner Freedom"
 date: 2026-06-11
+comment_id: blog/2026-06-11-cognitive-clarity-and-inner-freedom
 permalink: /posts/2026/06/cognitive-clarity-and-inner-freedom/
 categories:
   - Reflections

@@ -37,3 +37,5 @@ Students 紧接 Teaching，分为本科生、硕士生及科研机会与招生�
 首页照片使用 WebP 响应式资源和 JPEG 后备图，标签图标使用同一照片生成的 64 像素小图。原图 `images/bio-photo-new.jpg` 作为母版保留；更换照片后运行 `bash scripts/optimize-portrait.sh` 重新生成显示资源，详见维护说明。
 
 博客在 `_data/blog.yml` 配置置顶、最新标记和展示数量，默认五篇；其余文章从 More 进入归档。Teaching 显示近期三门课，以往四门进入归档，各课程均有独立主页入口。News、Projects、Publications、Teaching、Blog 的底部采用左对齐说明与右侧 More，说明中明确引导点击右侧入口。
+
+博客留言与访问统计的启用、管理和验证见 [接入说明](docs/blog-interactions.md)。新文章的中英文版本需设置相同且唯一的 `comment_id`。

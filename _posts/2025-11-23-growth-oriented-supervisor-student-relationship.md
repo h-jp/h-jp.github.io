@@ -1,6 +1,7 @@
 ---
 title: "From Defensive Thinking to Growth-Oriented Thinking: Building a Constructive Supervisor–Student Relationship"
 date: 2025-11-23
+comment_id: blog/2025-11-23-growth-oriented-supervisor-student-relationship
 permalink: /posts/2025/11/growth-oriented-supervisor-student-relationship/
 categories:
   - Reflections

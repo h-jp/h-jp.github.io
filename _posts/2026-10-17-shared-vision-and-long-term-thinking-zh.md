@@ -1,6 +1,7 @@
 ---
 title: "画饼是一种长期主义"
 date: 2026-10-17
+comment_id: blog/2026-10-17-shared-vision-and-long-term-thinking
 permalink: /posts/2026/10/shared-vision-and-long-term-thinking-zh/
 categories:
   - Reflections

@@ -1,0 +1,16 @@
+{%- assign blog_comments_ready = false -%}
+{%- assign giscus_config = site.comments.giscus -%}
+{%- assign giscus_repo = giscus_config.repo | default: '' | strip -%}
+{%- assign giscus_repo_id = giscus_config.repo_id | default: '' | strip -%}
+{%- assign giscus_category = giscus_config.category | default: '' | strip -%}
+{%- assign giscus_category_id = giscus_config.category_id | default: '' | strip -%}
+{%- if site.comments.enabled == true and site.comments.provider == 'giscus' and giscus_repo != empty and giscus_repo_id != empty and giscus_category != empty and giscus_category_id != empty -%}
+  {%- unless giscus_repo contains 'REPLACE' or giscus_repo_id contains 'REPLACE' or giscus_category contains 'REPLACE' or giscus_category_id contains 'REPLACE' -%}
+    {%- assign blog_comments_ready = true -%}
+  {%- endunless -%}
+{%- endif -%}
+{%- assign blog_analytics_ready = false -%}
+{%- assign cloudflare_token = site.analytics.cloudflare.token | default: '' | strip -%}
+{%- if site.analytics.enabled == true and site.analytics.provider == 'cloudflare' and cloudflare_token.size == 32 and site.analytics.cloudflare.hostname == 'h-jp.github.io' -%}
+  {%- assign blog_analytics_ready = true -%}
+{%- endif -%}

@@ -1,0 +1,4 @@
+{% include academic/interaction-config.html %}
+{% if blog_analytics_ready and page.section == 'blog' and page.analytics != false and jekyll.environment == 'production' %}
+<script defer src="{{ '/assets/js/blog-analytics.js' | relative_url }}?v={{ site.time | date: '%s' }}" data-cf-token="{{ cloudflare_token | escape }}" data-cf-hostname="{{ site.analytics.cloudflare.hostname | escape }}"></script>
+{% endif %}

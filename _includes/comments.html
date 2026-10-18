@@ -10,14 +10,7 @@
   {% capture comments_label %}{{ site.data.ui-text[site.locale].comments_label | default: "Comments" }}{% endcapture %}
   {% case site.comments.provider %}
   {% when "giscus" %}
-    {% assign giscus_repo_id = site.comments.giscus.repo_id | default: "" %}
-    {% assign giscus_category_id = site.comments.giscus.category_id | default: "" %}
-    {% if giscus_repo_id != "" and giscus_category_id != "" and giscus_repo_id != "REPLACE_WITH_GISCUS_REPO_ID" and giscus_category_id != "REPLACE_WITH_GISCUS_CATEGORY_ID" %}
-      <div class="page__comments post-comments" id="comments">
-        <h2 class="page__comments-title">{{ comments_label }}</h2>
-        {% include comments/giscus.html %}
-      </div>
-    {% endif %}
+    {% include academic/post-comments.html %}
   {% when "disqus" %}
     <div class="page__comments" id="comments">
       <h4 class="page__comments-title">{{ comments_label }}</h4>

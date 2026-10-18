@@ -1,6 +1,7 @@
 ---
 title: "Codex、Claude Code 与 AI 编程工具：软件开发方式正在改变"
 date: 2026-04-21
+comment_id: blog/2026-04-21-ai-coding-tools
 permalink: /posts/2026/04/ai-coding-tools-zh/
 categories:
   - Learning

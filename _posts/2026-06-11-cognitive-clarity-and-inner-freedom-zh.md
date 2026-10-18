@@ -1,6 +1,7 @@
 ---
 title: "提升认知，在风雨中保持清醒与豁达"
 date: 2026-06-11
+comment_id: blog/2026-06-11-cognitive-clarity-and-inner-freedom
 permalink: /posts/2026/06/cognitive-clarity-and-inner-freedom-zh/
 categories:
   - Reflections

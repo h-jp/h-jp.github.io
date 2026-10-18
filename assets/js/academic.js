@@ -18,6 +18,11 @@
       link.href = target.href;
     });
   });
+  document.querySelectorAll('[data-translation], .article-translation').forEach(link => {
+    link.addEventListener('click', () => {
+      if (location.hash === '#comments' && document.getElementById('comments')) link.hash = 'comments';
+    });
+  });
   const menu = document.querySelector('.mobile-menu');
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && menu?.open) {

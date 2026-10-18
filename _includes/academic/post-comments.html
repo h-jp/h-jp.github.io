@@ -1,0 +1,15 @@
+{% include academic/interaction-config.html %}
+{% if blog_comments_ready and page.collection == 'posts' and page.comments != false %}
+{% assign discussion_id = page.comment_id | default: page.url %}
+{% if page.comment_id == nil and lang == 'zh' and page.translation %}{% assign discussion_id = page.translation %}{% endif %}
+{% assign discussion_query = discussion_id | uri_escape %}
+<section class="article-comments" id="comments" aria-labelledby="comments-title">
+  <h2 id="comments-title">{% if lang == 'zh' %}留言与交流{% else %}Join the discussion{% endif %}</h2>
+  <p class="comments-intro">{% if lang == 'zh' %}欢迎分享想法。登录 GitHub 后即可留言或回应；本文的中英文版本共用讨论。{% else %}Share your thoughts with a GitHub account. The English and Chinese versions of this article share one discussion.{% endif %}</p>
+  <p class="comments-status" role="status" data-comments-status data-timeout-message="{% if lang == 'zh' %}留言服务暂未响应，请稍后刷新，或使用下方 GitHub 入口。{% else %}Comments are taking longer to load. Refresh later or use the GitHub link below.{% endif %}">{% if lang == 'zh' %}正在加载留言…{% else %}Loading comments…{% endif %}</p>
+  <div class="giscus">{% include comments/giscus.html %}</div>
+  <script defer src="{{ '/assets/js/blog-comments.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <p class="comments-fallback">{% if lang == 'zh' %}留言区加载较慢时，可{% else %}If comments are slow to load, {% endif %}<a href="https://github.com/{{ giscus_config.repo }}/discussions?discussions_q={{ discussion_query }}" target="_blank" rel="noopener noreferrer">{% if lang == 'zh' %}在 GitHub 查看讨论{% else %}view the discussion on GitHub{% endif %}</a>{% if lang == 'zh' %}。{% else %}.{% endif %}</p>
+  <noscript><p class="comments-fallback">{% if lang == 'zh' %}启用 JavaScript 后可在此查看留言。{% else %}Enable JavaScript to read comments here.{% endif %}</p></noscript>
+</section>
+{% endif %}

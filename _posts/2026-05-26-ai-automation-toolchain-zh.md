@@ -1,6 +1,7 @@
 ---
 title: "构建 AI 自动化工具链：让人沉浸于思考，让 AI 负责实现"
 date: 2026-05-26
+comment_id: blog/2026-05-26-ai-automation-toolchain
 permalink: /posts/2026/05/ai-automation-toolchain-zh/
 categories:
   - Research

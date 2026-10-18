@@ -1,6 +1,7 @@
 ---
 title: "从防御性认知走向成长型认知：理性建构研究生与导师关系"
 date: 2025-11-23
+comment_id: blog/2025-11-23-growth-oriented-supervisor-student-relationship
 permalink: /posts/2025/11/growth-oriented-supervisor-student-relationship-zh/
 categories:
   - Reflections

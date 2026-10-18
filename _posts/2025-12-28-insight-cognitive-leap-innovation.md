@@ -1,6 +1,7 @@
 ---
 title: "A Flash of Insight: How Cognitive Leaps Ignite Innovation and Reform"
 date: 2025-12-28
+comment_id: blog/2025-12-28-insight-cognitive-leap-innovation
 permalink: /posts/2025/12/insight-cognitive-leap-innovation/
 categories:
   - Reflections

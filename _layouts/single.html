@@ -16,4 +16,5 @@ layout: default
       <a class="text-link" href="{{ prefix | append: '/blogs/' | relative_url }}">← {{ ui.back_blog[lang] }}</a>
     </footer>
   </article>
+  {% include academic/post-comments.html %}
 </main>

@@ -1,6 +1,7 @@
 ---
 title: "Codex, Claude Code, and AI Coding Tools: How Software Development Is Changing"
 date: 2026-04-21
+comment_id: blog/2026-04-21-ai-coding-tools
 permalink: /posts/2026/04/ai-coding-tools/
 categories:
   - Learning

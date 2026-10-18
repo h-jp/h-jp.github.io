@@ -1,188 +1,49 @@
-# Blog interactions: giscus + GoatCounter
+# 博客留言与访问统计
 
-本仓库为博客文章集成了三类静态站点友好的交互能力：
+2026-10-19 接入方案：giscus 留言与回应、Cloudflare Web Analytics 访问统计。只应用于博客，中英文文章共用讨论，其他栏目保持原样。
 
-- 评论：giscus
-- 点赞 / reactions：giscus reactions
-- 阅读量：GoatCounter
+当前启用状态以 `_config.yml` 为准。外部服务尚未配置完成时，开关保持关闭；缺少必要配置时不输出留言区或统计脚本。完成代码接入不等于已经收到真实留言或统计数据。
 
-实现原则：不自建点赞数据库，不扩展 Cloudflare Worker，不修改已有文章内容，不改变已有 permalink。当前配置在 `repo_id`、`category_id`、`code` 仍为占位符时会静默跳过外部脚本，避免本地或线上页面报错。
+## 留言
 
-## 1. 开启 GitHub Discussions
+1. 用仓库管理账号在 `h-jp/h-jp.github.io` 的 Settings → General → Features 开启 Discussions。
+2. 从 [giscus GitHub App](https://github.com/apps/giscus) 安装，只选择 `h-jp/h-jp.github.io`。权限为读取仓库元数据、读写 Discussions。
+3. 在 [giscus 配置页](https://giscus.app/zh-CN) 填入仓库，选择 Announcements（公告类型）分类，取得真实的仓库 ID 与分类 ID。
+4. 填写 `_config.yml` 的 `comments.giscus`，随后将 `comments.enabled` 设为 `true`。不要使用示例或其他仓库的 ID。
 
-1. 打开仓库 `h-jp/h-jp.github.io` 的 GitHub 页面。
-2. 进入 `Settings` -> `General`。
-3. 找到 `Features`。
-4. 勾选 `Discussions`。
-5. 进入仓库顶部的 `Discussions` 标签页，确认已有 `General` 分类；如果没有，创建一个 `General` 分类。
+留言由 `_layouts/single.html` → `_includes/academic/post-comments.html` 接入，正文末尾显示。使用严格的特定字符串映射，评论框置顶、开启回应、采用浅色主题，并懒加载 iframe。语言随文章切换；加载失败时保留 GitHub 讨论入口。
 
-## 2. 安装或启用 giscus
-
-1. 打开 <https://github.com/apps/giscus>。
-2. 点击 `Install` 或 `Configure`。
-3. 选择只安装到 `h-jp/h-jp.github.io` 仓库。
-4. 确认仓库是 public，且 Discussions 已开启。
-
-## 3. 获取 repo_id 和 category_id
-
-1. 打开 <https://giscus.app>。
-2. 在 `Repository` 中填写：
-
-   ```text
-   h-jp/h-jp.github.io
-   ```
-
-3. 在页面配置项中选择：
-
-   ```text
-   Page <-> Discussion Mapping: pathname
-   Discussion Category: General
-   Enable reactions: yes
-   ```
-
-4. 页面底部会生成一段 `<script>`。从里面复制：
-
-   ```html
-   data-repo-id="..."
-   data-category-id="..."
-   ```
-
-5. 不要手写或猜测这两个值。
-
-## 4. 填写 _config.yml
-
-把 `_config.yml` 中的占位字段替换为 giscus 生成值：
+每篇文章的 front matter 使用固定 `comment_id`，例如：
 
 ```yaml
-comments:
-  provider: giscus
-  enabled: true
-  giscus:
-    repo: "h-jp/h-jp.github.io"
-    repo_id: "REPLACE_WITH_GISCUS_REPO_ID"
-    category: "General"
-    category_id: "REPLACE_WITH_GISCUS_CATEGORY_ID"
-    mapping: "pathname"
-    strict: "0"
-    reactions_enabled: "1"
-    emit_metadata: "0"
-    input_position: "bottom"
-    theme: "light"
-    lang: "zh-CN"
-    loading: "lazy"
+comment_id: blog/2026-10-17-shared-vision-and-long-term-thinking
 ```
 
-如果 `repo_id` 或 `category_id` 仍是 `REPLACE_WITH...`，页面不会加载 giscus script。
+中英文配对必须相同，不同文章必须不同。修改标题、URL 或文件名时保留原 ID。新文章配对均加入此字段。单篇关闭留言可设置 `comments: false`；全局关闭使用 `comments.enabled: false`，已有讨论仍保存在 GitHub。
 
-## 5. 关闭某篇文章评论
+读者无需登录即可阅读，留言或回应需要 GitHub 授权。第一条留言或回应会由 giscus 自动建立对应讨论；初次打开时尚无讨论是正常状态。管理员在仓库 Discussions 中管理留言。不得为了测试功能代用户发送公开留言。
 
-在某篇博客文章的 front matter 中加入：
+## 访问统计
 
-```yaml
-comments: false
-```
+1. 在 [Cloudflare Web Analytics](https://dash.cloudflare.com/?to=/:account/web-analytics) 中添加 `h-jp.github.io`。
+2. 选择手动插入 JavaScript，将生成代码中 `data-cf-beacon` 的 `token` 填入 `_config.yml` 的 `analytics.cloudflare.token`，保持 hostname 为 `h-jp.github.io`。
+3. 将 `analytics.enabled` 设为 `true`。只需公开的 beacon token，**不要填写 Cloudflare API token、密码或其他凭证**。无需迁移 GitHub Pages 或修改 DNS。
+4. 发布后通过真实博客页面访问验证，稍后到后台按 Path 查看文章流量。
 
-只影响该文章。不要为了关闭评论修改 layout 或全局配置。
+统计范围是 `section: blog` 的列表、归档与文章。单篇可设 `analytics: false`。仅生产构建输出加载器，且浏览器必须实际位于 `https://h-jp.github.io`；本地预览、测试域名与关闭的中文页面均不计数。全局关闭使用 `analytics.enabled: false`。
 
-## 6. 注册 GoatCounter
+本方案在 Cloudflare 管理后台查看统计，不提供公开的累计阅读数。数据从启用后累积，不补造历史访问；浏览次数不等于独立读者人数。中英文访问按实际路径分别统计，必要时在后台汇总。
 
-1. 打开 <https://www.goatcounter.com>。
-2. 注册并创建一个站点。
-3. 选择一个 site code。例如统计地址为：
+## 构建与验收
 
-   ```text
-   https://example.goatcounter.com
-   ```
-
-   则 code 通常是：
-
-   ```text
-   example
-   ```
-
-## 7. 填写 GoatCounter code
-
-把 `_config.yml` 中的占位字段替换为 GoatCounter code：
-
-```yaml
-analytics:
-  provider: goatcounter
-  goatcounter:
-    enabled: true
-    code: "REPLACE_WITH_GOATCOUNTER_CODE"
-
-post_views:
-  enabled: true
-  provider: goatcounter
-```
-
-如果 `code` 仍是 `REPLACE_WITH_GOATCOUNTER_CODE`，页面不会加载 GoatCounter tracking script，也不会请求阅读量 JSON。
-
-## 8. 开启 GoatCounter visitor counts
-
-GoatCounter 默认可能不允许网站公开显示 visitor counts。要显示文章阅读量，需要在 GoatCounter 后台开启公开计数：
-
-1. 登录 GoatCounter。
-2. 进入站点设置。
-3. 找到 visitor counter / visitor counts 相关选项。
-4. 开启 `Allow adding visitor counts on your website`。
-5. 保存设置。
-
-本仓库已经集成 tracking script，并在博客文章标题下方预留 `Views` 显示位置。若 GoatCounter 未配置、visitor counts 未开启、或该路径还没有统计数据，前端会显示 `Views: unavailable`。
-
-参考：<https://www.goatcounter.com/help/visitor-counter>
-
-## 9. 本地测试
-
-运行：
+使用项目已有 Ruby / Bundler 环境：
 
 ```bash
-bundle exec jekyll serve
+JEKYLL_ENV=production bundle exec jekyll build --safe --trace
+JEKYLL_ENV=production bundle exec ruby scripts/verify_site.rb
+git diff --check
 ```
 
-然后打开本地地址，例如：
+检查覆盖全站链接、双语配对、讨论 ID 一致性、留言与统计的范围、单篇关闭、语言关闭状态、生产域名保护。服务启用后还需在浏览器检查桌面与手机的真实留言 iframe；统计需在 Cloudflare 后台确认数据到达。
 
-```text
-http://127.0.0.1:4000/
-```
-
-检查：
-
-- 首页正常显示，且不出现评论区。
-- 博客列表正常显示，且不出现评论区。
-- 博客文章正常显示文章内容、meta 信息和底部评论插入位置。
-- `repo_id` / `category_id` 未填写时，不加载 giscus script，不报错。
-- `code` 未填写时，不加载 GoatCounter script，不报错。
-- 给某篇文章设置 `comments: false` 后，该文章不显示 giscus 评论区。
-
-注意：giscus 和 GoatCounter 的真实线上行为依赖 GitHub Discussions、giscus app 和 GoatCounter 后台配置；本地测试主要验证页面结构、Jekyll 构建、脚本占位保护和浏览器控制台错误。
-
-## 10. 提交并部署到 GitHub Pages
-
-1. 确认本地构建通过：
-
-   ```bash
-   bundle exec jekyll build
-   ```
-
-2. 查看变更：
-
-   ```bash
-   git status
-   git diff
-   ```
-
-3. 提交：
-
-   ```bash
-   git add _config.yml _includes _layouts _sass assets/js docs/blog-interactions.md
-   git commit -m "Add blog comments reactions and views"
-   ```
-
-4. 推送分支并创建 Pull Request：
-
-   ```bash
-   git push -u origin feature/blog-interactions-giscus-goatcounter
-   ```
-
-5. 合并后由 GitHub Pages 自动部署。
+`_includes/academic/utility.html` 根据实际配置同步生成中英文隐私与使用说明。旧模板保留的 GoatCounter / Staticman 等源码不属于当前接入方案，不应同时启用。

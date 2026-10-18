@@ -1,6 +1,7 @@
 ---
 title: "Talent Requires Cultivation, but It Also Requires Selection"
 date: 2026-01-22
+comment_id: blog/2026-01-22-cultivating-and-selecting-talent
 permalink: /posts/2026/01/cultivating-and-selecting-talent/
 categories:
   - Mentoring

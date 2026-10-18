@@ -1,6 +1,7 @@
 ---
 title: "OpenClaw and Our Agent Research: From Tool Use to Task Execution"
 date: 2026-03-26
+comment_id: blog/2026-03-26-openclaw-and-agent-research
 permalink: /posts/2026/03/openclaw-and-agent-research/
 categories:
   - Research

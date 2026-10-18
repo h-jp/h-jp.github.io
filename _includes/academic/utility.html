@@ -17,5 +17,18 @@
 {% when 'talks' %}
   <p>{% if lang == 'zh' %}学术报告资料整理后将在此更新。相关研究可见{% else %}Talk materials will be added here when available. Explore related work in{% endif %} <a href="{{ prefix | append: '/research/' | relative_url }}">{{ ui.research[lang] }}</a> {% if lang == 'zh' %}与{% else %}and{% endif %} <a href="{{ prefix | append: '/publications/' | relative_url }}">{{ ui.publications[lang] }}</a>{% if lang == 'zh' %}。{% else %}.{% endif %}</p>
 {% when 'terms' %}
-  <div class="prose">{% if lang == 'zh' %}<p>本网站用于介绍个人学术研究、论文与教学，并分享博客文章。引用论文时请采用论文详情中的正式发表信息。</p><p>本站页面不启用评论、访问统计或广告脚本。点击邮件链接将打开您设备上的邮件应用；外部链接将进入相应网站。</p>{% else %}<p>This website presents academic research, publications, teaching, and blog writing. Please use the formal publication information on each paper's detail page when citing research.</p><p>These pages do not enable commenting, analytics, or advertising scripts. Email links open your device's email application; external links lead to their respective websites.</p>{% endif %}</div>
+  {% include academic/interaction-config.html %}
+  <div class="prose">
+  {% if lang == 'zh' %}
+    <p>本网站用于介绍个人学术研究、论文与教学，并分享博客文章。引用论文时请采用论文详情中的正式发表信息。</p>
+    {% if blog_comments_ready %}<p>博客文章通过 <a href="https://giscus.app/zh-CN">giscus</a> 提供留言与回应功能。浏览留言无需登录；发表留言需要 GitHub 账号授权。留言与账号公开信息保存在公开的 GitHub Discussions 中，中英文版本共用讨论。请围绕文章交流，避免提交个人隐私信息。</p>{% else %}<p>博客留言功能尚未开放。</p>{% endif %}
+    {% if blog_analytics_ready %}<p>博客列表、归档与文章页使用 <a href="https://developers.cloudflare.com/web-analytics/about/">Cloudflare Web Analytics</a> 了解访问趋势与页面性能。统计不使用 Cookie，不用于跨站广告跟踪；数据在站主管理后台查看。其他栏目不加载该统计脚本。</p>{% else %}<p>本站目前不加载访问统计脚本。</p>{% endif %}
+    <p>本站不投放广告。点击邮件链接将打开您设备上的邮件应用；外部链接将进入相应网站。</p>
+  {% else %}
+    <p>This website presents academic research, publications, teaching, and blog writing. Please use the formal publication information on each paper's detail page when citing research.</p>
+    {% if blog_comments_ready %}<p>Blog articles use <a href="https://giscus.app/">giscus</a> for comments and reactions. Reading comments does not require signing in; posting requires authorization through a GitHub account. Comments and public account information are stored in public GitHub Discussions, shared by the English and Chinese versions. Please keep discussion relevant and avoid posting private information.</p>{% else %}<p>Blog comments are not yet enabled.</p>{% endif %}
+    {% if blog_analytics_ready %}<p>Blog listings, archives, and articles use <a href="https://developers.cloudflare.com/web-analytics/about/">Cloudflare Web Analytics</a> to understand traffic trends and page performance. It does not use cookies or track visitors across sites for advertising. Statistics are viewed in the site owner's dashboard. Other sections do not load this analytics script.</p>{% else %}<p>This website currently does not load analytics scripts.</p>{% endif %}
+    <p>This website does not display advertising. Email links open your device's email application; external links lead to their respective websites.</p>
+  {% endif %}
+  </div>
 {% endcase %}

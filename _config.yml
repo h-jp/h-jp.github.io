@@ -18,8 +18,13 @@ future: true
 read_more: disabled
 talkmap_link: false
 comments:
-  provider: false
-  enabled: false
+  provider: giscus
+  enabled: true
+  giscus:
+    repo: h-jp/h-jp.github.io
+    repo_id: R_kgDOJLcaTw
+    category: Announcements
+    category_id: DIC_kwDOJLcaT84DI6G5
 staticman:
   allowedFields:
   - name
@@ -61,7 +66,12 @@ social:
   name: null
   links: null
 analytics:
-  provider: false
+  provider: cloudflare
+  enabled: true
+  cloudflare:
+    # Public beacon token from Web Analytics; never use an account API token here.
+    token: '06a3f6546faf450fb265910d5f00ff10'
+    hostname: h-jp.github.io
 post_views:
   enabled: false
 author:

@@ -1,6 +1,7 @@
 ---
 title: "优秀的研究者，学会自我管理"
 date: 2026-02-23
+comment_id: blog/2026-02-23-self-management-in-research
 permalink: /posts/2026/02/self-management-in-research-zh/
 categories:
   - Mentoring

@@ -1,6 +1,7 @@
 ---
 title: "OpenClaw 与我们的智能体研究：从工具使用到任务执行"
 date: 2026-03-26
+comment_id: blog/2026-03-26-openclaw-and-agent-research
 permalink: /posts/2026/03/openclaw-and-agent-research-zh/
 categories:
   - Research

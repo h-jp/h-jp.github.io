@@ -1,6 +1,7 @@
 ---
 title: "灵光闪现：认知跃迁如何点燃创新改革"
 date: 2025-12-28
+comment_id: blog/2025-12-28-insight-cognitive-leap-innovation
 permalink: /posts/2025/12/insight-cognitive-leap-innovation-zh/
 categories:
   - Reflections

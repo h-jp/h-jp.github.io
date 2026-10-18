@@ -1,6 +1,7 @@
 ---
 title: "Building AI Automation Toolchains: Let Humans Focus on Thinking and AI Handle Implementation"
 date: 2026-05-26
+comment_id: blog/2026-05-26-ai-automation-toolchain
 permalink: /posts/2026/05/ai-automation-toolchain/
 categories:
   - Research

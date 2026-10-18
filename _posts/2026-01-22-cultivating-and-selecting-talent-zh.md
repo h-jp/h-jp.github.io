@@ -1,6 +1,7 @@
 ---
 title: "人才需要培养，同样离不开筛选"
 date: 2026-01-22
+comment_id: blog/2026-01-22-cultivating-and-selecting-talent
 permalink: /posts/2026/01/cultivating-and-selecting-talent-zh/
 categories:
   - Mentoring
