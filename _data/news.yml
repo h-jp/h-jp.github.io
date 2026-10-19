@@ -1,11 +1,11 @@
-- date: '2026.10.17'
-  datetime: 2026-10-17
+- date: '2026.10.19'
+  datetime: 2026-10-19
   text:
-    en: 'New blog post “A Shared Vision and Long-Term Thinking” explores short-termism, selfishness, and the sustained effort and fair sharing behind a credible vision.'
-    zh: '新博文《画饼是一种长期主义》：讨论短视、利己主义与共同愿景，以及长期投入和公平分享。'
+    en: 'New illustrated essay “Beyond the Poverty of Imagination: Growing from Within” explores why imagination matters increasingly in the age of AI, and how reflection and action turn possibilities into growth.'
+    zh: '新博文《走出想象力的贫穷：向内求，生生不息》：探讨AI时代想象力为何愈发重要，以及如何通过自省与行动，让新的可能生长。'
   url:
-    en: /posts/2026/10/shared-vision-and-long-term-thinking/
-    zh: /posts/2026/10/shared-vision-and-long-term-thinking-zh/
+    en: /posts/2026/10/imagination-and-inner-growth/
+    zh: /posts/2026/10/imagination-and-inner-growth-zh/
 - date: '2026.08'
   datetime: 2026-08
   text:

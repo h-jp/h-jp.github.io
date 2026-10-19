@@ -57,7 +57,7 @@ v2.0 继承 v1.1 已确认的文案、正文排版与公开范围，纳入 Stude
 | 界面用语与栏目摘要 | `_data/labels.yml`、`_data/descriptions.yml` |
 | 论文原始记录、代表作选择、中文摘要 | `_publications/` |
 | 中文论文详情入口 | `_pages/zh/papers/`，通过 `pub_id` 复用论文数据 |
-| 十二组双语博客 | `_posts/` |
+| 十三组双语博客 | `_posts/` |
 | 博客置顶、最新标记与列表数量 | `_data/blog.yml` |
 | 主栏目页面 | `_pages/` 与 `_pages/zh/` |
 | 版式与交互 | `_layouts/`、`_includes/academic/`、`assets/css/academic.css`、`assets/js/academic.js` |
@@ -66,7 +66,7 @@ v2.0 继承 v1.1 已确认的文案、正文排版与公开范围，纳入 Stude
 
 SemFaith 已于 2026 年 8 月被 PRICAI 2026（CCF C）录用，科研论文动态按用户确认的时间先后排列为 SemFaith、TOSEM 和 TraceCoder。新增双语详情和完整摘要，通过动态中的“More / 更多”链接进入；`selected: false`，不增加代表作数量。录用时间仅精确到月，使用 `accepted_month` 与对应语言的 `acceptance`，不填补具体日期。作者、DOI、卷页信息尚未提供；录用状态的详情页不生成正式引用区块。英文摘要保留用户原文，仅转换 LaTeX 样式并分段，中文对应保留检查器依赖和人工校准限制。会议名称据[官网](https://2026.pricai.org/)，CCF C 与用户资料及[会议征稿通知](https://2026.pricai.org/files/CFP_PRICAI2026_scnu.pdf)一致。
 
-2026-10-17 博文《画饼是一种长期主义》列为首页与 News 的首条动态，英文对应文章为 “A Shared Vision and Long-Term Thinking”。动态按 `_data/news.yml` 中的顺序展示；博客等内容使用双语 `url` 字段，论文继续使用双语 `paper` 字段，行末“More / 更多”进入当前语言的对应正文。近期三条依次为该博文、SemFaith 和 TOSEM，TraceCoder 顺延至归档。
+2026-10-19 新增双语博文《走出想象力的贫穷：向内求，生生不息》，英文题为 “Beyond the Poverty of Imagination: Growing from Within”，配有“地图与道路”“根系与生长”两幅插画。正文讨论AI时代想象力的重要性，将工具带来的实践机会与问题发现、专业判断及向内求相衔接；相关写作与创意实验附原文链接，保留其具体任务范围。News 仅保留一条最新博客动态，其余均为论文动态；更新博客推荐时替换原博客动态，历史博文继续从 Blog 访问。首页与 News 的近期三条依次为该博文、SemFaith 和 TOSEM，TraceCoder 位于归档。动态按 `_data/news.yml` 中的顺序展示；博客等内容使用双语 `url` 字段，论文继续使用双语 `paper` 字段，行末“More / 更多”进入当前语言的对应正文。
 
 项目题名是已经脱敏的最终文本。中英文第一项各有两处 `[MASK]`，第二项各有三处；保留字面标记，不恢复省略词，不添加能反推省略词的摘要或元信息。
 
@@ -177,7 +177,7 @@ git diff --check
 bundle exec ruby scripts/verify_site.rb _site /tmp/homepage-site-audit.json
 ```
 
-当前构建包含 110 个页面（55 对语言页面，含两个错误页）与 7 个历史跳转页，中英文均已开放。包含 12 个归档页面和 14 个课程页面。维护后重新检查内容数、语言对应关系、链接、脱敏及删除页面是否残留。浏览器重点检查主栏目与归档在 320、390、768、1024、1280、1440 像素下的排版，以及手机菜单、More 和语言切换；照片还需检查不同像素密度下的候选文件和 JPEG 后备图，确认未请求母版。
+当前构建包含 112 个页面（56 对语言页面，含两个错误页）与 7 个历史跳转页，中英文均已开放。包含 12 个归档页面和 14 个课程页面。维护后重新检查内容数、语言对应关系、链接、脱敏及删除页面是否残留。浏览器重点检查主栏目与归档在 320、390、768、1024、1280、1440 像素下的排版，以及手机菜单、More 和语言切换；照片还需检查不同像素密度下的候选文件和 JPEG 后备图，确认未请求母版。
 
 默认构建用于验证完整双语内容。如需验证语言关闭后的回退状态，可在站点目录之外新建包含 `chinese_enabled: false`、`chinese_blog_enabled: true` 的 YAML 配置，再使用独立构建目录：
 

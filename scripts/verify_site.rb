@@ -271,9 +271,9 @@ end
 ['/','/zh/','/news/','/zh/news/'].each do |url|
   doc = html.fetch(resolve.call(url, File.join(root,'index.html')).first)
   next if doc.at_css('.language-notice')
-  blog_title = url.start_with?('/zh') ? '画饼是一种长期主义' : 'A Shared Vision and Long-Term Thinking'
-  check.call(doc.css('.news-list time').map(&:text) == ['2026.10.17','2026.08','2026.08'], "News order: #{url}")
-  check.call(doc.css('.news-list li').map(&:text).zip([blog_title,'SemFaith','Cross-Model Collaboration']).all? { |item, title| item.include?(title) }, "News sequence: #{url}")
+  latest_blog_title = url.start_with?('/zh') ? '走出想象力的贫穷：向内求，生生不息' : 'Beyond the Poverty of Imagination: Growing from Within'
+  check.call(doc.css('.news-list time').map(&:text) == ['2026.10.19','2026.08','2026.08'], "News order: #{url}")
+  check.call(doc.css('.news-list li').map(&:text).zip([latest_blog_title,'SemFaith','Cross-Model Collaboration']).all? { |item, title| item.include?(title) }, "News sequence: #{url}")
 end
 prefixes = chinese_enabled ? ['', '/zh'] : ['']
 blog_settings = load_yaml.call(File.join(source, '_data/blog.yml'))
