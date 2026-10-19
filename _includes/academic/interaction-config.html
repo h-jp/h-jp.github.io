@@ -9,8 +9,8 @@
     {%- assign blog_comments_ready = true -%}
   {%- endunless -%}
 {%- endif -%}
-{%- assign blog_analytics_ready = false -%}
+{%- assign site_analytics_ready = false -%}
 {%- assign cloudflare_token = site.analytics.cloudflare.token | default: '' | strip -%}
 {%- if site.analytics.enabled == true and site.analytics.provider == 'cloudflare' and cloudflare_token.size == 32 and site.analytics.cloudflare.hostname == 'h-jp.github.io' -%}
-  {%- assign blog_analytics_ready = true -%}
+  {%- assign site_analytics_ready = true -%}
 {%- endif -%}

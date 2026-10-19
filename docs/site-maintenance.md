@@ -188,6 +188,6 @@ bundle exec ruby scripts/verify_site.rb /tmp/hjp-fallback-preview /tmp/hjp-fallb
 
 同时将回退配置的 `chinese_blog_enabled` 设为 `false`，可检查全部中文关闭状态。正式本地预览与发布均采用 `_config.yml` 的完整双语配置，不使用回退构建目录。
 
-`docs/`、`work/`、`_archive/`、`scripts/`、旧地图和模板开发材料不进入站点构建目录。其中 `work/`、`_archive/` 与本地使用指南由 Git 忽略，不提交到公开仓库；维护说明和验证脚本作为源码提交。旧样式及工具文件保留作为历史源码，当前页面加载 `academic.css` 与 `academic.js`。样式与脚本链接均使用构建时间作为 `v` 参数，同一次构建中的页面共用同一版本；部署新构建后地址随之更新，避免新页面继续复用旧版本的浏览器样式或换行脚本缓存。博客留言与统计按 `_config.yml` 独立启用，接入与管理见 [博客留言与访问统计](blog-interactions.md)。留言仅出现在文章末尾，中英文配对共用固定 `comment_id`；Cloudflare 统计仅覆盖博客，并排除本地预览。广告脚本未启用。
+`docs/`、`work/`、`_archive/`、`scripts/`、旧地图和模板开发材料不进入站点构建目录。其中 `work/`、`_archive/` 与本地使用指南由 Git 忽略，不提交到公开仓库；维护说明和验证脚本作为源码提交。旧样式及工具文件保留作为历史源码，当前页面加载 `academic.css` 与 `academic.js`。样式与脚本链接均使用构建时间作为 `v` 参数，同一次构建中的页面共用同一版本；部署新构建后地址随之更新，避免新页面继续复用旧版本的浏览器样式或换行脚本缓存。博客留言与统计按 `_config.yml` 独立启用，接入与管理见 [博客留言与全站访问统计](blog-interactions.md)。评论与回复仅出现在文章底部，中英文配对共用固定 `comment_id`；不显示额外邀请标题和文章 reactions。Cloudflare 统计覆盖全站中英文页面，并排除本地预览。广告脚本未启用。
 
 恢复时使用改版前的完整备份，先另存当前目录，再复制备份回原位置；不要直接覆盖现有修改。备份和本轮测试截图保存在站点目录之外。

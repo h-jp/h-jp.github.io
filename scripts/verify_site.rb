@@ -130,9 +130,9 @@ html.each do |path, doc|
     check.call(widget['data-repo'] == giscus_config['repo'] && widget['data-repo-id'] == giscus_config['repo_id'] && widget['data-category-id'] == giscus_config['category_id'], "Configured comment repository and category: #{rel}")
     check.call(comment_widgets.first.at_css('.comments-fallback a')&.[]('href').to_s.start_with?("https://github.com/#{giscus_config['repo']}/discussions?"), "Comment fallback link: #{rel}")
   end
-  analytics_expected = analytics_enabled && analytics_configured && ENV['JEKYLL_ENV'] == 'production' && blog_routes.include?(canonical) && page_by_url[canonical]&.[]('analytics') != false && !notice_expected
+  analytics_expected = analytics_enabled && analytics_configured && ENV['JEKYLL_ENV'] == 'production' && page_by_url[canonical]&.[]('analytics') != false && !notice_expected
   beacons = doc.css('script[data-cf-token]')
-  check.call(beacons.size == (analytics_expected ? 1 : 0), "Analytics confined to visible blog pages in production: #{rel}")
+  check.call(beacons.size == (analytics_expected ? 1 : 0), "Analytics on visible, opted-in site pages in production: #{rel}")
   check.call(doc.css('script[src*="cloudflareinsights.com"], script[src*="goatcounter.com"]').empty?, "No unguarded or duplicate analytics provider: #{rel}")
   if analytics_expected
     check.call(beacons.first['data-cf-hostname'] == 'h-jp.github.io' && beacons.first['data-cf-token'] == cloudflare_config['token'], "Analytics site configuration: #{rel}")
