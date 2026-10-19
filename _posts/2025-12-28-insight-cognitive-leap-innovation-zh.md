@@ -13,6 +13,7 @@ tags:
   - 认知科学
   - 科研思考
 excerpt: "灵光闪现可能源于持续探索，以及熟悉观念之间的新联系。要让灵感转化为创新，还需要审视既有假设、完善想法，并在实践中检验。"
+image: /images/blog/insight-cognitive-leap-innovation.jpg
 lang: zh
 translation: /posts/2025/12/insight-cognitive-leap-innovation/
 ---
@@ -20,6 +21,14 @@ translation: /posts/2025/12/insight-cognitive-leap-innovation/
 重要的创新，有时始于一个微小的观察，而不是一套完整的方案。一个意外结果、一种熟悉的现象，或者一个被暂时搁置的问题，都可能促使我们重新思考事物如何运行。关键在于能否建立新的联系：当我们开始追问既有解释、注意到被忽略的关系时，普通观察也可能引出新的理解。
 
 我们通常把这种瞬间称为“灵光闪现”。对科研工作者而言，可以把灵感放回此前的知识积累和研究经历中理解：一个新想法，可能让分散的观察、问题和概念形成更清晰的联系。这样的瞬间可以打开创新的方向，但想法仍然需要进一步发展和检验。
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/insight-cognitive-leap-innovation-768.webp 768w, /images/blog/insight-cognitive-leap-innovation-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/insight-cognitive-leap-innovation.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="分散的石块与几何碎片，在一道弧线的连接下显现出新的结构。">
+  </picture>
+  <figcaption>灵感让熟悉的事物建立新的联系，检验使这条联系有机会成为知识。</figcaption>
+</figure>
 
 ## 从一个瞬间说起
 

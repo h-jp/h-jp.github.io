@@ -11,6 +11,7 @@ tags:
   - 软件工程
   - 代码生成
 excerpt: "AI 编程工具正在把软件开发从手工编辑代码，推向意图表达、结果审查、测试验证和持续修复的人机协作过程。"
+image: /images/blog/ai-coding-tools.jpg
 lang: zh
 translation: /posts/2026/04/ai-coding-tools/
 ---
@@ -20,6 +21,14 @@ AI 编程工具正在改变软件开发的日常工作流。Codex、Claude Code 
 在传统工作流中，很多精力消耗在把意图手工翻译成代码上。而在 AI 辅助工作流中，开发者越来越多地承担意图表达、约束说明、结果审查、测试验证和技术取舍的工作。这并没有削弱工程判断，反而提高了工程判断的价值。开发者必须知道该提出什么问题，该提供哪些上下文，哪些输出不能轻信，以及怎样验证修改是否真的适合当前系统。
 
 对学生来说，这意味着学习编程不能被简化为学习提示词。如果学生看不懂生成代码，设计不出测试，也诊断不了失败，工具很容易制造一种“好像已经完成了”的错觉。AI 编程工具在使用者具备足够知识时非常强大，因为人能引导它、约束它、检查它；但当使用者把表述流畅误当作结果正确时，风险也会变得很高。工具越强，人的需求理解、架构意识、接口意识、测试能力和可维护性判断就越重要。
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/ai-coding-tools-768.webp 768w, /images/blog/ai-coding-tools-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/ai-coding-tools.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="开发者在工作台前检查自动组装的模块结构及其连接处。">
+  </picture>
+  <figcaption>实现变快之后，理解需求、检查连接和验证结果更值得投入。</figcaption>
+</figure>
 
 从研究角度看，AI 编程工具暴露了很多开放问题。智能体应该怎样选择合适的仓库上下文？怎样保持项目已有代码风格？怎样判断生成补丁是否满足原始需求？怎样利用运行轨迹、测试结果和历史失败来修复代码？怎样解释修改，才能让人类高效审查？这些问题都直接连接到智能软件工程。
 

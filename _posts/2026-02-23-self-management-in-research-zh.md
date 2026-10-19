@@ -11,6 +11,7 @@ tags:
   - 自我管理
   - 学生指导
 excerpt: "学生和研究者通过管理目标、坚持标准、依据证据落实反馈，逐步形成独立开展研究的能力。"
+image: /images/blog/self-management-in-research.jpg
 lang: zh
 translation: /posts/2026/02/self-management-in-research/
 ---
@@ -20,6 +21,14 @@ translation: /posts/2026/02/self-management-in-research/
 自我管理并不等于单打独斗。科研仍然需要讨论、批评和指导，也需要团队合作。区别在于，一个具备自我管理能力的学生，不会被动等待下一条指令。他知道当前目标是什么，知道证据标准是什么，能意识到哪里卡住了，也能在下一次讨论中带来具体问题。比起只说“这个很难”，他会说明自己尝试了什么、哪里失败了、收集到了什么证据、现在需要做什么决策。
 
 这种能力之所以重要，是因为科研有很长一段时间都处在不确定中。论文可能没有给出足够的实现细节，实验结果可能出乎意料，模型可能在一个场景有效、换一个场景失效，系统也可能因为不明显的原因崩溃。如果每遇到一个这样的问题，都必须依赖外部管理，工作就会变慢，也会变脆弱。相反，如果学生能建立自己的反馈循环，困难也能成为学习的机会：定义问题，缩小范围，验证一个假设，记录结果，再更新计划。
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/self-management-in-research-768.webp 768w, /images/blog/self-management-in-research-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/self-management-in-research.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="研究者在帆船上对照海图与罗盘，根据航行中的反馈调整方向。">
+  </picture>
+  <figcaption>自我管理，是知道航向，也能根据证据修正航线。</figcaption>
+</figure>
 
 对研究生来说，自我管理往往从很小的习惯开始。保持清晰的研究日志；开始一周工作前写下目标；不仅记录成功结果，也记录失败尝试和失败原因；开会前准备简短的进展、证据和待决问题；开会后把反馈拆成具体任务和时间安排。这些习惯看起来朴素，却能把模糊的努力转化为可观察的进展。
 

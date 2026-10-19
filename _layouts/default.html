@@ -25,7 +25,7 @@
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:type" content="{% if page.collection == 'posts' and chinese_unavailable == false %}article{% else %}website{% endif %}">
   <meta property="og:locale" content="{% if lang == 'zh' %}zh_CN{% else %}en_US{% endif %}">
-  <meta property="og:image" content="{{ profile.portrait_share | absolute_url }}">
+  <meta property="og:image" content="{{ page.image | default: profile.portrait_share | absolute_url }}">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/png" sizes="64x64" href="{{ profile.portrait_icon | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/images/hjp-icon-192.png' | relative_url }}">

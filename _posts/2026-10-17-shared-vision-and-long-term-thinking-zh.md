@@ -13,6 +13,7 @@ tags:
   - 利己主义
   - 合作
 excerpt: "画出一个值得共同走向的未来，本身就是长期行动的起点。短视只计算眼前的回报，利己主义只计算自己的收益；可信的愿景则需要持续投入、公平分享和逐步兑现。"
+image: /images/blog/shared-vision-and-long-term-thinking.jpg
 lang: zh
 translation: /posts/2026/10/shared-vision-and-long-term-thinking/
 ---
@@ -22,6 +23,14 @@ translation: /posts/2026/10/shared-vision-and-long-term-thinking/
 我愿意说，画饼是一种长期主义。这里的“画饼”，是把尚未实现、但值得努力的未来讲清楚，让人知道今天的投入要通向哪里，并愿意和他人一起把它做出来。日常语言也用这个词指代虚假的许诺，二者需要分清。讨论的价值，就在于辨认一个愿景背后的行动与责任，不能只凭它谈的是未来，就认定它没有意义。
 
 学习一项困难的技能、开展一项研究、建设一个团队，开始时都很难拿出完整的成果。人们需要先理解这件事为什么值得做，才可能在回报尚不清晰的时候投入时间。愿景使分散的行动有了方向，也让参与者有机会判断，这个方向是否与自己的追求一致。把未来讲清楚，本身就是合作的一部分。
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/shared-vision-and-long-term-thinking-768.webp 768w, /images/blog/shared-vision-and-long-term-thinking-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/shared-vision-and-long-term-thinking.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="几位同行者共同搭建一座通向果园的桥，已完成的桥面与远端的规划线相连。">
+  </picture>
+  <figcaption>可信的愿景，从共同承担的眼前工作开始。</figcaption>
+</figure>
 
 画饼的人因此承担着一份具体责任：说明未来可能是什么样子，它与今天有什么联系，以及自己准备为此做些什么。一张好的蓝图可以很有想象力，但总要让人找到第一步。只有远处的热闹，却没有当下的投入，时间再长也不会自动把愿望变成现实。
 

@@ -224,6 +224,10 @@ html:lang(zh) .brand { letter-spacing: .045em; }
 .prose table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .prose th, .prose td { border-bottom: 1px solid var(--line); text-align: left; padding: 10px; }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 35px 0; }
+.article-illustration { margin: 30px 0 34px; }
+.article-illustration picture { display: block; }
+.article-illustration img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.article-illustration figcaption { margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.8; text-align: left; }
 .article-footer { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); }
 .post-navigation { display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: 12px 26px; margin-top: 32px; }
 .post-navigation a { padding-block: 8px; white-space: nowrap; }

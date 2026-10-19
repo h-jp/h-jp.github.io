@@ -11,6 +11,7 @@ tags:
   - Software Engineering
   - Code Generation
 excerpt: "AI coding tools are changing software development from manual editing toward intent expression, review, testing, and repair."
+image: /images/blog/ai-coding-tools.jpg
 lang: en
 translation: /posts/2026/04/ai-coding-tools-zh/
 ---
@@ -20,6 +21,14 @@ AI coding tools are changing the daily workflow of software development. Tools s
 In a traditional workflow, much effort is spent translating intent into code by hand. In an AI-assisted workflow, developers increasingly express intent, provide constraints, review generated changes, run tests, and decide whether the result fits the system. This does not remove engineering judgment. It raises the value of engineering judgment. A developer must know what to ask for, what context to provide, which output to distrust, and how to verify that the change is correct.
 
 For students, this means learning programming cannot be reduced to learning prompts. If a student cannot understand the generated code, cannot design tests, and cannot diagnose failures, the tool may create an illusion of progress. AI coding tools are powerful when the user has enough knowledge to guide them. They are risky when the user mistakes fluent output for a correct result. The better the tool becomes, the more important it is for the human to understand requirements, architecture, interfaces, tests, and maintainability.
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/ai-coding-tools-768.webp 768w, /images/blog/ai-coding-tools-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/ai-coding-tools.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="A developer inspects the joints of a modular structure assembled with automated assistance.">
+  </picture>
+  <figcaption>As implementation becomes faster, understanding requirements and verifying the result deserve greater attention.</figcaption>
+</figure>
 
 From a research perspective, AI coding tools expose many open problems. How should an agent select the right repository context? How should it preserve local coding conventions? How can it know whether a generated patch satisfies the original requirement? How can it use runtime traces, test results, and historical failures to repair code? How should it explain changes so that humans can review them efficiently? These questions connect directly to intelligent software engineering.
 

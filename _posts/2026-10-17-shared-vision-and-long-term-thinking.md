@@ -13,6 +13,7 @@ tags:
   - Selfishness
   - Cooperation
 excerpt: "Describing a future worth building together can be the beginning of sustained action. A credible vision asks us to look beyond immediate returns and our own benefit, and to support our hopes with effort, fair sharing, and promises kept along the way."
+image: /images/blog/shared-vision-and-long-term-thinking.jpg
 lang: en
 translation: /posts/2026/10/shared-vision-and-long-term-thinking-zh/
 ---
@@ -22,6 +23,14 @@ translation: /posts/2026/10/shared-vision-and-long-term-thinking-zh/
 I would argue that drawing such a picture of the future can itself be a form of long-term thinking. By this, I mean explaining a future worth pursuing, showing where today's effort could lead, and committing to build it with others. The same Chinese expression also describes deceptive promises, so the distinction matters. We need to examine the actions and responsibilities behind a vision. Its concern with something yet to happen is not, by itself, a reason to dismiss it.
 
 Learning a difficult skill, starting a research project, and building a team all begin without finished results to show. People need to understand why an undertaking matters before they can invest time in it while the rewards remain uncertain. A vision gives their separate efforts a direction. It also lets participants decide whether that direction fits their own aspirations. Explaining the future is part of making cooperation possible.
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/shared-vision-and-long-term-thinking-768.webp 768w, /images/blog/shared-vision-and-long-term-thinking-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/shared-vision-and-long-term-thinking.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="Several people build a bridge toward an orchard, connecting completed work with a lightly sketched future span.">
+  </picture>
+  <figcaption>A credible shared vision begins with work and responsibility shared in the present.</figcaption>
+</figure>
 
 The person proposing a vision therefore takes on a specific responsibility: to explain what that future might look like, how it connects to the present, and what they intend to contribute. A good plan can be ambitious, but people should still be able to find a first step. Time alone will not turn an attractive distant prospect into reality without effort now.
 

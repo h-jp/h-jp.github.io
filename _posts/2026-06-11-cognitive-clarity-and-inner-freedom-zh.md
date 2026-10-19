@@ -13,6 +13,7 @@ tags:
   - 人生成长
   - 豁达
 excerpt: "真正的豁达，是看清眼前的困难，也看见更广阔的人生。读苏轼的《定风波》，思考如何理解处境、回应情绪，并为自己保留继续前行的余地。"
+image: /images/blog/cognitive-clarity-and-inner-freedom.jpg
 lang: zh
 translation: /posts/2026/06/cognitive-clarity-and-inner-freedom/
 ---
@@ -27,6 +28,14 @@ translation: /posts/2026/06/cognitive-clarity-and-inner-freedom/
 短短一首词，却像打开了一个辽阔的人生境界。风雨、竹杖、芒鞋、斜照、归途，本是极普通的景象，在苏轼笔下，却也成为一种面对世界的姿态。打动我的，既是文字之美，也是它让人看到的另一种生活视角。
 
 这里所说的“提升认知”，是指更充分地理解经历、反思判断，并学会把眼前的事情放到更长的时间里看。这是我读这首词时，想进一步思考的方向。
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/cognitive-clarity-and-inner-freedom-768.webp 768w, /images/blog/cognitive-clarity-and-inner-freedom-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/cognitive-clarity-and-inner-freedom.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="持竹杖的行者穿过竹林细雨，远山与归途渐有斜阳。">
+  </picture>
+  <figcaption>风雨仍在，行路的人也可以多一分清醒与从容。</figcaption>
+</figure>
 
 ## 一、豁达不是没有风雨，而是不被风雨定义
 

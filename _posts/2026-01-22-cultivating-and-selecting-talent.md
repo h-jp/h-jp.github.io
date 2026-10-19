@@ -11,6 +11,7 @@ tags:
   - Talent Development
   - Mentoring
 excerpt: "A reflection on why research groups should cultivate students carefully while also selecting those who are willing to grow through responsibility, initiative, and long-term effort."
+image: /images/blog/cultivating-and-selecting-talent.jpg
 lang: en
 translation: /posts/2026/01/cultivating-and-selecting-talent-zh/
 ---
@@ -20,6 +21,14 @@ Developing as a researcher takes training and support. A student does not become
 Training alone is not enough; research groups also need to select students who are willing to make sustained use of that support.
 
 Selection does not mean rejecting people too early, nor does it mean judging students only by their current background. In my view, selection means identifying who is truly willing to grow. A good research group should not only ask whether a student is already strong, but also whether the student has curiosity, responsibility, persistence, and the ability to respond to feedback. These qualities often matter more than current technical skills.
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/cultivating-and-selecting-talent-768.webp 768w, /images/blog/cultivating-and-selecting-talent-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/cultivating-and-selecting-talent.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="Plants at different stages grow with suitable light, support and care in a quiet greenhouse.">
+  </picture>
+  <figcaption>Provide the conditions for growth, and observe how growth unfolds through sustained practice.</figcaption>
+</figure>
 
 Research is different from routine coursework. In coursework, the problem is usually defined, the answer is often known, and the evaluation standard is relatively clear. In research, the problem may be vague, the method may fail, the experiment may produce unexpected results, and the writing may need many rounds of revision. A student who wants to do research must be able to work through uncertainty. This requires not only intelligence, but also patience, initiative, and self-discipline.
 

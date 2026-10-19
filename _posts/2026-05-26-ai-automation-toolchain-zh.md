@@ -11,6 +11,7 @@ tags:
   - 工具链
   - 人机协作
 excerpt: "好的 AI 自动化工具链，应当把重复实现细节沉淀为可靠流程，同时让人的注意力回到目标、判断和真正需要思考的问题上。"
+image: /images/blog/ai-automation-toolchain.jpg
 lang: zh
 translation: /posts/2026/05/ai-automation-toolchain/
 ---
@@ -20,6 +21,14 @@ AI 自动化最吸引人的承诺之一，是让人少花时间处理重复的�
 在软件工程中，很多任务同时包含重复劳动和智力判断。搭建实验、解析日志、生成报告、运行测试、收集轨迹、整理数据、应用小规模代码修改，这些步骤往往可以被自动化。但判断什么问题值得解决、实验是否有效、失败是否重要、结论是否站得住，仍然需要人的思考。好的工具链应该尊重这种分工。
 
 可靠的工具链需要清晰的结构。首先，它需要清晰输入：目标、约束、文件、数据集和期望输出。其次，它需要可执行工具：脚本、测试、解析器、评估器和构建命令。第三，它需要反馈：日志、错误、指标、差异和运行轨迹。第四，它需要记忆：已经尝试过什么，发生过哪些失败，哪些经验不应该被忘记。没有这些部分，AI 自动化就容易退化成连续猜测。
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/ai-automation-toolchain-768.webp 768w, /images/blog/ai-automation-toolchain-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/ai-automation-toolchain.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="相互连接的水道驱动多个工作站，一条回流把观察结果带回思考者身边。">
+  </picture>
+  <figcaption>把重复步骤连接起来，也让反馈回到需要作出判断的人手中。</figcaption>
+</figure>
 
 这也是为什么我们的研究经常强调制品和证据。在智能需求工程中，智能体不应该只是对话，而应该生成和修改人类可以审阅的需求制品。在代码生成和修复中，智能体不应该只是提出补丁，而应该运行测试、检查运行轨迹，并解释修复依据。在机器人任务中，智能体不应该只是生成计划，而应该观察环境、检查约束，并根据执行反馈调整行为。
 

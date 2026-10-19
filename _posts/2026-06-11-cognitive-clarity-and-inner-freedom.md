@@ -13,6 +13,7 @@ tags:
   - Personal Growth
   - Inner Freedom
 excerpt: "Equanimity means seeing difficulties clearly while keeping a broader view of life. Reading Su Shi’s Ding Feng Bo invites reflection on how we understand our circumstances, respond to emotions, and find room to move forward."
+image: /images/blog/cognitive-clarity-and-inner-freedom.jpg
 lang: en
 translation: /posts/2026/06/cognitive-clarity-and-inner-freedom-zh/
 ---
@@ -31,6 +32,14 @@ Whenever I read Su Shi’s *Ding Feng Bo*, I am struck by its strength and gener
 In a few lines, the poem opens up a remarkably expansive view of life. Rain, a bamboo staff, straw sandals, evening sunlight, and the journey home are ordinary things. In Su Shi’s writing, they also express a way of meeting the world. What moves me is both the beauty of the language and the perspective it makes possible.
 
 Here, I use “cognitive growth” to mean learning to understand our experiences more fully, reflect on our judgments, and see beyond the immediate moment.
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/cognitive-clarity-and-inner-freedom-768.webp 768w, /images/blog/cognitive-clarity-and-inner-freedom-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/cognitive-clarity-and-inner-freedom.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="A traveler with a bamboo staff walks through rain as late sunlight reaches the distant hills.">
+  </picture>
+  <figcaption>The rain may remain, while the traveler finds greater clarity and composure.</figcaption>
+</figure>
 
 ## 1. Equanimity means not letting the storm define us
 

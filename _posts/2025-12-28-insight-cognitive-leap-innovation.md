@@ -13,6 +13,7 @@ tags:
   - Cognitive Science
   - AI Research
 excerpt: "A flash of insight can grow from sustained inquiry and new connections among familiar ideas. Turning it into innovation requires us to question existing assumptions, develop the idea, and test it in practice."
+image: /images/blog/insight-cognitive-leap-innovation.jpg
 lang: en
 translation: /posts/2025/12/insight-cognitive-leap-innovation-zh/
 ---
@@ -20,6 +21,14 @@ translation: /posts/2025/12/insight-cognitive-leap-innovation-zh/
 An important innovation can begin with a small observation rather than a complete plan. An unexpected result, a familiar phenomenon, or a question that others have set aside may prompt us to reconsider how something works. What matters is the connection we make: an ordinary observation can lead to a new explanation when we question an established framework and notice relationships we had overlooked.
 
 We often call this a “flash of insight.” For researchers, it is useful to see insight in relation to the knowledge and experience that precede it. A new idea may bring scattered observations, questions, and concepts into a more coherent pattern. That moment can open a direction for innovation, but the idea still needs to be developed and tested.
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/insight-cognitive-leap-innovation-768.webp 768w, /images/blog/insight-cognitive-leap-innovation-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/insight-cognitive-leap-innovation.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="Scattered stones and geometric fragments form a new structure when a fine arc connects them.">
+  </picture>
+  <figcaption>Insight reveals a new connection; testing gives that connection a chance to become knowledge.</figcaption>
+</figure>
 
 ## Beginning with a Moment
 

@@ -13,6 +13,7 @@ tags:
   - 学业发展
   - 高等教育
 excerpt: "网络叙事容易在真实沟通开始之前塑造学生对导师关系的预期。从认知角度看，研究生应从防御性认知走向成长型认知，以理性、开放和建设性的方式建构导师关系，并为自己的学业与人生发展负责。"
+image: /images/blog/growth-oriented-supervisor-student-relationship.jpg
 lang: zh
 translation: /posts/2025/11/growth-oriented-supervisor-student-relationship/
 ---
@@ -22,6 +23,14 @@ translation: /posts/2025/11/growth-oriented-supervisor-student-relationship/
 如果不对这些内容进行理性辨析，学生就容易在潜移默化中受到影响。部分学生在尚未真正进入科研训练、尚未与导师建立充分沟通之前，就可能对导师形成先入为主的负面预期，把导师关系理解为天然的压力来源、风险来源，甚至对立关系。这种认知一旦形成，不仅会影响师生沟通，也会影响学生对学业、科研和个人成长的判断。
 
 因此，我们有必要从认知的角度，冷静、理性地分析导师关系，帮助学生从“防御性认知”走向“成长型认知”，在真实学习和科研过程中理性建构导师关系，并为自己的学业发展和人生选择负责。
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/growth-oriented-supervisor-student-relationship-768.webp 768w, /images/blog/growth-oriented-supervisor-student-relationship-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/growth-oriented-supervisor-student-relationship.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="导师与研究生平等地坐在圆桌旁，共同讨论笔记和实验模型。">
+  </picture>
+  <figcaption>真实的交流与共同的工作，让信任有了生长的土壤。</figcaption>
+</figure>
 
 ## 一、网络叙事不能替代现实判断
 

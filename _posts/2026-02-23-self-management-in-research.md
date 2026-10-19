@@ -11,6 +11,7 @@ tags:
   - Self Management
   - Mentoring
 excerpt: "A reflection on how students and researchers develop independence by managing their goals, maintaining standards, and acting on feedback."
+image: /images/blog/self-management-in-research.jpg
 lang: en
 translation: /posts/2026/02/self-management-in-research-zh/
 ---
@@ -20,6 +21,14 @@ In research supervision, management is often discussed as if it mainly means ass
 Self-management is not the same as working alone. Research is collaborative, and students still need discussion, criticism, and guidance. The difference is that a self-directed student does not wait passively for the next instruction. They know the current goal, understand the standard of evidence, notice when progress is blocked, and bring concrete questions to the next meeting. Instead of saying only that something is difficult, they can explain what they tried, what failed, what evidence they collected, and what decision needs to be made.
 
 This ability matters because research contains long periods of uncertainty. A paper may not provide enough implementation detail. An experiment may produce a surprising result. A model may work on one case and fail on another. A system may break for reasons that are not obvious. If every such moment requires external management, the work becomes slow and fragile. If the student can create a feedback loop, the same difficulty becomes an opportunity to learn: define the problem, narrow the scope, test one hypothesis, document the result, and update the plan.
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/self-management-in-research-768.webp 768w, /images/blog/self-management-in-research-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/self-management-in-research.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="A researcher aboard a sailboat checks a chart and compass while adjusting the course.">
+  </picture>
+  <figcaption>Self-management means knowing your direction and revising your course in response to evidence.</figcaption>
+</figure>
 
 For graduate students, self-management begins with small habits. Keep a clear research log. Write down weekly goals before starting the work. Record not only successful results, but also failed attempts and reasons. Before a meeting, prepare a short summary of the problem, progress, evidence, and next choices. After a meeting, turn feedback into concrete tasks with deadlines. These habits are simple, but they transform vague effort into visible progress.
 

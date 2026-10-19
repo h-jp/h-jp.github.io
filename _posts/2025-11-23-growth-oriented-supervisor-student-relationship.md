@@ -13,6 +13,7 @@ tags:
   - Academic Development
   - Higher Education
 excerpt: "Online narratives can easily shape students’ perceptions of supervisor–student relationships before real communication begins. From a cognitive perspective, graduate students need to move beyond defensive thinking and learn to build constructive, growth-oriented relationships with their supervisors."
+image: /images/blog/growth-oriented-supervisor-student-relationship.jpg
 lang: en
 translation: /posts/2025/11/growth-oriented-supervisor-student-relationship-zh/
 ---
@@ -22,6 +23,14 @@ In recent years, discussions about the relationship between students and supervi
 When such content is repeatedly viewed without careful reflection, it may shape students’ expectations before they have truly entered research training or established open communication with their supervisors. Some students may begin their graduate studies with a defensive mindset, assuming that supervisors are naturally sources of pressure, risk, or even opposition. This kind of pre-existing perception can affect communication, research engagement, academic development, and long-term personal growth.
 
 For this reason, it is necessary to examine the supervisor–student relationship from a cognitive perspective. Instead of being driven by online emotions or isolated narratives, students need to move from defensive thinking to growth-oriented thinking. They should learn to build constructive relationships with their supervisors while taking responsibility for their own academic development and life choices.
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/growth-oriented-supervisor-student-relationship-768.webp 768w, /images/blog/growth-oriented-supervisor-student-relationship-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/growth-oriented-supervisor-student-relationship.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="A mentor and graduate student sit together at a round table, discussing notes and an experimental model.">
+  </picture>
+  <figcaption>Trust grows through honest dialogue and work shared over time.</figcaption>
+</figure>
 
 ## Online Narratives Cannot Replace Real-World Judgment
 

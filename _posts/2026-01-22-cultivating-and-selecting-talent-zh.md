@@ -11,6 +11,7 @@ tags:
   - 人才培养
   - 学生指导
 excerpt: "人才成长既需要耐心培养，也需要在真实任务中不断筛选。好的研究组不是简单地管理所有人，而是把有限资源投入到真正愿意成长、能够承担责任并持续进步的学生身上。"
+image: /images/blog/cultivating-and-selecting-talent.jpg
 lang: zh
 translation: /posts/2026/01/cultivating-and-selecting-talent/
 ---
@@ -20,6 +21,14 @@ translation: /posts/2026/01/cultivating-and-selecting-talent/
 但单靠培养还不够，研究组也需要筛选愿意持续投入、认真利用培养机会的学生。
 
 筛选并非意味着过早淘汰他人，也并非仅仅根据学生目前的背景来评判他们。在我看来，筛选的意义在于识别那些真正渴望成长的人。一个优秀的科研团队不仅应该考察学生是否已经具备较强的能力，还应该考察他们是否拥有好奇心、责任心、毅力和接受反馈的能力。这些品质往往比当前掌握的技术技能更为重要。
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/cultivating-and-selecting-talent-768.webp 768w, /images/blog/cultivating-and-selecting-talent-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/cultivating-and-selecting-talent.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="温室中不同生长阶段的植物得到合适的光照、支撑与照料。">
+  </picture>
+  <figcaption>给成长以条件，也在持续的实践中观察成长。</figcaption>
+</figure>
 
 研究与常规课程作业截然不同。课程作业中，问题通常已经明确，答案往往已知，评价标准也相对清晰。而研究中，问题可能模糊不清，方法可能失效，实验可能产生意想不到的结果，论文也可能需要反复修改。想要从事研究的学生必须能够坦然面对不确定性。这不仅需要智力，还需要耐心、主动性和自律性。
 

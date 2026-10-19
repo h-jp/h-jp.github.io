@@ -10,6 +10,7 @@ tags:
   - 工具使用
   - 任务执行
 excerpt: "智能体研究不能停留在单次工具调用，而应走向带有目标、记忆、证据、反馈和验证机制的可靠任务执行。"
+image: /images/blog/openclaw-and-agent-research.jpg
 lang: zh
 translation: /posts/2026/03/openclaw-and-agent-research/
 ---
@@ -19,6 +20,14 @@ translation: /posts/2026/03/openclaw-and-agent-research/
 [OpenClaw](https://openclaw.ai/) 是一个开源 AI 助手项目，为我们思考智能体研究提供了一个参考。它引出了一个更广泛的研究问题：如何构建能够把任务持续推进到完成的智能体系统？在真实工作中，一个任务很少是一条清晰、完整、没有歧义的指令。需求可能不完整，文件里可能有隐藏约束，输出可能需要验证，有些操作还可能代价很高或难以回滚。因此，一个可靠智能体需要形成循环：观察当前状态，推理下一步，通过工具行动，评估结果，再更新记忆或计划。
 
 这个循环和我们理解的智能软件工程非常接近。当智能体修改代码时，它应该理解仓库上下文，保留已有风格，尽可能运行测试，并解释自己改了什么。当智能体调试程序时，它应该收集证据，而不是只凭一条报错信息猜测原因。当智能体支持需求工程时，它应该维护需求制品，检查一致性，并知道什么时候需要人类审阅。这些并不是彼此割裂的问题，而是不同形式的、由证据驱动的任务执行。
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/openclaw-and-agent-research-768.webp 768w, /images/blog/openclaw-and-agent-research-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/openclaw-and-agent-research.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="一台小型自主装置沿着经过观察、执行和检查站点的路线推进任务。">
+  </picture>
+  <figcaption>工具调用只是一步；可靠的任务执行需要持续观察、检验与修正。</figcaption>
+</figure>
 
 核心研究问题是：如何让智能体在不确定条件下保持可靠。工具调用可能失败，模型输出可能不符合格式，新的证据可能让原计划失效，多智能体协作也可能因为缺少共享制品而引入不一致。因此，我们的智能体研究强调结构化制品、执行轨迹、记忆、反思、验证，以及必要的人工审阅环节。它们的共同作用，是让智能体行为更可检查、更可追踪。
 

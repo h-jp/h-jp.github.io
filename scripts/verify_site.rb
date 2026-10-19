@@ -93,6 +93,7 @@ post_data.each do |post|
   check.call(post['comment_id'].to_s.match?(%r{\Ablog/[a-z0-9/-]+\z}), "Stable discussion id: #{post['permalink']}")
   counterpart = post_by_url[post['translation']]
   check.call(counterpart && counterpart['comment_id'] == post['comment_id'], "Shared bilingual discussion: #{post['permalink']}")
+  check.call(post['image'].to_s.start_with?('/images/blog/') && counterpart && counterpart['image'] == post['image'], "Shared bilingual blog illustration: #{post['permalink']}")
 end
 post_data.group_by { |post| post['comment_id'] }.each do |id, posts|
   check.call(posts.size == 2 && posts.map { |post| post['lang'] }.sort == %w[en zh], "Discussion id must identify exactly one article pair: #{id}")
@@ -330,6 +331,9 @@ blog_prefixes.each do |prefix|
   chronological_posts.each_with_index do |post, index|
     article = html.fetch(resolve.call(post['permalink'], File.join(root, 'index.html')).first)
     check.call(article.at_css('.prose') && !article.at_css('.prose').text.strip.empty? && article.at_css('meta[property="og:type"]')&.[]('content') == 'article', "Readable blog article: #{post['permalink']}")
+    figures = article.css('.prose figure.article-illustration')
+    check.call(figures.any? && figures.all? { |figure| figure.at_css('img') && !figure.at_css('figcaption')&.text.to_s.strip.empty? }, "Illustrated blog with captions: #{post['permalink']}")
+    check.call(figures.first&.at_css('img')&.[]('src') == post['image'] && article.at_css('meta[property="og:image"]')&.[]('content') == "#{config['url']}#{post['image']}", "Blog sharing image matches its lead illustration: #{post['permalink']}")
     check.call(article.at_css('.article-excerpt .article-translation')&.[]('href') == post['translation'], "Blog excerpt translation: #{post['permalink']}")
     previous_url = index.positive? ? chronological_posts[index - 1]['permalink'] : nil
     next_url = chronological_posts[index + 1]&.[]('permalink')

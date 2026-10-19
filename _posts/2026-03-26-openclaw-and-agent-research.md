@@ -10,6 +10,7 @@ tags:
   - Tool Use
   - Task Execution
 excerpt: "Agent research should move beyond isolated tool calls toward reliable task execution with goals, memory, evidence, and feedback."
+image: /images/blog/openclaw-and-agent-research.jpg
 lang: en
 translation: /posts/2026/03/openclaw-and-agent-research-zh/
 ---
@@ -19,6 +20,14 @@ Many discussions about AI agents begin with tool use. A model calls a search too
 [OpenClaw](https://openclaw.ai/), an open-source AI assistant project, offers a useful point of reference for our thinking about agents. It brings a broader research question into focus: how can we build systems that carry tasks through to completion? In real work, a task rarely consists of a single clear, complete instruction. Requirements may be incomplete. Files may contain hidden constraints. Outputs may need validation. Some actions may be irreversible or expensive. A capable agent therefore needs a loop: observe the current state, reason about the next step, act through tools, evaluate the result, and update its memory or plan.
 
 This loop is close to how we think about intelligent software engineering. When an agent modifies code, it should understand the repository context, preserve existing conventions, run tests when possible, and explain what changed. When an agent debugs a program, it should collect evidence rather than guess from a failure message alone. When an agent supports requirements engineering, it should maintain artifacts, check consistency, and know when human review is needed. These are not separate problems. They are different forms of evidence-driven task execution.
+
+<figure class="article-illustration">
+  <picture>
+    <source type="image/webp" srcset="/images/blog/openclaw-and-agent-research-768.webp 768w, /images/blog/openclaw-and-agent-research-1536.webp 1536w" sizes="(max-width: 880px) calc(100vw - 40px), 840px">
+    <img src="/images/blog/openclaw-and-agent-research.jpg" width="1536" height="864" loading="lazy" decoding="async" alt="A small autonomous device follows a route through observation, action and checking stations.">
+  </picture>
+  <figcaption>A tool call is one step; reliable execution requires continued observation, verification and revision.</figcaption>
+</figure>
 
 The key research question is how to make agents reliable under uncertainty. Tool calls can fail. Model outputs can be malformed. A plan can become invalid after new evidence appears. Multi-agent collaboration can introduce inconsistency if agents exchange conclusions without shared artifacts. For this reason, our agent research emphasizes structured artifacts, execution traces, memory, reflection, validation, and human review at appropriate stages. These mechanisms make agent behavior more inspectable.
 
