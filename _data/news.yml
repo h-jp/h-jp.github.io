@@ -1,11 +1,11 @@
-- date: '2026.10.19'
-  datetime: 2026-10-19
+- date: '2026.10.23'
+  datetime: 2026-10-23
   text:
-    en: 'New illustrated essay “Beyond the Poverty of Imagination: Growing from Within” explores why imagination matters increasingly in the age of AI, and how reflection and action turn possibilities into growth.'
-    zh: '新博文《走出想象力的贫穷：向内求，生生不息》：探讨AI时代想象力为何愈发重要，以及如何通过自省与行动，让新的可能生长。'
+    en: 'New illustrated essay “If AI Can Supply Both Ideas and Results, Where Does Human Value Lie?” explores dignity, learning, and participation in a future where AI may surpass human judgment.'
+    zh: '新博文《如果创意和实现都来自AI，人类的价值在哪里？》：当AI可能连判断也更强，人的尊严、学习与共同参与，如何支撑值得过的生活？'
   url:
-    en: /posts/2026/10/imagination-and-inner-growth/
-    zh: /posts/2026/10/imagination-and-inner-growth-zh/
+    en: /posts/2026/10/human-value-in-the-ai-age/
+    zh: /posts/2026/10/human-value-in-the-ai-age-zh/
 - date: '2026.08'
   datetime: 2026-08
   text:

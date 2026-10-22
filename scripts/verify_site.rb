@@ -271,8 +271,8 @@ end
 ['/','/zh/','/news/','/zh/news/'].each do |url|
   doc = html.fetch(resolve.call(url, File.join(root,'index.html')).first)
   next if doc.at_css('.language-notice')
-  latest_blog_title = url.start_with?('/zh') ? '走出想象力的贫穷：向内求，生生不息' : 'Beyond the Poverty of Imagination: Growing from Within'
-  check.call(doc.css('.news-list time').map(&:text) == ['2026.10.19','2026.08','2026.08'], "News order: #{url}")
+  latest_blog_title = url.start_with?('/zh') ? '如果创意和实现都来自AI，人类的价值在哪里？' : 'If AI Can Supply Both Ideas and Results, Where Does Human Value Lie?'
+  check.call(doc.css('.news-list time').map(&:text) == ['2026.10.23','2026.08','2026.08'], "News order: #{url}")
   check.call(doc.css('.news-list li').map(&:text).zip([latest_blog_title,'SemFaith','Cross-Model Collaboration']).all? { |item, title| item.include?(title) }, "News sequence: #{url}")
 end
 prefixes = chinese_enabled ? ['', '/zh'] : ['']
