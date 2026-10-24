@@ -151,8 +151,13 @@ html.each do |path, doc|
     check.call(!doc.at_css('.mobile-menu summary')&.[]('aria-label').to_s.empty?, "Missing mobile menu label: #{rel}")
   end
   language_switcher = doc.at_css('.language-switcher')
-  target_language = doc.at_css('html')['lang'] == 'zh-CN' ? 'EN' : 'ZH'
-  check.call(language_switcher.text.strip == target_language && language_switcher.css('a').size == 1 && language_switcher.css('[aria-current]').empty?, "Target language only: #{rel}")
+  current_language = doc.at_css('html')['lang']
+  language_toggle = language_switcher.at_css('summary.language-toggle')
+  check.call(language_switcher.name == 'details' && !language_switcher.key?('open') && language_toggle&.at_css('svg') && language_toggle['aria-label'] == 'Language / 语言', "Accessible language icon: #{rel}")
+  check.call(language_switcher.css('.language-options a').map { |link| [link['hreflang'], link.text.strip] } == [['en', 'English'], ['zh-CN', '简体中文']], "Both language options: #{rel}")
+  current_option = language_switcher.at_css('a[aria-current="true"]')
+  check.call(language_switcher.css('a[aria-current]').size == 1 && current_option&.[]('hreflang') == current_language && current_option.at_css('.language-check') && resolve.call(current_option['href'], path)&.first == path, "Current language selection: #{rel}")
+  check.call(language_switcher.css('[data-translation]').size == 1 && language_switcher.at_css('[data-translation]')['hreflang'] != current_language && language_toggle['aria-controls'] == language_switcher.at_css('.language-options')['id'], "Language menu destination: #{rel}")
   doc.css('img').each { |img| check.call(!img['alt'].to_s.empty?, "Missing image alternative: #{rel}") }
   doc.css('source[srcset], img[srcset]').each do |node|
     node['srcset'].split(',').each do |candidate|

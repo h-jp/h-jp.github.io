@@ -43,8 +43,16 @@ html:lang(zh) .brand { letter-spacing: .045em; }
 .desktop-nav a[aria-current] { color: var(--ink); }
 .desktop-nav a[aria-current]::after { position: absolute; content: ""; height: 2px; background: var(--accent); bottom: 20px; left: 0; right: 0; }
 .desktop-nav a:hover { color: var(--accent); }
-.language-switcher { display: flex; align-items: center; font-size: 13px; white-space: nowrap; }
-.language-switcher a { padding: 9px 2px; text-decoration: none; color: var(--muted); }
+.language-switcher { position: relative; flex: 0 0 auto; white-space: nowrap; }
+.language-toggle { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 10px; list-style: none; color: var(--ink); cursor: pointer; border-radius: 6px; }
+.language-toggle::-webkit-details-marker { display: none; }
+.language-toggle:hover, .language-switcher[open] > .language-toggle { color: var(--accent); background: var(--soft); }
+.language-icon { width: 21px; height: 21px; }
+.language-options { position: absolute; top: calc(100% + 10px); right: 0; z-index: 30; width: 184px; padding: 6px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 8px 24px #17324112; }
+.language-options a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; padding: 10px 12px; border-radius: 4px; color: var(--ink); font-size: 15px; font-weight: 500; line-height: 1.5; text-decoration: none; }
+.language-options a:hover, .language-options a[aria-current="true"] { color: var(--accent); background: var(--soft); }
+.language-options a[aria-current="true"] { font-weight: 600; }
+.language-check { width: 18px; height: 18px; flex-shrink: 0; }
 .mobile-menu { display: none; }
 .hero { padding: 64px 0 54px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 64px; align-items: stretch; }
 .hero-copy { display: flex; flex-direction: column; justify-content: space-between; min-width: 0; }
@@ -301,7 +309,6 @@ main .post-title, main .post-title > a { text-wrap: wrap; }
   .brand { font-size: 18px; }
   .mobile-menu summary > span:first-child { display: none; }
   .mobile-menu summary { padding-left: 0; min-width: 28px; justify-content: flex-end; }
-  .language-switcher { font-size: 12px; }
   .hero { padding-block: 34px 36px; grid-template-columns: minmax(0, 1fr) 104px; gap: 16px; align-items: start; }
   .hero-copy { display: contents; }
   .hero-role { grid-column: 1; grid-row: 1; font-size: 11px; margin: 0; padding-top: 3px; }
